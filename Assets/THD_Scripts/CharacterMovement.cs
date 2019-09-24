@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class CharacterMovement : MonoBehaviour
     public float idashTime;
     private int direction;
     [HideInInspector] public bool isDashing;
+    public float iDashCooldown;
+    float dashCooldown;
+
+    //
+
+    double sqrt2by2 = (Math.Sqrt(2) / 2);
 
  
     // Start is called before the first frame update
@@ -29,87 +36,64 @@ public class CharacterMovement : MonoBehaviour
     {
         DashHandler();
         CharacterMove();
+        AttackTarget();
     }
 
+    //DashHandler method takes care of the player's dash
     void DashHandler()
     {
-        if (dashTime <= 0)
+        float dashButton = Input.GetAxis("Dash");
+
+
+        if (dashButton == 0 || dashTime <= 0)
         {
-            dashTime = idashTime;
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
             isDashing = false;
+            dashTime = idashTime;
         }
-        else
-        {
-            dashTime -= Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-                
-            {               
-                if (Input.GetAxis("Horizontal") == 1 && Input.GetAxis("Vertical") == 1)//Dash haut droite
-                {
-                    rb.velocity =  Vector2.one * dashSpeed;
-                    isDashing = true;
-                }
 
-                else if (Input.GetAxis("Horizontal") == -1 && Input.GetAxis("Vertical") == 1)//Dash haut gauche
-                {
-                    rb.velocity = (Vector2.up +Vector2.left) * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Horizontal") == 1 && Input.GetAxis("Vertical") == -1)//Dash bas droite
-                {
-                    rb.velocity = (Vector2.down + Vector2.right) * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Horizontal") == -1 && Input.GetAxis("Vertical") == -1)//Dash bas gauche
-                {
-                    rb.velocity = (Vector2.down + Vector2.left) * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Horizontal") == 1) //Dash droit
-                {
-                    rb.velocity = Vector2.right * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Horizontal") == -1)//Dash gauche
-                {
-                    rb.velocity = Vector2.left * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Vertical") == 1)//Dash haut
-                {
-                    rb.velocity = Vector2.up * dashSpeed;
-                    isDashing = true;
-                }
-                else if (Input.GetAxis("Vertical") == -1)//Dash bas
-                {
-                    rb.velocity = Vector2.down * dashSpeed;
-                    isDashing = true;
-                }
-
+        if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
+            {
+                dashTime--;
+                rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
+                isDashing = true ;
             }
-        }
+
+           
+        
     }
 
+    //CharacterMove method takes care of the players movement
     void CharacterMove()
     {
-        Transform target = GetComponent<PlayerSliceAttack>().attackPosition;
-        float targetDist = Vector3.Distance(transform.position, target.position);
-
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f); 
-        transform.position += movement * Time.deltaTime * speed;
-
-        if (targetDist <= 0.1)
-        {           
-            target.position += movement.normalized;
-        }
-        else
-        {
-            target.position = transform.position;
-        }
-     
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f); //This vector takes input from a joystick. It allows the player to move in every direction on a 2D plane
+        transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
     }
 
+    //AttackTarget method updates the direction where the player attacks when he presses a button on the gamepad
 
+    void AttackTarget()
+    {
+        Transform target = GetComponent<PlayerSliceAttack>().attackPosition;
+        
+        if (Input.GetAxis("Horizontal") >= sqrt2by2)
+        {
+ ;
+            target.position = transform.position + new Vector3(0.5f, 0, 0);
+        }
+        else if (Input.GetAxis("Horizontal") <= -sqrt2by2)
+        {
+            target.position = transform.position + new Vector3(-0.5f, 0, 0);
+        }
+        else if (Input.GetAxis("Vertical") >= sqrt2by2)
+        {
+            target.position = transform.position + new Vector3(0, 0.5f, 0);
+        }
+        else if (Input.GetAxis("Vertical") <= -sqrt2by2)
+        {
+            target.position = transform.position + new Vector3(0, -0.5f, 0);
+        }
+        
+    }
 
 }

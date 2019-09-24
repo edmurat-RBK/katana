@@ -24,7 +24,7 @@ public class PlayerSliceAttack : MonoBehaviour
     {
         if (timeInBtwAttack <= 0)
         {
-            if (Input.GetKey(KeyCode.Space) && CanAttack() == true)
+            if (Input.GetAxis("Attack") == 1 && CanAttack() == true)
             {
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
