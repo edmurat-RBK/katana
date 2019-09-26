@@ -408,8 +408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  dashSpeed: 25
-  idashTime: 0.25
+  dashSpeed: 15
+  idashTime: 3.5
   isDashing: 0
   iDashCooldown: 0
 --- !u!212 &2027725205

@@ -34,7 +34,7 @@ public class PlayerSliceAttack : MonoBehaviour
                 timeInBtwAttack = iTimeInBtwAttack;
             }
         }
-        else
+        else if(Input.GetAxis("Attack") == 0)
         {
             timeInBtwAttack -= Time.deltaTime;
         }

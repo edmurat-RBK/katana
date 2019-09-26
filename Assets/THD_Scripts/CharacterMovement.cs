@@ -45,19 +45,23 @@ public class CharacterMovement : MonoBehaviour
         float dashButton = Input.GetAxis("Dash");
 
 
-        if (dashButton == 0 || dashTime <= 0)
+        if (dashTime <= 0)
         {
             rb.velocity = Vector3.zero;
-            isDashing = false;
-            dashTime = idashTime;
+            isDashing = false;   
         }
 
         if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
-            {
-                dashTime--;
-                rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
-                isDashing = true ;
-            }
+        {
+            dashTime--;
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
+            isDashing = true ;
+        }
+
+        if (dashButton == 0)
+        {
+            dashTime = idashTime;
+        }
 
            
         
@@ -71,7 +75,6 @@ public class CharacterMovement : MonoBehaviour
     }
 
     //AttackTarget method updates the direction where the player attacks when he presses a button on the gamepad
-
     void AttackTarget()
     {
         Transform target = GetComponent<PlayerSliceAttack>().attackPosition;
