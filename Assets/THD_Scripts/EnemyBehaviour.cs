@@ -5,17 +5,13 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public int health;
-    
-    void Start()
-    {
-        
-    }
+    public float speed;
+    public float attackDamage; 
 
-    // Update is called once per frame
+
     void Update()
     {
-        Vector3 movement = new Vector3(-1f, 0f, 0f);
-        transform.position += movement * Time.deltaTime;
+        EnemyMovement();
         if (health <=0)
         {
             Destroy(gameObject);
@@ -23,8 +19,13 @@ public class EnemyBehaviour : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        GetComponent<SpriteRenderer>().color = Color.white ;
+        GetComponent<SpriteRenderer>().color = Color.white;
         health -= damage;
         Debug.Log("OUCH");
+    }
+    public void EnemyMovement()
+    {
+        Vector3 movement = new Vector3(-1f, 0f, 0f);
+        transform.position += movement * Time.deltaTime * speed;
     }
 }
