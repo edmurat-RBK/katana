@@ -84,7 +84,6 @@ public class CharacterMovement : MonoBehaviour
         
         if (Input.GetAxis("Horizontal") >= sqrt2by2)
         {
- ;
             target.position = transform.position + new Vector3(0.5f, 0, 0);
         }
         else if (Input.GetAxis("Horizontal") <= -sqrt2by2)

@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 0.75}
+    oldSize: {x: 0.2857143, y: 0.17142858}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   stoppingDistance: 1
   iattackCooldown: 100
   attackRange: 1.5
+  iattackDuration: 100
+  ieffectCooldown: 50

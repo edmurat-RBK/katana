@@ -9,6 +9,12 @@ public class OnionBehaviour : EnemyBehaviour
     float attackCooldown;
     public float iattackCooldown;
     public float attackRange;
+    bool isAttacking;
+    public float iattackDuration;
+    float attackDuration; 
+    public float ieffectCooldown;
+    float effectCooldown; 
+
 
 
     // Start is called before the first frame update
@@ -16,46 +22,58 @@ public class OnionBehaviour : EnemyBehaviour
     {
         target = GameObject.Find("Player").GetComponent<Transform>();
         attackCooldown = iattackCooldown;
-        
-
+        isAttacking = false ;
+        effectCooldown = ieffectCooldown;
+        attackDuration = iattackDuration;
     }
 
     // Update is called once per frame
     void Update()
     {
+        OnionAttack();
         OnionMovement(); 
+
+        //The Onion dies
         if (health <= 0)
         {
             Destroy(gameObject);
         }
-        OnionAttack();
+        
     }
 
     void OnionMovement()
     {   
-        if (Vector3.Distance(transform.position, target.position) > stoppingDistance)
+        if (isAttacking == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            if (Vector3.Distance(transform.position, target.position) > stoppingDistance)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            }
+
         }
-        //Quand l'oignon est proche du joueur, alors il lui tourne autour ?
-        
+       
+        //Quand l'oignon est proche du joueur, alors il lui tourne autour ?        
     }
 
     void OnionAttack()
     {
-        if (attackCooldown <= 0)
-        {     
+        if (attackCooldown <= 0)//Cooldown de l'attaque de l'oignon
+        {
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
+                isAttacking = true;
                 GameObject.Find("Player").GetComponent<CharacterMovement>().health -= 1;
                 Debug.Log(GameObject.Find("Player").GetComponent<CharacterMovement>().health);
                 //Blur
             }
+
+
             attackCooldown = iattackCooldown;
         }
         else
         {
-            attackCooldown--;
+            attackCooldown-- ;
+            isAttacking = false ; 
         }
 
     }
