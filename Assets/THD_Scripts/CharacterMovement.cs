@@ -19,7 +19,8 @@ public class CharacterMovement : MonoBehaviour
     public float iDashCooldown;
     float dashCooldown;
 
-    //
+    //Player related variables
+    public int health = 10;
 
     double sqrt2by2 = (Math.Sqrt(2) / 2);
 
@@ -37,6 +38,10 @@ public class CharacterMovement : MonoBehaviour
         DashHandler();
         CharacterMove();
         AttackTarget();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //DashHandler method takes care of the player's dash
@@ -44,27 +49,25 @@ public class CharacterMovement : MonoBehaviour
     {
         float dashButton = Input.GetAxis("Dash");
 
-
-        if (dashTime <= 0)
-        {
-            rb.velocity = Vector3.zero;
-            isDashing = false;   
-        }
-
-        if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
-        {
-            dashTime--;
-            rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
-            isDashing = true ;
-        }
-
-        if (dashButton == 0)
-        {
-            dashTime = idashTime;
-        }
-
-           
         
+            if (dashTime <= 0)
+            {
+                rb.velocity = Vector3.zero;
+                isDashing = false;
+            }
+
+            if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
+            {
+                dashTime--;
+                rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
+                isDashing = true;
+
+            }
+
+            if (dashButton == 0)
+            {
+                dashTime = idashTime;
+            }
     }
 
     //CharacterMove method takes care of the players movement
@@ -99,4 +102,11 @@ public class CharacterMovement : MonoBehaviour
         
     }
 
+    public void PlayerTakeDamage()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+        health -= 1;
+        Debug.Log("TookDamage");
+    }
 }
+
