@@ -47,7 +47,19 @@ public class OnionBehaviour : EnemyBehaviour
         {
             if (Vector3.Distance(transform.position, target.position) > stoppingDistance)
             {
+                
+                if (Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed).x < 0)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                    Debug.Log("Facing Right");
+                }
                 transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+
+               
             }
 
         }

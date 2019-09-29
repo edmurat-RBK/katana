@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1225385577892740937}
   - component: {fileID: 1225385577892740932}
   - component: {fileID: 1225385577892740939}
+  - component: {fileID: 4190382567604915160}
   m_Layer: 8
   m_Name: O-nion
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 558f08beb09d4f74ea61735cf7a5f79e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 406e69b835bb3054c93a39fe7d3f90a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2857143, y: 0.17142858}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -128,3 +129,22 @@ MonoBehaviour:
   attackRange: 1.5
   iattackDuration: 100
   ieffectCooldown: 50
+--- !u!95 &4190382567604915160
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225385577892740936}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40542366c5bbe244d8ad3c47d947786d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
