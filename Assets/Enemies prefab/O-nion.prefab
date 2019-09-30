@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 406e69b835bb3054c93a39fe7d3f90a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1225385577892740932
@@ -127,8 +127,6 @@ MonoBehaviour:
   stoppingDistance: 1
   iattackCooldown: 100
   attackRange: 1.5
-  iattackDuration: 100
-  ieffectCooldown: 50
 --- !u!95 &4190382567604915160
 Animator:
   serializedVersion: 3
