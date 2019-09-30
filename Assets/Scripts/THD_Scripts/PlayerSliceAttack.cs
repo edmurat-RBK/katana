@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerSliceAttack : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class PlayerSliceAttack : MonoBehaviour
     public float attackRange;
     public LayerMask whatIsEnemy;
     public int Playerdamage;
-    
-    
+    double sqrt2by2 = (Math.Sqrt(2) / 2);
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerSliceAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AttackTarget();
         if (timeInBtwAttack <= 0)
         {
             if (Input.GetAxis("Attack") == 1 && CanAttack() == true)
@@ -39,6 +42,29 @@ public class PlayerSliceAttack : MonoBehaviour
             timeInBtwAttack -= Time.deltaTime;
         }
         
+    }
+    //AttackTarget method updates the direction where the player attacks when he presses a button on the gamepad
+    void AttackTarget()
+    {
+
+        Transform target = GameObject.Find("IattackPosition").transform; 
+
+        if (Input.GetAxis("Horizontal") >= sqrt2by2)
+        {
+            attackPosition.position = target.position + new Vector3(0.5f, 0, 0);
+        }
+        else if (Input.GetAxis("Horizontal") <= -sqrt2by2)
+        {
+            attackPosition.position = target.position + new Vector3(-0.5f, 0, 0);
+        }
+        else if (Input.GetAxis("Vertical") >= sqrt2by2)
+        {
+            attackPosition.position= target.position + new Vector3(0, 0.5f, 0);
+        }
+        else if (Input.GetAxis("Vertical") <= -sqrt2by2)
+        {
+            attackPosition.position = target.position + new Vector3(0, -0.5f, 0);
+        }
     }
 
 

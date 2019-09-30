@@ -22,15 +22,14 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawnUseCount < spawnUseCountMax)
+        if(spawnUseCount < spawnUseCountMax)//Nombre de fois max que le spawner va s'activer
         {
             if (spawnRate <= 0)
             {
-                for (int i = 0; i < numberToSpawn; i++)
+                for (int i = 0; i < numberToSpawn; i++) //Le spawner fait apparaitre x ennemis à la fois
                 {
                     Instantiate(enemyToSpawn, new Vector3(0, 0, 0), Quaternion.identity);
                     spawnRate = ispawnRate;
-
                 }
                 spawnUseCount++;
             }
@@ -39,6 +38,6 @@ public class EnemySpawner : MonoBehaviour
                 spawnRate--;
             }
         }
-       
+      
     }
 }

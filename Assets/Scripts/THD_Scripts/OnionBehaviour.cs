@@ -10,10 +10,7 @@ public class OnionBehaviour : EnemyBehaviour
     public float iattackCooldown;
     public float attackRange;
     bool isAttacking;
-    public float iattackDuration;
-    float attackDuration; 
-    public float ieffectCooldown;
-    float effectCooldown; 
+
 
 
 
@@ -23,8 +20,6 @@ public class OnionBehaviour : EnemyBehaviour
         target = GameObject.Find("Player").GetComponent<Transform>();
         attackCooldown = iattackCooldown;
         isAttacking = false ;
-        effectCooldown = ieffectCooldown;
-        attackDuration = iattackDuration;
     }
 
     // Update is called once per frame

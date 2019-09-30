@@ -5,12 +5,11 @@ using System;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private Rigidbody2D rb; 
-
     //Player speed related variables
     public float speed = 1f;
 
     //Player dash related variables
+    private Rigidbody2D rb;
     public float dashSpeed;
     private float dashTime;
     public float idashTime;
@@ -22,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     //Player related variables
     public int health = 10;
 
-    double sqrt2by2 = (Math.Sqrt(2) / 2);
+
 
  
     // Start is called before the first frame update
@@ -37,7 +36,6 @@ public class CharacterMovement : MonoBehaviour
     {
         DashHandler();
         CharacterMove();
-        AttackTarget();
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -77,35 +75,13 @@ public class CharacterMovement : MonoBehaviour
         transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
     }
 
-    //AttackTarget method updates the direction where the player attacks when he presses a button on the gamepad
-    void AttackTarget()
-    {
-        Transform target = GetComponent<PlayerSliceAttack>().attackPosition;
-        
-        if (Input.GetAxis("Horizontal") >= sqrt2by2)
-        {
-            target.position = transform.position + new Vector3(0.5f, 0, 0);
-        }
-        else if (Input.GetAxis("Horizontal") <= -sqrt2by2)
-        {
-            target.position = transform.position + new Vector3(-0.5f, 0, 0);
-        }
-        else if (Input.GetAxis("Vertical") >= sqrt2by2)
-        {
-            target.position = transform.position + new Vector3(0, 0.5f, 0);
-        }
-        else if (Input.GetAxis("Vertical") <= -sqrt2by2)
-        {
-            target.position = transform.position + new Vector3(0, -0.5f, 0);
-        }
-        
-    }
+
+
 
     public void PlayerTakeDamage()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
         health -= 1;
-        Debug.Log("TookDamage");
+        Debug.Log(health);
     }
 }
 
