@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLoot : MonoBehaviour
+/*public class EnemyLoot : MonoBehaviour
 {
 
     public GameObject objectToLoot;
@@ -33,4 +33,4 @@ public class EnemyLoot : MonoBehaviour
             }
         }
     }
-}
+}*/
