@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 3918691da96f442409949a562b248148
+guid: 90af3018e8b99dd4d92eba70371c4ab9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7398401877867595916
-    second: NINJA_idle_droite_0
+      213: 8350437694079873590
+    second: NINJA_course_gauche_0
   - first:
-      213: -8022150830704665834
-    second: NINJA_idle_droite_1
+      213: 8451005854384035956
+    second: NINJA_course_gauche_1
   - first:
-      213: 189999834158587962
-    second: NINJA_idle_droite_2
+      213: -100445661333216721
+    second: NINJA_course_gauche_2
   - first:
-      213: 3357764352397058933
-    second: NINJA_idle_droite_3
+      213: 4960014017919852353
+    second: NINJA_course_gauche_3
+  - first:
+      213: 3615683286767331443
+    second: NINJA_course_gauche_4
+  - first:
+      213: -8066572675617606904
+    second: NINJA_course_gauche_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -53,7 +59,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -98,7 +104,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_idle_droite_0
+      name: NINJA_course_gauche_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d56277e53eb824398ef9060f2f010b
+      internalID: 8350437694079873590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NINJA_course_gauche_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651523313b69fde47a4877ee454585eb
+      internalID: 8451005854384035956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NINJA_course_gauche_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973bbf696bcff694299804c88f7ca387
+      internalID: -100445661333216721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NINJA_course_gauche_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326b7a3f9cad6f5499d1c9fca741b639
+      internalID: 4960014017919852353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NINJA_course_gauche_4
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e6c1d926d403484d8f8168e974c0503
-      internalID: 7398401877867595916
+      spriteID: 78ed3a164e0707a43bf24433c29363b4
+      internalID: 3615683286767331443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_idle_droite_1
+      name: NINJA_course_gauche_5
       rect:
         serializedVersion: 2
         x: 32
@@ -133,50 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd79f81acc97fd4b8bd9e8c2d10e74c
-      internalID: -8022150830704665834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NINJA_idle_droite_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8be2b7dc3a64b04da2fde8c282a95b5
-      internalID: 189999834158587962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NINJA_idle_droite_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 697aa2a50dafed046a2da8a819f9eb36
-      internalID: 3357764352397058933
+      spriteID: a32e290f312ccad4a83c69be21fe89dc
+      internalID: -8066572675617606904
       vertices: []
       indices: 
       edges: []

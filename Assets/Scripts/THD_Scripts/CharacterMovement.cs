@@ -21,7 +21,8 @@ public class CharacterMovement : MonoBehaviour
     //Player related variables
     public int health = 10;
 
-
+    //Player animation
+    public Animator animator; 
 
  
     // Start is called before the first frame update
@@ -73,6 +74,9 @@ public class CharacterMovement : MonoBehaviour
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f); //This vector takes input from a joystick. It allows the player to move in every direction on a 2D plane
         transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
+
+        animator.SetFloat("VerticalMove", movement.y * 100);
+        animator.SetFloat("HorizontalMove", movement.x * 100);
     }
 
 
