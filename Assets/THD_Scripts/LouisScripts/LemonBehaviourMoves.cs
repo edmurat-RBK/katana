@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LemonBehaviour : MonoBehaviour
+public class LemonBehaviourMoves : MonoBehaviour
 {
 
     [SerializeField]
@@ -18,17 +18,14 @@ public class LemonBehaviour : MonoBehaviour
     [SerializeField]
     private float fuiteDist = .5f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void Update()
     {
-        //if (directionToMove == Direction.NONE)
+        
         DirectionToMoveAway();
+
         // déplacements de fuite 
         if (Vector3.Distance(transform.position, target.position) < fuiteDist)
             MoveAway();
@@ -50,7 +47,7 @@ public class LemonBehaviour : MonoBehaviour
         }
     }
 
-    private void MoveAway()// ecteurs qui font fuir
+    private void MoveAway()// vecteurs qui font fuir
     {
         switch (directionToMove)
         {
