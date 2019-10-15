@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 1f;
 
     //Player dash related variables
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float dashSpeed;
     private float dashTime;
     public float idashTime;
@@ -74,9 +74,8 @@ public class CharacterMovement : MonoBehaviour
             if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
             {
                 dashTime--;
-                rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * dashSpeed;
+                rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashSpeed;
                 isDashing = true;
-
             }
 
             if (dashButton == 0)
@@ -89,7 +88,8 @@ public class CharacterMovement : MonoBehaviour
     void CharacterMove()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f); //This vector takes input from a joystick. It allows the player to move in every direction on a 2D plane
-        transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
+        rb.velocity = new Vector2(movement.x, movement.y).normalized * speed;
+        //transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
 
         animator.SetFloat("VerticalMove", movement.y * 100);
         animator.SetFloat("HorizontalMove", movement.x * 100);
