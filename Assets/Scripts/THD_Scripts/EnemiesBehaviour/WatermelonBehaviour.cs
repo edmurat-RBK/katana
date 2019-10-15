@@ -71,4 +71,9 @@ public class WatermelonBehaviour : EnemyBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)//Quand la pastèque rencontre un collider, elle est détruite.
+    {
+        Destroy(gameObject);
+    }
+
 }
