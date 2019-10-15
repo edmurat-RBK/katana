@@ -6,7 +6,7 @@ public class Loot : MonoBehaviour
 {
     private bool canBePickedUp;
     private bool isCarrying;
-    private bool candrop
+    //private bool candrop
     Transform picker;
     // Start is called before the first frame update
     void Start()
