@@ -27,7 +27,7 @@ public class WatermelonBehaviour : MonoBehaviour
     {
         if (directionToMove == Direction.NONE)
             SearchTarget();
-        switch (directionToMove)
+        switch (directionToMove)//deplacements via des vecteurs
         {
 
             case Direction.UP:

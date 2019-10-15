@@ -12,36 +12,62 @@ public class LemonBehaviourShoot : MonoBehaviour
     private Direction directionToShoot = Direction.NONE;
     [SerializeField]
     private float ShootDist = .10f;
+    public Transform firePoint;
+    public GameObject tirCitronPrefab;
+    public float bulletForce = 20f;
+    private int rate;
+    public int initRate = 100;
 
+    private void Start()
+    {
+        rate = initRate;
+    }
 
     // Update is called once per frame
     void Update()
     {
+
         DirectionToShoot();
-        TurnShoot();
+        Turn();
         // distance de tir
         if (Vector3.Distance(transform.position, target.position) < ShootDist)
-        { }
+        {
+            rate--;
+            if (rate<=0)
+            {
+                Shoot();
+                Debug.Log("tir");
+                rate = initRate;
+            }
+        }
         
     }
-    void TurnShoot()// rotation (pour l'instant)
+
+    void Shoot()
+    {
+        GameObject tirCitron = Instantiate(tirCitronPrefab, firePoint.position, firePoint.rotation);//spawn tir
+        tirCitron.transform.SetParent(this.transform);// on declare la bullet en enfant de lemon
+        Rigidbody2D rb = tirCitron.GetComponent<Rigidbody2D>(); //on y ajoute un rigidbody
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);// on y ajoute la force
+    }
+    void Turn()// rotation (pour l'instant)
     {
         switch (directionToShoot)
         {
             case Direction.UP:
-                transform.eulerAngles = new Vector3(0, 0, 180);
+                firePoint.eulerAngles = new Vector3(0, 0, 0);
                 Debug.Log("up");
                 break;
             case Direction.DOWN:
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                firePoint.eulerAngles = new Vector3(0, 0, 180);
                 Debug.Log("down");
                 break;
             case Direction.LEFT:
-                transform.eulerAngles = new Vector3(0, 0, -90);
+                firePoint.eulerAngles = new Vector3(0, 0, 90);
                 Debug.Log("left");
                 break;
             case Direction.RIGHT:
-                transform.eulerAngles = new Vector3(0, 0, 90);
+                firePoint.eulerAngles = new Vector3(0, 0, -90);
                 Debug.Log("right");
                 break;
         }
