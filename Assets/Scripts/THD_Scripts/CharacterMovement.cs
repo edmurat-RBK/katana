@@ -45,22 +45,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isAlive)
         {
-<<<<<<< HEAD
             DashHandler();
             if (isDashing == false)
             {
                 CharacterMove();
             }         
-=======
-            if (canDash)
-            {
-                DashHandler();
-            }
-            if (canMove)
-            {
-                CharacterMove();
-            }
->>>>>>> pre-prod
         }
 
         if (health <= 0)
