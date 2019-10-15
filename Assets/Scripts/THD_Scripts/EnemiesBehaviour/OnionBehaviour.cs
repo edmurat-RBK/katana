@@ -11,6 +11,8 @@ public class OnionBehaviour : EnemyBehaviour
     public float attackRange;
     bool isAttacking;
 
+    public GameObject onionLoot; 
+
 
 
 
@@ -31,6 +33,7 @@ public class OnionBehaviour : EnemyBehaviour
         //The Onion dies
         if (health <= 0)
         {
+            OnionLoot();
             Destroy(gameObject);
         }
         
@@ -83,5 +86,11 @@ public class OnionBehaviour : EnemyBehaviour
             isAttacking = false ; 
         }
 
+    }
+
+    void OnionLoot()
+    {
+        Instantiate(onionLoot, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
+        Debug.Log("wah le loot");
     }
 }

@@ -69,7 +69,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 rb.velocity = Vector3.zero;
                 isDashing = false;
-                Debug.Log("Je dash plus parce que le dash est fini!");
+
             }
 
             if (dashButton == 1 && dashTime >= 0)//when the button is pressed the player dashes    
@@ -77,7 +77,7 @@ public class CharacterMovement : MonoBehaviour
                 dashTime--;
                 rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashSpeed;
                 isDashing = true;
-                Debug.Log("Je dash!");
+
             }
 
             if (dashButton == 0)
@@ -85,7 +85,7 @@ public class CharacterMovement : MonoBehaviour
                 isDashing = false;
                 rb.velocity = Vector3.zero;
                 dashTime = idashTime;
-                Debug.Log("Je laché le bouton du dash!");
+
             }
     }
 
