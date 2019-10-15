@@ -19,7 +19,14 @@ public class CharacterMovement : MonoBehaviour
     float dashCooldown;
 
     //Player related variables
-    public int health = 10;
+    public int maxHealth;
+    public int health;
+
+    //Player abilities variables
+    private bool isAlive = true;
+    private bool canMove = true;
+    private bool canDash = true;
+    private bool canAttack = true;
 
     //Player animation
     public Animator animator; 
@@ -30,22 +37,35 @@ public class CharacterMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         dashTime = idashTime;
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health > 0)
+        if (isAlive)
         {
+<<<<<<< HEAD
             DashHandler();
             if (isDashing == false)
             {
                 CharacterMove();
             }         
+=======
+            if (canDash)
+            {
+                DashHandler();
+            }
+            if (canMove)
+            {
+                CharacterMove();
+            }
+>>>>>>> pre-prod
         }
 
         if (health <= 0)
         {
+            isAlive = false;
             Destroy(gameObject);
         }
     }
