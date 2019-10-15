@@ -20,7 +20,7 @@ public class CharacterMovement : MonoBehaviour
 
     //Player related variables
     public int maxHealth;
-    private int health;
+    public int health;
 
     //Player abilities variables
     private bool isAlive = true;
@@ -43,13 +43,16 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canDash)
+        if (isAlive)
         {
-            DashHandler();
-        }
-        if (canMove)
-        {
-            CharacterMove();
+            if (canDash)
+            {
+                DashHandler();
+            }
+            if (canMove)
+            {
+                CharacterMove();
+            }
         }
 
         if (health <= 0)
