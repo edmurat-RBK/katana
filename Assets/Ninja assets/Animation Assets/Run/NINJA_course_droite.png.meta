@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: b577a877190685c4e909623eccbd87cf
+guid: 57d84a7c3c9d0034ba1b23579aa8e49c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6293428411498748524
-    second: MOB_oignon_course_droite 1_0
+      213: -3268725883682434046
+    second: NINJA_course_droite_0
   - first:
-      213: 792856690930974369
-    second: MOB_oignon_course_droite 1_1
+      213: -4516487561104233252
+    second: NINJA_course_droite_1
   - first:
-      213: 6593980871439929970
-    second: MOB_oignon_course_droite 1_2
+      213: 1625543307844699419
+    second: NINJA_course_droite_2
   - first:
-      213: 2902184693446656346
-    second: MOB_oignon_course_droite 1_3
+      213: 6071416748458909571
+    second: NINJA_course_droite_3
   - first:
-      213: -1546979639223619868
-    second: MOB_oignon_course_droite 1_4
+      213: 6076034512802204721
+    second: NINJA_course_droite_4
   - first:
-      213: 1955441462938954425
-    second: MOB_oignon_course_droite 1_5
+      213: -3759341904132791791
+    second: NINJA_course_droite_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_0
+      name: NINJA_course_droite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5366785f0b3aa0041a5857554ab7e292
-      internalID: -6293428411498748524
+      spriteID: dbd3b4103726f0043b8005484640ad1e
+      internalID: -3268725883682434046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_1
+      name: NINJA_course_droite_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44a49cf321957f64f9b869340d396f48
-      internalID: 792856690930974369
+      spriteID: 223ba4cf4e691a847add723c73570068
+      internalID: -4516487561104233252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_2
+      name: NINJA_course_droite_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87317783dd929764aa0a1952e6fa781f
-      internalID: 6593980871439929970
+      spriteID: 9da776176746d2b428665e4cd13e72c2
+      internalID: 1625543307844699419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_3
+      name: NINJA_course_droite_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce796502bf864a545b928cae04df1f42
-      internalID: 2902184693446656346
+      spriteID: 84438867bb68d084f9df63c91c47125e
+      internalID: 6071416748458909571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_4
+      name: NINJA_course_droite_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 552db30703dc68642b3f6a99c2a89842
-      internalID: -1546979639223619868
+      spriteID: 6791ba1fdc1458941ac9447bb294c799
+      internalID: 6076034512802204721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MOB_oignon_course_droite 1_5
+      name: NINJA_course_droite_5
       rect:
         serializedVersion: 2
         x: 32
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 421269b71b0117d49930527a7666fd5e
-      internalID: 1955441462938954425
+      spriteID: 689aad790588bea48a5bc3b98932bbd4
+      internalID: -3759341904132791791
       vertices: []
       indices: 
       edges: []
