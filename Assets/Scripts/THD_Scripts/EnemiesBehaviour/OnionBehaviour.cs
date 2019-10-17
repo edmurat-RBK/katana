@@ -10,7 +10,8 @@ public class OnionBehaviour : EnemyBehaviour
     public float iattackCooldown;
     public float attackRange;
     bool isAttacking;
-
+    private float lootChance;
+    public float lootPercentage;
     public GameObject onionLoot; 
 
 
@@ -19,6 +20,7 @@ public class OnionBehaviour : EnemyBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lootChance = Random.Range(0f, 1f);
         target = GameObject.Find("Player").GetComponent<Transform>();
         attackCooldown = iattackCooldown;
         isAttacking = false ;
@@ -90,7 +92,10 @@ public class OnionBehaviour : EnemyBehaviour
 
     void OnionLoot()
     {
-        Instantiate(onionLoot, new Vector3(transform.position.x,transform.position.y,0), Quaternion.identity);
-        Debug.Log("wah le loot");
+        if(lootChance <= lootPercentage)
+        {
+            Instantiate(onionLoot, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Debug.Log("wah le loot");
+        }        
     }
 }

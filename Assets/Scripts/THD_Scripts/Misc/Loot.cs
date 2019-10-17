@@ -6,21 +6,24 @@ public class Loot : MonoBehaviour
 {
     private bool canBePickedUp;
     private bool isCarrying;
-    private bool candrop
     Transform picker;
+    private Renderer rend;
+     
+
     // Start is called before the first frame update
     void Start()
     {
         canBePickedUp = false;
-        isCarrying = false; 
+        isCarrying = false;
         picker = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PickUp();
-        Drop();
+        StartCoroutine("LootPerish");
+        PickAndDrop();
+        Consume();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,26 +38,45 @@ public class Loot : MonoBehaviour
         Debug.Log("I can't be picked up anymore");
     }
 
-    private void PickUp()
-    {
-        if(canBePickedUp && Input.GetAxis("Pick") == 1 && isCarrying == false)
+  
+     void PickAndDrop()
+     {
+        if(Input.GetButtonDown("Pick"))
         {
-            transform.SetParent(picker);     
+            if(isCarrying == false && canBePickedUp)
+            {
+                transform.position = picker.position;
+                transform.SetParent(picker);
+                isCarrying = true;
+            }
+
+            else
+            {
+                transform.parent = null;
+                isCarrying = false ;
+            }
+        }
+     }
+
+    private void Consume()
+    {
+        if(Input.GetButtonDown("Consume") && isCarrying)
+        {
+            Destroy(gameObject);
+            //add effect !
         }
 
-        if (Input.GetAxis("Pick") == 0)
-        {
-            isCarrying = true ;
-        }
     }
 
-    private void Drop()
+    IEnumerator LootPerish()
     {
-        if (isCarrying == true && Input.GetAxis("Pick") == 1)
+        yield return new WaitForSeconds(5);
+        if (isCarrying == false)
         {
-            transform.parent = null;
-        }
-
+            Destroy(gameObject);
+        }       
     }
+     
+   
 
 }

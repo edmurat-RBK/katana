@@ -103,6 +103,9 @@ MonoBehaviour:
   stoppingDistance: 1
   iattackCooldown: 100
   attackRange: 1.5
+  lootPercentage: 0.7
+  onionLoot: {fileID: 4494265484780077364, guid: 728c1f1e5a96e1043952a72837d00e9f,
+    type: 3}
 --- !u!95 &4190382567604915160
 Animator:
   serializedVersion: 3

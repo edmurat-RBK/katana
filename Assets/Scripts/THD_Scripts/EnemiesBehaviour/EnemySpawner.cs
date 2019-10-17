@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 for (int i = 0; i < numberToSpawn; i++) //Le spawner fait apparaitre x ennemis à la fois
                 {
-                    Instantiate(enemyToSpawn, new Vector3(0, 0, 0), Quaternion.identity);
+                    Instantiate(enemyToSpawn, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                     spawnRate = ispawnRate;
                 }
                 spawnUseCount++;
