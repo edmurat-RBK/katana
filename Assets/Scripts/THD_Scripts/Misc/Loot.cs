@@ -6,10 +6,6 @@ public class Loot : MonoBehaviour
 {
     private bool canBePickedUp;
     private bool isCarrying;
-<<<<<<< HEAD
-=======
-    private bool candrop;
->>>>>>> pre-prod
     Transform picker;
     private Renderer rend;
      
