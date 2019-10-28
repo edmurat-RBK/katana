@@ -55,7 +55,6 @@ public class OnionBehaviour : EnemyBehaviour
                 else
                 {
                     GetComponent<SpriteRenderer>().flipX = false;
-                    Debug.Log("Facing Right");
                 }
                 transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
 
