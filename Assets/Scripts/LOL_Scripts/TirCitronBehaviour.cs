@@ -7,17 +7,25 @@ public class TirCitronBehaviour : MonoBehaviour
     [SerializeField]
     private float DieDist = 10f;
 
-    private void Start()
-    {
-       
-    }
+    [SerializeField]
+    private Transform origin;
+
+    [SerializeField]
+    private GameObject target;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, transform.parent.position) >= DieDist)//mort par distance
+        if (Vector3.Distance(transform.position, origin.position) >= DieDist)//mort par distance
         {
             Destroy(gameObject);
         }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);       
     }
 }

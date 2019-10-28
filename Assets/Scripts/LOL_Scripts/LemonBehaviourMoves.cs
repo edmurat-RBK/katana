@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LemonBehaviourMoves : MonoBehaviour
+public class LemonBehaviourMoves : EnemyBehaviour
 {
-
+    private Rigidbody2D rb;
     [SerializeField]
     private Transform target;
     [SerializeField]
     private float speedFuite = 1f;
-    [SerializeField]
-    private float speed = 1f;
     [SerializeField]
     private float offsetDetectionRange = .01f;
     enum Direction { UP, DOWN, LEFT, RIGHT, NONE }
@@ -28,7 +26,10 @@ public class LemonBehaviourMoves : MonoBehaviour
 
         // déplacements de fuite 
         if (Vector3.Distance(transform.position, target.position) < fuiteDist)
+        {
             MoveAway();
+        }
+            
 
         // déplacement pour s'aligner au joueur
         MoveTowardsTarget(target);
@@ -39,11 +40,11 @@ public class LemonBehaviourMoves : MonoBehaviour
     {
         if (Mathf.Abs(targ.position.x - transform.position.x) > Mathf.Abs(targ.position.y - transform.position.y))
         {
-            transform.position += new Vector3(0, (targ.position.y - transform.position.y), 0) * speed;
+            transform.position += new Vector3(0, (targ.position.y - transform.position.y), 0) * speed * Time.deltaTime;
         }
         else
         {
-            transform.position += new Vector3((targ.position.x - transform.position.x), 0, 0) * speed;
+            transform.position += new Vector3((targ.position.x - transform.position.x), 0, 0) * speed * Time.deltaTime;
         }
     }
 
@@ -52,16 +53,16 @@ public class LemonBehaviourMoves : MonoBehaviour
         switch (directionToMove)
         {
             case Direction.UP:
-                transform.position += new Vector3(0, 1, 0) * speedFuite;
+                transform.position += new Vector3(0, 1, 0) * speedFuite * Time.deltaTime;
                 break;
             case Direction.DOWN:
-                transform.position += new Vector3(0, -1, 0) * speedFuite;
+                transform.position += new Vector3(0, -1, 0) * speedFuite * Time.deltaTime;
                 break;
             case Direction.LEFT:
-                transform.position += new Vector3(-1, 0, 0) * speedFuite;
+                transform.position += new Vector3(-1, 0, 0) * speedFuite * Time.deltaTime;
                 break;
             case Direction.RIGHT:
-                transform.position += new Vector3(1, 0, 0) * speedFuite;
+                transform.position += new Vector3(1, 0, 0) * speedFuite * Time.deltaTime;
                 break;
         }
     }
