@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1.3333334, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1225385577892740939
@@ -104,7 +104,7 @@ MonoBehaviour:
   iattackCooldown: 100
   attackRange: 1.5
   lootPercentage: 0.7
-  onionLoot: {fileID: 4494265484780077364, guid: 728c1f1e5a96e1043952a72837d00e9f,
+  onionLoot: {fileID: 5222833412539433487, guid: d9cf52b110fc31b48946bfc89557d067,
     type: 3}
 --- !u!95 &4190382567604915160
 Animator:
