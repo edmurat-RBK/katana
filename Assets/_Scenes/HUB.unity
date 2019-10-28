@@ -282,6 +282,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1507663692}
   - component: {fileID: 1507663691}
+  - component: {fileID: 1507663695}
+  - component: {fileID: 1507663694}
+  - component: {fileID: 1507663693}
+  - component: {fileID: 1507663696}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -349,41 +353,96 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.58, y: 2.24, z: -7.060547}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1732280531}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1732280530
-GameObject:
+--- !u!50 &1507663693
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1732280531}
-  m_Layer: 0
-  m_Name: Menu_trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1732280531
-Transform:
+  m_GameObject: {fileID: 1507663690}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!61 &1507663694
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732280530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1507663692}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1507663690}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.010736227, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59202385, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &1507663695
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507663690}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.62270045}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.33435488}
+  m_EdgeRadius: 0
+--- !u!114 &1507663696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507663690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7d891682578ad4b9ecde1a266307e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fridge: {fileID: 1784146958}
 --- !u!1 &1784146958
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,11 +541,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onion: {fileID: 5222833412539433487, guid: d9cf52b110fc31b48946bfc89557d067, type: 3}
+  onionCount: 0
   lemon: {fileID: 4494265484780077364, guid: 728c1f1e5a96e1043952a72837d00e9f, type: 3}
+  lemonCount: 0
   watermelon: {fileID: 4212388855079635035, guid: f48ee0341327a0e48ae11936c93547b9,
     type: 3}
+  watermelonCount: 0
   eggplant: {fileID: 1790402996298412982, guid: 755c471603590de49bfd28ff5e725c55,
     type: 3}
+  eggplantCount: 0
   loot: []
   spriteRenderer: {fileID: 1784146959}
   openSprite: {fileID: -649661362191946298, guid: 337941465250caf4ba852fedbe023b48,
