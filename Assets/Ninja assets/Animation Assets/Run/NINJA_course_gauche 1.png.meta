@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 60727ced1bb047d4da906ef8fe7a4e18
+guid: 6298df87256ed3a45bac04520135fe0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5923355465335192904
-    second: NINJA_course_bas_0
+      213: 5415610608283701140
+    second: NINJA_course_gauche 1_0
   - first:
-      213: -7435785121371690471
-    second: NINJA_course_bas_1
+      213: 4342926284355475204
+    second: NINJA_course_gauche 1_1
   - first:
-      213: 2617135630566197429
-    second: NINJA_course_bas_2
+      213: 1618287709294226794
+    second: NINJA_course_gauche 1_2
   - first:
-      213: -381110552866532162
-    second: NINJA_course_bas_3
+      213: 8661586536449885278
+    second: NINJA_course_gauche 1_3
   - first:
-      213: -5748691923264477731
-    second: NINJA_course_bas_4
+      213: 2777601915436299244
+    second: NINJA_course_gauche 1_4
   - first:
-      213: -4976141519706126367
-    second: NINJA_course_bas_5
+      213: -3764959415812668550
+    second: NINJA_course_gauche 1_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_course_bas_0
+      name: NINJA_course_gauche 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b88cc4fa8477e4eba1bda4cc889585
-      internalID: 5923355465335192904
+      spriteID: 1cf485579df1a82459c7c143284e91ef
+      internalID: 5415610608283701140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_1
+      name: NINJA_course_gauche 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 661eec1ccdbb9c14aade3e97d6dbc5bc
-      internalID: -7435785121371690471
+      spriteID: de68d516a4577a04c8b4cffc4a74810c
+      internalID: 4342926284355475204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_2
+      name: NINJA_course_gauche 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ace49d81298e9a4fab599a3793a6dfc
-      internalID: 2617135630566197429
+      spriteID: f7ff43baee6399842873a146fb082e15
+      internalID: 1618287709294226794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_3
+      name: NINJA_course_gauche 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24766c3d66624254bb3fbe1585b6ffde
-      internalID: -381110552866532162
+      spriteID: 6150535a9d0f5754983f466da6906f31
+      internalID: 8661586536449885278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_4
+      name: NINJA_course_gauche 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39597e37efa7060468ca42760ca1d7a8
-      internalID: -5748691923264477731
+      spriteID: f243df2ab7a6b5e418e7008a58cba37d
+      internalID: 2777601915436299244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_5
+      name: NINJA_course_gauche 1_5
       rect:
         serializedVersion: 2
         x: 32
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4df1fb057d5a284bab98b684b87d82c
-      internalID: -4976141519706126367
+      spriteID: 3f9d5d958e74b7d45921becd99d1426a
+      internalID: -3764959415812668550
       vertices: []
       indices: 
       edges: []

@@ -14,7 +14,7 @@ public class CharacterMovement : MonoBehaviour
     private float dashTime;
     public float idashTime;
     private int direction;
-    [HideInInspector] public bool isDashing;
+    public bool isDashing;
     public float iDashCooldown;
     float dashCooldown;
 
@@ -29,9 +29,11 @@ public class CharacterMovement : MonoBehaviour
     private bool canAttack = true;
 
     //Player animation
-    public Animator animator; 
+    public Animator animator;
+    private float HavedMoveRight;
+    private float HavedMoveUp;
+    
 
- 
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
             isAlive = false;
             Destroy(gameObject);
         }
+
     }
 
     //DashHandler method takes care of the player's dash
@@ -96,8 +99,36 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = new Vector2(movement.x, movement.y).normalized * speed;
         //transform.position += movement.normalized * Time.deltaTime * speed; //The player position is updated, it depends on the movement vector and the speed value.
 
+        //anim
+        if(movement.x > 0.5f)
+        {
+            HavedMoveRight = 1; 
+            HavedMoveUp = 0;
+        }
+        else if(movement.x < -0.5f)
+        {
+            HavedMoveRight = -1;
+            HavedMoveUp = 0;
+        }
+
+        if (movement.y > 0.5f)
+        {
+            HavedMoveUp = 1;
+            HavedMoveRight = 0;
+        }
+        else if (movement.y < -0.5f)
+        {
+            HavedMoveUp = -1;
+            HavedMoveRight = 0;
+        }
+
         animator.SetFloat("VerticalMove", movement.y * 100);
         animator.SetFloat("HorizontalMove", movement.x * 100);
+        animator.SetFloat("AbsoluteMove", (Mathf.Abs(movement.y)+ Mathf.Abs(movement.x)));
+        animator.SetFloat("IsLookingRight", HavedMoveRight);
+        animator.SetFloat("IsLookingUp", HavedMoveUp );
+        animator.SetBool("isDashing" , isDashing );
+
     }
 
 

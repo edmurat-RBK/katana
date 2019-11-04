@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 60727ced1bb047d4da906ef8fe7a4e18
+guid: 936ad65f829f6b148bcc45031283dc46
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5923355465335192904
-    second: NINJA_course_bas_0
+      213: 7398401877867595916
+    second: NINJA_idle_droite_0
   - first:
-      213: -7435785121371690471
-    second: NINJA_course_bas_1
+      213: -8022150830704665834
+    second: NINJA_idle_droite_1
   - first:
-      213: 2617135630566197429
-    second: NINJA_course_bas_2
+      213: 189999834158587962
+    second: NINJA_idle_droite_2
   - first:
-      213: -381110552866532162
-    second: NINJA_course_bas_3
+      213: 3357764352397058933
+    second: NINJA_idle_droite_3
   - first:
-      213: -5748691923264477731
-    second: NINJA_course_bas_4
+      213: 10564102257560394
+    second: NINJA_idle_droite_4
   - first:
-      213: -4976141519706126367
-    second: NINJA_course_bas_5
+      213: 9154899836189330869
+    second: NINJA_idle_droite_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_course_bas_0
+      name: NINJA_idle_droite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b88cc4fa8477e4eba1bda4cc889585
-      internalID: 5923355465335192904
+      spriteID: e6ee68e7b55e1114885178238131ab02
+      internalID: 7398401877867595916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_1
+      name: NINJA_idle_droite_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 661eec1ccdbb9c14aade3e97d6dbc5bc
-      internalID: -7435785121371690471
+      spriteID: 763bdad580b2df04396794d471badd8e
+      internalID: -8022150830704665834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_2
+      name: NINJA_idle_droite_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ace49d81298e9a4fab599a3793a6dfc
-      internalID: 2617135630566197429
+      spriteID: 93ea77dc2882ff544943e9380bca6b54
+      internalID: 189999834158587962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_3
+      name: NINJA_idle_droite_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24766c3d66624254bb3fbe1585b6ffde
-      internalID: -381110552866532162
+      spriteID: bb21fd0556bd3184dbe254018eafd0b3
+      internalID: 3357764352397058933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_4
+      name: NINJA_idle_droite_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39597e37efa7060468ca42760ca1d7a8
-      internalID: -5748691923264477731
+      spriteID: 15f6d611985d1e24cb8cb883d0ffdd99
+      internalID: 10564102257560394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_5
+      name: NINJA_idle_droite_5
       rect:
         serializedVersion: 2
         x: 32
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4df1fb057d5a284bab98b684b87d82c
-      internalID: -4976141519706126367
+      spriteID: 3f464ef1467737d43857bd4b74d17347
+      internalID: 9154899836189330869
       vertices: []
       indices: 
       edges: []

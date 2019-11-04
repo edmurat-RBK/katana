@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 60727ced1bb047d4da906ef8fe7a4e18
+guid: 24135315305204f46b3558b38c32dba5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5923355465335192904
-    second: NINJA_course_bas_0
+      213: -8220102974871955609
+    second: MOB_frappasteque_course_gauche_0
   - first:
-      213: -7435785121371690471
-    second: NINJA_course_bas_1
+      213: -1559155476283645162
+    second: MOB_frappasteque_course_gauche_1
   - first:
-      213: 2617135630566197429
-    second: NINJA_course_bas_2
+      213: 6555587427679909980
+    second: MOB_frappasteque_course_gauche_2
   - first:
-      213: -381110552866532162
-    second: NINJA_course_bas_3
+      213: 1180813566400151005
+    second: MOB_frappasteque_course_gauche_3
   - first:
-      213: -5748691923264477731
-    second: NINJA_course_bas_4
+      213: 2794669489161845866
+    second: MOB_frappasteque_course_gauche_4
   - first:
-      213: -4976141519706126367
-    second: NINJA_course_bas_5
+      213: -3038152363565492955
+    second: MOB_frappasteque_course_gauche_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_course_bas_0
+      name: MOB_frappasteque_course_gauche_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 48
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b88cc4fa8477e4eba1bda4cc889585
-      internalID: 5923355465335192904
+      spriteID: 4f34fc089ee8dc94dbac40dabef34975
+      internalID: -8220102974871955609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_1
+      name: MOB_frappasteque_course_gauche_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,41 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 661eec1ccdbb9c14aade3e97d6dbc5bc
-      internalID: -7435785121371690471
+      spriteID: 6c0574a787e2bd74880bbf124912524c
+      internalID: -1559155476283645162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ace49d81298e9a4fab599a3793a6dfc
-      internalID: 2617135630566197429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NINJA_course_bas_3
+      name: MOB_frappasteque_course_gauche_2
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
-        width: 32
-        height: 32
+        y: 48
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +160,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24766c3d66624254bb3fbe1585b6ffde
-      internalID: -381110552866532162
+      spriteID: 948e14f74ca052545b0d6cacf8caad00
+      internalID: 6555587427679909980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_4
+      name: MOB_frappasteque_course_gauche_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e2bcb22fd0e9f45b673f01c335343a
+      internalID: 1180813566400151005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOB_frappasteque_course_gauche_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39597e37efa7060468ca42760ca1d7a8
-      internalID: -5748691923264477731
+      spriteID: e2146307ef03b774e9f2882a953f2687
+      internalID: 2794669489161845866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_bas_5
+      name: MOB_frappasteque_course_gauche_5
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4df1fb057d5a284bab98b684b87d82c
-      internalID: -4976141519706126367
+      spriteID: e0d9a6806b8e392478cd8231f6c1f2c4
+      internalID: -3038152363565492955
       vertices: []
       indices: 
       edges: []

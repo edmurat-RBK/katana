@@ -12,10 +12,10 @@ public class OnionBehaviour : EnemyBehaviour
     bool isAttacking;
     private float lootChance;
     public float lootPercentage;
-    public GameObject onionLoot; 
+    public GameObject onionLoot;
 
-
-
+    //ajout arthur
+    private SpriteRenderer SprRender;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,10 @@ public class OnionBehaviour : EnemyBehaviour
         target = GameObject.Find("Player").GetComponent<Transform>();
         attackCooldown = iattackCooldown;
         isAttacking = false ;
+
+        //ajout arthur
+        SprRender = GetComponent<SpriteRenderer>() ;
+
     }
 
     // Update is called once per frame
@@ -50,11 +54,13 @@ public class OnionBehaviour : EnemyBehaviour
                 
                 if (Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed).x < 0)
                 {
-                    GetComponent<SpriteRenderer>().flipX = true;
+                    SprRender.flipX = true;
+                    //GetComponent<SpriteRenderer>().flipX = true;
                 }
                 else
                 {
-                    GetComponent<SpriteRenderer>().flipX = false;
+                    SprRender.flipX = false;
+                    //GetComponent<SpriteRenderer>().flipX = false;
                 }
                 transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
 

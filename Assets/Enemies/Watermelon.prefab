@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3574209174410806818}
   - component: {fileID: 3574209174410806821}
   - component: {fileID: 3574209174410806820}
+  - component: {fileID: 5350649056773758741}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Untagged
@@ -70,8 +71,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -8220102974871955609, guid: 24135315305204f46b3558b38c32dba5,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,3 +100,22 @@ MonoBehaviour:
   attackDamage: 0
   target: {fileID: 7537212170225295908, guid: 2a57a5a0ffabdde4e94609aa9dbc919c, type: 3}
   offsetDetectionRange: 0.75
+--- !u!95 &5350649056773758741
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574209174410806823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
