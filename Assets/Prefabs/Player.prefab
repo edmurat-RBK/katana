@@ -166,8 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumHealth: 10
   speed: 5
-  dashSpeed: 41.6
-  initialDashTime: 0.08
+  dashSpeed: 45
+  initialDashTime: 0.1
   initialDashCooldown: 1
   attackMeleeDamage: 2
   attackMeleeRange: 0.3

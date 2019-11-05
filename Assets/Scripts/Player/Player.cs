@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         {
             if(dashCooldown <= 0)
             {
-                if(inputDash == 1f)
+                if(inputDash == 1f && (rb.velocity.x != 0 || rb.velocity.y != 0))
                 {
                     isDashing = true;
                 }
