@@ -5,18 +5,62 @@ using UnityEngine;
 public class CameraRecenter : MonoBehaviour
 {
 
-    private GameObject camera;
+    private GameObject mainCamera;
+    private static float nextPositionX;
+    private static float nextPositionY;
+    public float travellingSpeed = 1f;
 
     void Start()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            camera.transform.position = new Vector3(transform.position.x, transform.position.y,camera.transform.position.z);
+            nextPositionX = transform.position.x;
+            nextPositionY = transform.position.y;
+        }
+    }
+
+    void Update()
+    {
+        Debug.Log(travellingSpeed);
+
+        if(mainCamera.transform.position.x < nextPositionX)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x + travellingSpeed, mainCamera.transform.position.y, mainCamera.transform.position.z);
+            if(mainCamera.transform.position.x >= nextPositionX)
+            {
+                mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
+            }
+        }
+        else if(mainCamera.transform.position.x > nextPositionX)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x - travellingSpeed, mainCamera.transform.position.y, mainCamera.transform.position.z);
+            if (mainCamera.transform.position.x <= nextPositionX)
+            {
+                mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
+            }
+        }
+
+
+        if (mainCamera.transform.position.y < nextPositionY)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y + travellingSpeed, mainCamera.transform.position.z);
+            if (mainCamera.transform.position.y >= nextPositionY)
+            {
+                mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
+            }
+        }
+        else if (mainCamera.transform.position.y > nextPositionY)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y - travellingSpeed, mainCamera.transform.position.z);
+            if (mainCamera.transform.position.y <= nextPositionY)
+            {
+                mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
+            }
         }
     }
 }

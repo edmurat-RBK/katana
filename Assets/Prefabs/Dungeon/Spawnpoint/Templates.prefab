@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7508504650060563589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7508504650060563590}
+  - component: {fileID: 7508504650060563591}
+  m_Layer: 0
+  m_Name: Templates
+  m_TagString: Template
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7508504650060563590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508504650060563589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7508504650060563591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508504650060563589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a13d9979ee53fc429f57da35feba8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumDistance: 8
+  ratio1Door: 0.05
+  ratio2Door: 0.75
+  ratio3Door: 0.15
+  ratio4Door: 0.05
+  spawnpointPrefab: {fileID: 3405203705847998835, guid: 1dbecc10b54ebb243afb3b00df461f7f,
+    type: 3}
+  north:
+  - {fileID: 157843212330196212, guid: 0a750c8c293caf648ada64d2d25b9bec, type: 3}
+  east:
+  - {fileID: 2086020834824763766, guid: 392871b8e0eb9ed4bb314d0fa6a2f1ab, type: 3}
+  south:
+  - {fileID: 5037100024057254057, guid: 84aa5ab0b5391414da9baac6ae280554, type: 3}
+  west:
+  - {fileID: 8499372463621494062, guid: 74da2a738aef6b44490e6c35c9d5ace2, type: 3}
+  northEast:
+  - {fileID: 5329999067885408075, guid: 439e3a55294ed7245b6ee029531b70ef, type: 3}
+  northSouth:
+  - {fileID: 4232958118948452079, guid: 08c96c5ebe108d34782ca7084ea2209c, type: 3}
+  northWest:
+  - {fileID: 8487858040019016225, guid: e27f5b2650e049c4687421191bf36fc1, type: 3}
+  southEast:
+  - {fileID: 6793319862119119803, guid: 93b4c1718335be04094cddc16b1c195b, type: 3}
+  southWest:
+  - {fileID: 5423807196296929552, guid: a35cf85415e31b84bb74e8ccb06d120c, type: 3}
+  eastWest:
+  - {fileID: 6109422226892086658, guid: e361cf8d3fe805e47855a6c0c549451e, type: 3}
+  northSouthEast:
+  - {fileID: 6829083809371726505, guid: 0bb98aaa617e65245b3a3f1ee6b305d1, type: 3}
+  northSouthWest:
+  - {fileID: 5833867763381333778, guid: 96cee9cbccc892e489d2dde2ac9b1166, type: 3}
+  northEastWest:
+  - {fileID: 4469662090533417148, guid: 0f6110551cf29424e80d53b06d8a9ace, type: 3}
+  southEastWest:
+  - {fileID: 6391882028314303889, guid: ee2c2cb8fb6cb1243a5969cfd0dd9783, type: 3}
+  northEastSouthWest:
+  - {fileID: 797945389735397957, guid: c29c90d9c98281b4cb037a770bfb72c2, type: 3}
