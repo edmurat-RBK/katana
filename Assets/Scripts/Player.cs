@@ -23,8 +23,7 @@ public class Player : MonoBehaviour
     public float attackMeleeDamage = 2f;
     public float attackMeleeRange = 0.5f;
     public float attackMeleeRadius = 1f;
-    private Transform attackMeleePosition;
-    private GameObject attackMeleeLandmark;
+    [SerializeField] private GameObject attackMeleeMarker;
     public LayerMask layerMask;
     private float attackMeleeCooldown;
     public float initialAttackMeleeCooldown = 0.15f;
@@ -38,8 +37,6 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
 
         dashTime = initialDashTime;
-
-        attackMeleeLandmark = GameObject.Find("Attack Melee Landmark");
     }
 
     void Update()
@@ -127,8 +124,6 @@ public class Player : MonoBehaviour
         if (isDashing)
         {
             anim.SetBool("isDashing", true);
-            anim.SetFloat("horizontalMovement", rb.velocity.x);
-            anim.SetFloat("verticalMovement", rb.velocity.y);
         }
         else
         {
@@ -138,40 +133,30 @@ public class Player : MonoBehaviour
 
     private void MeleeAttack()
     {
-        float inputMelee = Input.GetAxis("Melee Attack");
+        bool inputMelee = Input.GetButtonDown("MeleeAttack");
 
         if (!isMeleeAttacking)
         {
             if(attackMeleeCooldown <= 0)
             {
-                if(inputMelee == 1f)
+                if(inputMelee)
                 {
                     isMeleeAttacking = true;
 
-                    /*
-                    if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
-                    {
-                        attackMeleePosition.position = attackMeleeLandmark.transform.position + new Vector3(attackMeleeRange, 0, 0);
-                    }
-                    else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
-                    {
-                        attackMeleePosition.position = attackMeleeLandmark.transform.position + new Vector3(-attackMeleeRange, 0, 0);
-                    }
-                    else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
-                    {
-                        attackMeleePosition.position = attackMeleeLandmark.transform.position + new Vector3(0, attackMeleeRange, 0);
-                    }
-                    else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
-                    {
-                        attackMeleePosition.position = attackMeleeLandmark.transform.position + new Vector3(0, -attackMeleeRange, 0);
-                    }
+                    // Attack
+                    float inputHorizontal = Input.GetAxis("Horizontal");
+                    float inputVertical = Input.GetAxis("Vertical");
 
-                    Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleePosition.position, attackMeleeRadius, layerMask);
+                    if (Input.GetAxis("Horizontal") >= Math.Sqrt(2)/2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f); }
+                    else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f); }
+                    else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f); }
+                    else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f); }
+
+                    Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, layerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
                         enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
                     }
-                    */
                 }
             }
             else
@@ -208,13 +193,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackMeleePosition.position, attackMeleeRadius);
+        Gizmos.DrawWireSphere(attackMeleeMarker.transform.position, attackMeleeRadius);
     }
-    */
 
     // Used by UI - Exist only for tests
     public float GetDashCooldown()

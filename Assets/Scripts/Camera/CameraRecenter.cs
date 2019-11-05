@@ -8,7 +8,7 @@ public class CameraRecenter : MonoBehaviour
     private GameObject mainCamera;
     private static float nextPositionX;
     private static float nextPositionY;
-    public float travellingSpeed = 1f;
+    public float travellingSpeed;
 
     void Start()
     {
@@ -26,8 +26,6 @@ public class CameraRecenter : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(travellingSpeed);
-
         if(mainCamera.transform.position.x < nextPositionX)
         {
             mainCamera.transform.position = new Vector3(mainCamera.transform.position.x + travellingSpeed, mainCamera.transform.position.y, mainCamera.transform.position.z);

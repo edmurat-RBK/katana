@@ -118,7 +118,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 77d482eb117c72641b386eb2bc28f200
+=======
+      spriteID: bf2ce829b86242c4b82e82754139a885
+>>>>>>> Stashed changes
       internalID: 8350437694079873590
       vertices: []
       indices: 
@@ -139,7 +143,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: e1d26382eb1987244b042d6e802f9646
+=======
+      spriteID: f4f7756cc593594438c7481114020983
+>>>>>>> Stashed changes
       internalID: 8451005854384035956
       vertices: []
       indices: 
@@ -160,7 +168,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: ac84c497afc46524c88e9877e545c91c
+=======
+      spriteID: 8948f44ffbb03744fa290d59b74b02ee
+>>>>>>> Stashed changes
       internalID: -100445661333216721
       vertices: []
       indices: 
@@ -181,7 +193,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 4196f2a25b1368e4ca6b34a74975dd72
+=======
+      spriteID: b89b3a041555af24bb80b779db525fe4
+>>>>>>> Stashed changes
       internalID: 4960014017919852353
       vertices: []
       indices: 
@@ -202,7 +218,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: e81c07aba76c5c24d91d483938a11179
+=======
+      spriteID: 522b29fe1aace994895f592fae5570f3
+>>>>>>> Stashed changes
       internalID: 3615683286767331443
       vertices: []
       indices: 
@@ -223,7 +243,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 27d118db61a0bb948bb589f86b0a712a
+=======
+      spriteID: 4f72191a08dab87458cbb3dc51c4bc53
+>>>>>>> Stashed changes
       internalID: -8066572675617606904
       vertices: []
       indices: 
