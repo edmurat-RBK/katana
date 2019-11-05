@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    // Health
+    public float maximumHealth;
+    private float health;
     // Move
     public float speed = 1f;
     // Dash
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        health = maximumHealth;
         dashTime = initialDashTime;
     }
 
@@ -55,6 +59,9 @@ public class Player : MonoBehaviour
         {
             MeleeAttack();
         }
+
+        TestHealthModifier();
+        
     }
 
 
@@ -147,10 +154,30 @@ public class Player : MonoBehaviour
                     float inputHorizontal = Input.GetAxis("Horizontal");
                     float inputVertical = Input.GetAxis("Vertical");
 
-                    if (Input.GetAxis("Horizontal") >= Math.Sqrt(2)/2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f); }
-                    else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f); }
-                    else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f); }
-                    else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2) { attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f); }
+                    if (Input.GetAxis("Horizontal") >= Math.Sqrt(2)/2)
+                    {
+                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 1f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+                    }
+                    else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
+                    {
+                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", -1f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+                    }
+                    else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
+                    {
+                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
+                    }
+                    else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
+                    {
+                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
+                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", -1);
+                    }
 
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, layerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
@@ -177,10 +204,12 @@ public class Player : MonoBehaviour
         if (isMeleeAttacking)
         {
             anim.SetBool("isMeleeAttacking", true);
+            attackMeleeMarker.GetComponent<Animator>().SetBool("isMeleeAttacking", true);
         }
         else
         {
             anim.SetBool("isMeleeAttacking", false);
+            attackMeleeMarker.GetComponent<Animator>().SetBool("isMeleeAttacking", false);
         }
     }
 
@@ -199,9 +228,37 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(attackMeleeMarker.transform.position, attackMeleeRadius);
     }
 
-    // Used by UI - Exist only for tests
-    public float GetDashCooldown()
+    public float GetCooldownInPercentage()
     {
-        return dashCooldown;
+        return 1 - (dashCooldown / initialDashCooldown);
+    }
+
+    private void TestHealthModifier()
+    {
+        if(Input.GetKeyDown(KeyCode.P) && health < 10)
+        {
+            health++;
+            anim.SetBool("isDead", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M) && health > 0)
+        {
+            health--;
+
+            // Animation (death)
+            if (health <= 0)
+            {
+                anim.SetBool("isDead", true);
+            }
+            else
+            {
+                anim.SetBool("isDead", false);
+            }
+        }
+    }
+
+    public int GetHealth()
+    {
+        return (int)Mathf.Ceil(health);
     }
 }
