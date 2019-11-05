@@ -141,6 +141,33 @@ public class Player : MonoBehaviour
     private void MeleeAttack()
     {
         bool inputMelee = Input.GetButtonDown("MeleeAttack");
+        float inputHorizontal = Input.GetAxis("Horizontal");
+        float inputVertical = Input.GetAxis("Vertical");
+
+        if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
+        {
+            attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 1f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+        }
+        else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
+        {
+            attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", -1f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+        }
+        else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
+        {
+            attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
+        }
+        else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
+        {
+            attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
+            attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", -1);
+        }
 
         if (!isMeleeAttacking)
         {
@@ -149,35 +176,6 @@ public class Player : MonoBehaviour
                 if(inputMelee)
                 {
                     isMeleeAttacking = true;
-
-                    // Attack
-                    float inputHorizontal = Input.GetAxis("Horizontal");
-                    float inputVertical = Input.GetAxis("Vertical");
-
-                    if (Input.GetAxis("Horizontal") >= Math.Sqrt(2)/2)
-                    {
-                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 1f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
-                    }
-                    else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
-                    {
-                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", -1f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
-                    }
-                    else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
-                    {
-                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
-                    }
-                    else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
-                    {
-                        attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
-                        attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", -1);
-                    }
 
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, layerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)

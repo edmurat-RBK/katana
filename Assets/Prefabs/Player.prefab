@@ -176,7 +176,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  initialAttackMeleeCooldown: 0.15
+  initialAttackMeleeCooldown: 0.1
 --- !u!1 &9038376924947114005
 GameObject:
   m_ObjectHideFlags: 0
