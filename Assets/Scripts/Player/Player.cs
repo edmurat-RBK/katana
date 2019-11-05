@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     private Animator anim;
 
     // Health
-    public float maximumHealth;
+    public float maximumHealth = 10f;
     private float health;
+    private bool isAlive = true;
     // Move
     public float speed = 1f;
     // Dash
@@ -26,10 +27,10 @@ public class Player : MonoBehaviour
     public float attackMeleeDamage = 2f;
     public float attackMeleeRange = 0.5f;
     public float attackMeleeRadius = 1f;
-    [SerializeField] private GameObject attackMeleeMarker;
+    public GameObject attackMeleeMarker;
     public LayerMask layerMask;
     private float attackMeleeCooldown;
-    public float initialAttackMeleeCooldown = 0.15f;
+    public float initialAttackMeleeCooldown = 0.10f;
     private bool isMeleeAttacking = false;
 
 
@@ -45,23 +46,26 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isMeleeAttacking)
-        {
-            Move();
-        }
-
-        if (!isMeleeAttacking)
-        {
-            Dash();
-        }
-
-        if (!isDashing)
-        {
-            MeleeAttack();
-        }
-
+        Statistics();
         TestHealthModifier();
-        
+
+        if(isAlive)
+        {
+            if (!isMeleeAttacking)
+            {
+                Move();
+            }
+
+            if (!isMeleeAttacking)
+            {
+                Dash();
+            }
+
+            if (!isDashing)
+            {
+                MeleeAttack();
+            }
+        }
     }
 
 
@@ -211,6 +215,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Statistics()
+    {
+        if(health <= 0)
+        {
+            isAlive = false;
+        }
+    }
+
     public void GetAnimationEvent(string eventMessage)
     {
         if(eventMessage.Equals("MeleeAttackEnded"))
@@ -258,5 +270,10 @@ public class Player : MonoBehaviour
     public int GetHealth()
     {
         return (int)Mathf.Ceil(health);
+    }
+
+    public bool IsAlive()
+    {
+        return isAlive;
     }
 }
