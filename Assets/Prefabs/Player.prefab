@@ -170,7 +170,7 @@ MonoBehaviour:
   initialDashTime: 0.08
   initialDashCooldown: 1
   attackMeleeDamage: 2
-  attackMeleeRange: 0.5
+  attackMeleeRange: 0.3
   attackMeleeRadius: 0.5
   attackMeleeMarker: {fileID: 9038376924947114005}
   layerMask:
