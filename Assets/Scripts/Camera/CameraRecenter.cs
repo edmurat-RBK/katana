@@ -8,11 +8,12 @@ public class CameraRecenter : MonoBehaviour
     private GameObject mainCamera;
     private static float nextPositionX;
     private static float nextPositionY;
-    public float travellingSpeed;
+    private float travellingSpeed;
 
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        travellingSpeed = 0.08f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
