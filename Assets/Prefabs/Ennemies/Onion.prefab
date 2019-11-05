@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d16001a93df834497961abce4e70ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 10
   speed: 1
   attackDamage: 0
   isAttacking: 0
@@ -170,3 +170,5 @@ MonoBehaviour:
   loot: {fileID: 0}
   target: {fileID: 2309131142747344048, guid: 4d6edd48469c9a149bfbb5f63b40461f, type: 3}
   stoppingDistance: 0.3
+  onionSpray: {fileID: 0}
+  pos: {fileID: 0}
