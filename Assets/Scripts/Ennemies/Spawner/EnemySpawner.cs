@@ -42,5 +42,9 @@ public class EnemySpawner : MonoBehaviour
                 spawnRate--;
             }
         }
+        else
+        {
+            anim.SetBool("Spawn", false);
+        }
     }
 }
