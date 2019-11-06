@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: c7ad0c86026a7c84ebe6d79dffbea098
+guid: 8a840958f4d705b4486bfe8231fe0b7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6911650895428283338
-    second: NINJA_course_haut_0
+      213: 5792874608028322652
+    second: "FX_fum\xE9e_apparition_0"
   - first:
-      213: 681931991479697505
-    second: NINJA_course_haut_1
+      213: 8671059866729686924
+    second: "FX_fum\xE9e_apparition_1"
   - first:
-      213: -3469334631898849755
-    second: NINJA_course_haut_2
+      213: 8964154049073351804
+    second: "FX_fum\xE9e_apparition_2"
   - first:
-      213: -1770797588237685727
-    second: NINJA_course_haut_3
-  - first:
-      213: 6681815348245965552
-    second: NINJA_course_haut_4
-  - first:
-      213: -8303718543523349220
-    second: NINJA_course_haut_5
+      213: 813724497392958179
+    second: "FX_fum\xE9e_apparition_3"
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_course_haut_0
+      name: "FX_fum\xE9e_apparition_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dde90540a46483448da8cfed34f13a9
-      internalID: -6911650895428283338
+      spriteID: 85747e5f1b747044f865e7d4e22ab0c8
+      internalID: 5792874608028322652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_haut_1
+      name: "FX_fum\xE9e_apparition_1"
       rect:
         serializedVersion: 2
         x: 32
@@ -139,56 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd313dbcb6f9cd4e97b4df2af33979f
-      internalID: 681931991479697505
+      spriteID: 473b203219bb2f744b986d58c2e14b40
+      internalID: 8671059866729686924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_haut_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52332977f21a2384897a6709e0b726d9
-      internalID: -3469334631898849755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NINJA_course_haut_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c33ab980b928ce4ab2b51a7eab0d404
-      internalID: -1770797588237685727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NINJA_course_haut_4
+      name: "FX_fum\xE9e_apparition_2"
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3340798d8d1b6549a88d578c578f682
-      internalID: 6681815348245965552
+      spriteID: e7d6defdfe8d2c549b5f0de8a779fe27
+      internalID: 8964154049073351804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_course_haut_5
+      name: "FX_fum\xE9e_apparition_3"
       rect:
         serializedVersion: 2
         x: 32
@@ -223,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1342b079e67498f46afa6764f3c4369a
-      internalID: -8303718543523349220
+      spriteID: 69d4cf9073098e747a03cd1431e33db1
+      internalID: 813724497392958179
       vertices: []
       indices: 
       edges: []
@@ -232,7 +184,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f5f7ac5827808124187cde8073c69662
     internalID: 0
     vertices: []
     indices: 

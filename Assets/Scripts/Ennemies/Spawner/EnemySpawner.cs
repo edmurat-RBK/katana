@@ -8,14 +8,16 @@ public class EnemySpawner : MonoBehaviour
     float               spawnRate;
     public float        ispawnRate;
     public int          numberToSpawn;
-    public int          spawnUseCount;
+    private int         spawnUseCount;
     public int          spawnUseCountMax;
+    private Animator    anim;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnRate = ispawnRate;
         spawnUseCount = 0;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,8 +27,10 @@ public class EnemySpawner : MonoBehaviour
         {
             if (spawnRate <= 0)
             {
+                anim.SetBool("Spawn", true);
                 for (int i = 0; i < numberToSpawn; i++) //Le spawner fait apparaitre x ennemis à la fois
                 {
+                    
                     Instantiate(enemyToSpawn, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                     spawnRate = ispawnRate;
                 }
@@ -34,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
+                anim.SetBool("Spawn", false);
                 spawnRate--;
             }
         }
