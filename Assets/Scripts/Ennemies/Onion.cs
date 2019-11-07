@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Onion : Enemy
 {
-    private Rigidbody2D     rb;
     private Animator        anim;
     public float            stoppingDistance;
     public ParticleSystem   onionSpray;
@@ -14,8 +13,8 @@ public class Onion : Enemy
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
         pos = target.transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

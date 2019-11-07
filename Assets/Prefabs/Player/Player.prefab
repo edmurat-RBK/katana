@@ -167,7 +167,7 @@ MonoBehaviour:
   maximumHealth: 10
   speed: 5
   dashSpeed: 45
-  initialDashTime: 0.1
+  initialDashTime: 0.05
   initialDashCooldown: 1
   attackMeleeDamage: 2
   attackMeleeRange: 0.3

@@ -141,12 +141,15 @@ MonoBehaviour:
   speed: 1
   attackDamage: 0
   isAttacking: 0
-  lootPercentage: 70
+  lootPercentage: 0.7
   loot: {fileID: 6150950775162080428, guid: 7907d66adc2f81548aec844034079b9d, type: 3}
   target: {fileID: 2309131142747344048, guid: 4d6edd48469c9a149bfbb5f63b40461f, type: 3}
+  rb: {fileID: 0}
+  knockbackPower: 50
   stoppingDistance: 1
   onionSpray: {fileID: 0}
   pos: {fileID: 0}
+  isDead: 0
 --- !u!58 &-2406650148927816596
 CircleCollider2D:
   m_ObjectHideFlags: 0

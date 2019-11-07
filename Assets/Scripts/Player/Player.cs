@@ -72,12 +72,12 @@ public class Player : MonoBehaviour
                 MeleeAttack();
             }
 
-            /*
+            
             if (!isMeleeAttacking && !isDashing)
             {
                 RangeAttack();
             }
-            */
+            
         }
     }
 
@@ -108,13 +108,13 @@ public class Player : MonoBehaviour
     {
         float inputHorizontal = Input.GetAxis("Horizontal");
         float inputVertical = Input.GetAxis("Vertical");
-        float inputDash = Input.GetAxis("Dash");
+        bool inputDash = Input.GetButtonDown("Dash");
 
         if(!isDashing)
         {
             if(dashCooldown <= 0)
             {
-                if(inputDash == 1f && (rb.velocity.x != 0 || rb.velocity.y != 0))
+                if(inputDash && (rb.velocity.x != 0 || rb.velocity.y != 0))
                 {
                     isDashing = true;
                 }
@@ -198,6 +198,8 @@ public class Player : MonoBehaviour
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
                         enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
+                        enemiesHit[i].GetComponent<Enemy>().Knockback();
+
                     }
                 }
             }
@@ -238,6 +240,7 @@ public class Player : MonoBehaviour
         {
             if(inputRange)
             {
+                Debug.Log("SHURIKEN");
                 if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
                 {
                     GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, 0f), Quaternion.identity);

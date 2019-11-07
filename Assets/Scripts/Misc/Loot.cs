@@ -29,13 +29,11 @@ public class Loot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         canBePickedUp = true;
-        Debug.Log("I can be picked up");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         canBePickedUp = false;
-        Debug.Log("I can't be picked up anymore");
     }
 
 

@@ -14,11 +14,15 @@ public class Enemy : MonoBehaviour
     public float lootPercentage; // proba de drop attaché à un type d'ennemi
     public GameObject loot;
     public GameObject target;
+    [HideInInspector]
+    public Rigidbody2D rb;
+    public float knockbackPower;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         health = maximumHealth;
-        lootChance = Random.Range(0f, 1f);
+        target = GameObject.FindGameObjectWithTag("Player");       
     }
     
     //Don't use the Update method in this script, call this script's methods in the other realted scripts (onionbehaviour, watermelon behaviour...)
@@ -29,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void Loot()
     {
+        lootChance = Random.Range(0f, 1f);
         if (lootChance <= lootPercentage)
         {
             Instantiate(loot, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
@@ -43,6 +48,11 @@ public class Enemy : MonoBehaviour
             Loot();
             Destroy(gameObject); //pour l'instant
         }
+    }
+
+    public void Knockback()
+    {
+        rb.AddForce(-rb.velocity.normalized * knockbackPower, ForceMode2D.Impulse);
     }
 
    
