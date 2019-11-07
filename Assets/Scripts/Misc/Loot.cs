@@ -4,74 +4,46 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    private bool        canBePickedUp;
-    private bool        isCarrying;
-    Transform           picker;
-    private Renderer    rend;
+    public enum Item
+    {
+        ONION = 1
+    }
 
+    public Item item;
+    public float maximumPickupTime = 5f;
+    private float pickupTime;
+    public bool isPickup = false;
+    public bool isThrow = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        canBePickedUp = false;
-        isCarrying = false;
-        picker = GameObject.Find("Player").transform;
+        pickupTime = maximumPickupTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("LootPerish");
-        PickAndDrop();
-        Consume();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        canBePickedUp = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        canBePickedUp = false;
-    }
-
-
-    void PickAndDrop()
-    {
-        if (Input.GetButtonDown("Pick"))
+        if(pickupTime <= 0)
         {
-            if (isCarrying == false && canBePickedUp)
+            Destroy(gameObject);
+        }
+        else
+        {
+            if(!isPickup && !isThrow)
             {
-                transform.position = picker.position;
-                transform.SetParent(picker);
-                isCarrying = true;
-            }
-
-            else
-            {
-                transform.parent = null;
-                isCarrying = false;
+                pickupTime -= Time.deltaTime;
             }
         }
     }
 
-    private void Consume()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetButtonDown("Consume") && isCarrying)
+        // Replace with "Walls" tag when created
+        if(!other.CompareTag("Player") && !other.CompareTag("Ennemy") && !other.CompareTag("Spawnpoint"))
         {
-            Destroy(gameObject);
-            //add effect !
-        }
-
-    }
-
-    IEnumerator LootPerish()
-    {
-        yield return new WaitForSeconds(5);
-        if (isCarrying == false)
-        {
-            Destroy(gameObject);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            isThrow = false;
         }
     }
 }
