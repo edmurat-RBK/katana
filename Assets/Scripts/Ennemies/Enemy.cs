@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float maximumHealth;
+    [HideInInspector]
     public float health;
     public float speed;
     public float attackDamage;
@@ -19,10 +20,11 @@ public class Enemy : MonoBehaviour
         health = maximumHealth;
         lootChance = Random.Range(0f, 1f);
     }
-
+    
+    //Don't use the Update method in this script, call this script's methods in the other realted scripts (onionbehaviour, watermelon behaviour...)
     public void TakeDamage(float damage)
     {
-        
+        health -= damage; 
     }
 
     public void Loot()
@@ -43,8 +45,5 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        OnDeath();
-    }
+   
 }
