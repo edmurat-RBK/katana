@@ -177,6 +177,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   initialAttackMeleeCooldown: 0.1
+  projectilePrefab: {fileID: 3782794491880227671, guid: 64fc6f1e9c9133e4c9a0c8749de23002,
+    type: 3}
+  projectileCount: 3
+  initialAttackRangeCooldown: 4
 --- !u!1 &9038376924947114005
 GameObject:
   m_ObjectHideFlags: 0

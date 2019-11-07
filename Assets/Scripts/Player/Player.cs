@@ -32,6 +32,12 @@ public class Player : MonoBehaviour
     private float attackMeleeCooldown;
     public float initialAttackMeleeCooldown = 0.10f;
     private bool isMeleeAttacking = false;
+    // Range Attack
+    public GameObject projectilePrefab;
+    public int projectileCount = 3;
+    private float attackRangeCooldown;
+    public float initialAttackRangeCooldown = 4f;
+    private bool isRangeAttacking = false;
 
 
 
@@ -65,6 +71,13 @@ public class Player : MonoBehaviour
             {
                 MeleeAttack();
             }
+
+            /*
+            if (!isMeleeAttacking && !isDashing)
+            {
+                RangeAttack();
+            }
+            */
         }
     }
 
@@ -215,6 +228,50 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void RangeAttack()
+    {
+        bool inputRange = Input.GetButtonDown("RangeAttack");
+        float inputHorizontal = Input.GetAxis("Horizontal");
+        float inputVertical = Input.GetAxis("Vertical");
+
+        if (attackRangeCooldown <= 0)
+        {
+            if(inputRange)
+            {
+                if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, 0f), Quaternion.identity);
+                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.EAST;
+                }
+                else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x - 0.5f, transform.position.y, 0f), Quaternion.identity);
+                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.WEST;
+                }
+                else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, 0f), Quaternion.identity);
+                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.NORTH;
+                }
+                else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y - 0.5f, 0f), Quaternion.identity);
+                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.SOUTH;
+                }
+
+                attackRangeCooldown = initialAttackRangeCooldown;
+            }
+        }
+        else
+        {
+            attackRangeCooldown -= Time.deltaTime;
+            if (attackRangeCooldown <= 0)
+            {
+                attackRangeCooldown = 0;
+            }
+        }
+    }
+
     private void Statistics()
     {
         if(health <= 0)
@@ -238,6 +295,7 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(attackMeleeMarker.transform.position, attackMeleeRadius);
     }
 
+    // UI methods
     public float GetCooldownInPercentage()
     {
         return 1 - (dashCooldown / initialDashCooldown);
@@ -270,10 +328,5 @@ public class Player : MonoBehaviour
     public int GetHealth()
     {
         return (int)Mathf.Ceil(health);
-    }
-
-    public bool IsAlive()
-    {
-        return isAlive;
     }
 }
