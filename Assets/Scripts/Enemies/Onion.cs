@@ -13,6 +13,7 @@ public class Onion : Enemy
     void Start()
     {
         anim = GetComponent<Animator>();
+        target = GameObject.FindGameObjectWithTag("Player");
         pos = target.transform;
         rb = GetComponent<Rigidbody2D>();
     }
