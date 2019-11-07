@@ -8,7 +8,8 @@ public class Onion : Enemy
     private Animator        anim;
     public float            stoppingDistance;
     public ParticleSystem   onionSpray;
-    public Transform pos;
+    public Transform        pos;
+    public bool             isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,18 @@ public class Onion : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Movement();
-        OnDeathAttack();
         anim.SetFloat("horizontalMove", rb.velocity.x);
-        anim.SetFloat("verticalMove", rb.velocity.y); 
-        
+        anim.SetFloat("verticalMove", rb.velocity.y);
+        if (health <= 0 && !isDead)
+        {
+            Loot();
+            Destroy(gameObject);
+            isDead = true;
+        }
+
     }
 
 
@@ -49,14 +55,6 @@ public class Onion : Enemy
         }
     }
 
-    private void OnDeathAttack()
-    {
-        if(health <= 0)
-        {
-            rb.velocity = Vector2.zero;//il arrête de bouger
-            //lancer l'anim de mort
-            //à la fin de l'anim lancer une coroutine avec l'effet;
-        }
 
-    }
+    
 }
