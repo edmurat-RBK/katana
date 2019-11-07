@@ -153,13 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a15d4a7e82e75e40a7c24a1566c4713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumHealth: 100
+  maximumHealth: 0
   health: 0
-  speed: 3
+  speed: 5
   attackDamage: 0
   isAttacking: 0
-  lootPercentage: 50
-  loot: {fileID: 0}
+  lootPercentage: 0.5
+  loot: {fileID: 2128351048808079814, guid: 2ca6c00017f201742a305877c1c093ce, type: 3}
   target: {fileID: 0}
   rb: {fileID: 0}
   knockbackPower: 0

@@ -28,16 +28,16 @@ public class Watermelon : Enemy
         {
 
             case Direction.UP:
-                transform.position += new Vector3(0, 1, 0) * speed * Time.deltaTime;
+                rb.velocity = new Vector2(0f,1f) * speed;
                 break;
             case Direction.DOWN:
-                transform.position += new Vector3(0, -1, 0) * speed * Time.deltaTime;
+                rb.velocity = new Vector2(0f, -1f) * speed;
                 break;
             case Direction.LEFT:
-                transform.position += new Vector3(1, 0, 0) * speed * Time.deltaTime;
+                rb.velocity = new Vector2(1f, 0f) * speed;
                 break;
             case Direction.RIGHT:
-                transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
+                rb.velocity = new Vector2(-1f, 0f) * speed;
                 break;
         }
 
@@ -75,6 +75,7 @@ public class Watermelon : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)//Quand la pastèque rencontre un collider, elle est détruite.
     {
+        Loot();
         Destroy(gameObject);
     }
 }

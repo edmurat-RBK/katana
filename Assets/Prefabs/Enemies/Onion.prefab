@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumHealth: 10
   health: 10
-  speed: 1
+  speed: 4
   attackDamage: 0
   isAttacking: 0
   lootPercentage: 0.7

@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private float lootChance; //proba de drop init au spawn du mob
     public float lootPercentage; // proba de drop attaché à un type d'ennemi
     public GameObject loot;
+    [HideInInspector]
     public GameObject target;
     [HideInInspector]
     public Rigidbody2D rb;
