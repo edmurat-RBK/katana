@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    // Component
+    // Components
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private bool isAlive = true;
     // Move
     public float speed = 1f;
+    private float speedModifier = 1f;
     // Dash
     public float dashSpeed = 1.5f;
     private float dashTime;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     public float attackMeleeRange = 0.5f;
     public float attackMeleeRadius = 1f;
     public GameObject attackMeleeMarker;
-    public LayerMask layerMask;
+    public LayerMask enemyLayerMask;
     private float attackMeleeCooldown;
     public float initialAttackMeleeCooldown = 0.10f;
     private bool isMeleeAttacking = false;
@@ -38,6 +39,13 @@ public class Player : MonoBehaviour
     private float attackRangeCooldown;
     public float initialAttackRangeCooldown = 4f;
     private bool isRangeAttacking = false;
+    // Hold
+    public GameObject itemHold;
+    public Collider2D[] itemPickupable;
+    public LayerMask lootLayerMask;
+    private bool isHolding = false;
+    public float throwForce = 20f;
+
 
 
 
@@ -67,15 +75,25 @@ public class Player : MonoBehaviour
                 Dash();
             }
 
-            if (!isDashing)
+            if (!isDashing && !isHolding)
             {
                 MeleeAttack();
             }
-
             
             if (!isMeleeAttacking && !isDashing)
             {
                 RangeAttack();
+            }
+
+            if(!isMeleeAttacking && !isDashing)
+            {
+                Pickup();
+            }
+
+            if(isHolding)
+            {
+                Consume();
+                Throw();
             }
             
         }
@@ -89,7 +107,7 @@ public class Player : MonoBehaviour
         float inputVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(inputHorizontal, inputVertical, 0f);
-        rb.velocity = new Vector2(movement.x, movement.y).normalized * speed;
+        rb.velocity = new Vector2(movement.x, movement.y).normalized * (speed * speedModifier);
 
         // Animation
         if (rb.velocity.x != 0 || rb.velocity.y != 0)
@@ -163,41 +181,40 @@ public class Player : MonoBehaviour
 
         if (!isMeleeAttacking)
         {
-            if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
+            // Check joystick X an Y position
+            if (inputHorizontal >= Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 1f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
             }
-            else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
+            else if (inputHorizontal <= -Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", -1f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
             }
-            else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
+            else if (inputVertical >= Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
             }
-            else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
+            else if (inputVertical <= -Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", -1);
             }
-        }
 
-        if (!isMeleeAttacking)
-        {
-            if(attackMeleeCooldown <= 0)
+            // If cooldown up
+            if (attackMeleeCooldown <= 0)
             {
                 if(inputMelee)
                 {
                     isMeleeAttacking = true;
 
-                    Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, layerMask);
+                    Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
                         enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
@@ -276,6 +293,63 @@ public class Player : MonoBehaviour
                 attackRangeCooldown = 0;
             }
         }
+    }
+
+    private void Pickup()
+    {
+        itemPickupable = Physics2D.OverlapCircleAll(transform.position, 1f, lootLayerMask);
+
+        if (!isHolding)
+        {
+            if(itemPickupable.Length >= 1)
+            {
+                if(Input.GetButtonDown("Pick"))
+                {
+                    isHolding = true;
+                    itemHold = itemPickupable[0].gameObject;
+                    itemHold.GetComponent<Loot>().isPickup = true;
+                }
+            }
+        }
+        else
+        {
+            itemHold.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, 0f);
+            speedModifier = 0.75f;
+        }
+    }
+
+    private void Throw()
+    {
+        float inputHorizontal = Input.GetAxis("Horizontal");
+        float inputVertical = Input.GetAxis("Vertical");
+
+        if (Input.GetButtonDown("Throw"))
+        {
+            isHolding = false;
+            itemHold.GetComponent<Loot>().isThrow = true;
+            itemHold.GetComponent<Loot>().isPickup = false;
+            Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
+            itemHold.GetComponent<Rigidbody2D>().AddForce(force,ForceMode2D.Impulse);
+            speedModifier = 1f;
+        }
+    }
+
+    private void Consume()
+    {
+        if (Input.GetButtonDown("Consume"))
+        {
+            switch (itemHold.GetComponent<Loot>().item)
+            {
+                case Loot.Item.ONION:
+                    // Onion effet 
+                    break;
+                default:
+                    //Do nothing
+                    break;
+            }
+            Destroy(itemHold);
+        }
+
     }
 
     private void Statistics()
