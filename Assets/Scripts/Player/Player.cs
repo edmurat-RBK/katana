@@ -340,7 +340,7 @@ public class Player : MonoBehaviour
         {
             switch (itemHold.GetComponent<Loot>().item)
             {
-                case Loot.Item.ONION:
+                case Item.ONION:
                     // Onion effet 
                     break;
                 default:

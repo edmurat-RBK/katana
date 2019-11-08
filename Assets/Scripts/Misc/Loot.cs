@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public enum Item
-    {
-        ONION = 1,
-        WATERMELON = 2,
-        LEMON = 3,
-        EGGPLANT = 4
-    }
-
     public Item item;
     public float maximumPickupTime = 5f;
     [HideInInspector] public float pickupTime;

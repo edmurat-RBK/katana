@@ -5,12 +5,12 @@ using UnityEngine;
 public class Basket : MonoBehaviour
 {
 
-    private List<Loot.Item> content;
+    private List<Item> content;
 
     // Start is called before the first frame update
     void Start()
     {
-        content = new List<Loot.Item>();
+        content = new List<Item>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,6 +26,7 @@ public class Basket : MonoBehaviour
             {
                 content.Add(other.GetComponent<Loot>().item);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isHolding = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().speedModifier = 1f;
                 Destroy(other.gameObject);
             }
         }
