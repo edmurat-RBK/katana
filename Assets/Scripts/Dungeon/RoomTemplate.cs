@@ -11,6 +11,8 @@ public class RoomTemplate : MonoBehaviour
     public float ratio4Door = 0.1f;
     public GameObject spawnpointPrefab;
 
+    public GameObject basketPrefab;
+
     public GameObject[] north;
     public GameObject[] east;
     public GameObject[] south;

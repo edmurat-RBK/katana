@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private bool isAlive = true;
     // Move
     public float speed = 1f;
-    private float speedModifier = 1f;
+    public float speedModifier = 1f;
     // Dash
     public float dashSpeed = 1.5f;
     private float dashTime;
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public GameObject itemHold;
     public Collider2D[] itemPickupable;
     public LayerMask lootLayerMask;
-    private bool isHolding = false;
+    [HideInInspector] public bool isHolding = false;
     public float throwForce = 20f;
 
 
@@ -349,6 +349,7 @@ public class Player : MonoBehaviour
             }
 
             isHolding = false;
+            speedModifier = 1f;
             Destroy(itemHold);
         }
 

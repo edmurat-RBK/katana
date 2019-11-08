@@ -278,6 +278,8 @@ public class RoomSpawner : MonoBehaviour
                 }
             }
 
+            Instantiate(template.basketPrefab, new Vector3(transform.position.x + Random.Range(-6.04f, 6.04f), transform.position.y + Random.Range(-3.48f, 3.48f), 0f), Quaternion.identity);
+
             spawned = true;
         }
     }
