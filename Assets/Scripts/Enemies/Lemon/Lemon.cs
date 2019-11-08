@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Lemon : Enemy
 {
-    //Liste des directions 
+    //Liste des directions----------------------------------------------- 
     enum Direction                  { UP, DOWN, LEFT, RIGHT, NONE }
     private Direction               directionToMove = Direction.NONE;
+    private Direction               directionToShoot = Direction.NONE;
 
-    //Gestion de la détection et de la vitesse
+    //Gestion de la détection et de la vitesse---------------------------
     [SerializeField] private float  fuiteDist = .5f;
     [SerializeField] private float  speedFuite = 1f;
     [SerializeField] private float  offsetDetectionRange = .01f;
     private Transform               targetTransform;
     [SerializeField] private float  detectionRadius;
 
-    //Animator
+    //Animator-----------------------------------------------------------
     private Animator                anim;
+
+
+    //Shoot--------------------------------------------------------------
+    public Transform                firePoint;
+    public GameObject               lemonProjectile;
+    public float                    bulletForce = 10f;
+    private int                     rate;
+    public int                      initRate = 100;
 
 
 
@@ -26,6 +35,7 @@ public class Lemon : Enemy
         target = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         targetTransform = target.transform;
+        rate = initRate;
     }
 
     void Update()
@@ -43,7 +53,6 @@ public class Lemon : Enemy
             anim.SetBool("isMoving", false);
         }
 
-        // déplacements de fuite 
         if (Vector3.Distance(transform.position, targetTransform.position) < fuiteDist)
         {     
             MoveAway();
@@ -53,11 +62,26 @@ public class Lemon : Enemy
 
         }
 
+        DirectionToShoot();
+        Turn();
+ 
+
+        if (Vector3.Distance(transform.position, targetTransform.position) < detectionRadius)
+        {
+            rate--;
+            if (rate <= 0)
+            {
+                Shoot();
+                Debug.Log("tir");
+                rate = initRate;
+            }
+        }
+
         anim.SetFloat("horizontalMove", rb.velocity.x);
         anim.SetFloat("verticalMove", rb.velocity.y);
     }
 
-    private void MoveTowardsTarget(Transform targ) //déplacement sur le x ou le y du joueur
+    private void MoveTowardsTarget(Transform targ)
     {
         if (Mathf.Abs(targ.position.x - transform.position.x) > Mathf.Abs(targ.position.y - transform.position.y))
         {
@@ -119,6 +143,64 @@ public class Lemon : Enemy
             {
                 directionToMove = Direction.RIGHT;
             }
+        }
+    }
+
+    private void DirectionToShoot()
+    {
+        if (transform.position.x <= targetTransform.position.x + offsetDetectionRange
+            && transform.position.x >= targetTransform.position.x - offsetDetectionRange)
+        {
+
+            if (transform.position.y < targetTransform.position.y)
+            {
+                directionToShoot = Direction.UP;
+
+            }
+            if (transform.position.y > targetTransform.position.y)
+            {
+                directionToShoot = Direction.DOWN;
+
+            }
+        }
+        if (transform.position.y <= targetTransform.position.y + offsetDetectionRange
+            && transform.position.y >= targetTransform.position.y - offsetDetectionRange)
+        {
+            if (transform.position.x < targetTransform.position.x)
+            {
+                directionToShoot = Direction.RIGHT;
+
+            }
+            if (transform.position.x > targetTransform.position.x)
+            {
+                directionToShoot = Direction.LEFT;
+
+            }
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject tirCitron = Instantiate(lemonProjectile, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = tirCitron.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+    void Turn()
+    {
+        switch (directionToShoot)
+        {
+            case Direction.UP:
+                firePoint.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            case Direction.DOWN:
+                firePoint.eulerAngles = new Vector3(0, 0, 180);
+                break;
+            case Direction.LEFT:
+                firePoint.eulerAngles = new Vector3(0, 0, 90);
+                break;
+            case Direction.RIGHT:
+                firePoint.eulerAngles = new Vector3(0, 0, -90);
+                break;
         }
     }
 }
