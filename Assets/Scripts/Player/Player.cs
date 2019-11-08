@@ -347,6 +347,8 @@ public class Player : MonoBehaviour
                     //Do nothing
                     break;
             }
+
+            isHolding = false;
             Destroy(itemHold);
         }
 
