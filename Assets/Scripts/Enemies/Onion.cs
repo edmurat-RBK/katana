@@ -27,7 +27,6 @@ public class Onion : Enemy
         if (health <= 0 && !isDead)
         {
             Loot();
-            Destroy(gameObject);
             isDead = true;
         }
 
