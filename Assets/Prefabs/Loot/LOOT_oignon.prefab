@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4162d2f63d232469870a8dd1bb7ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 0
+  item: 1
   maximumPickupTime: 5
   pickupTime: 0
   isPickup: 0
@@ -307,7 +307,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &6427758961462712995
 GameObject:
   m_ObjectHideFlags: 0
