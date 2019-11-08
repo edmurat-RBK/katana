@@ -29,15 +29,19 @@ public class Watermelon : Enemy
 
             case Direction.UP:
                 rb.velocity = new Vector2(0f,1f) * speed;
+                anim.SetBool("isMoving", true);
                 break;
             case Direction.DOWN:
                 rb.velocity = new Vector2(0f, -1f) * speed;
+                anim.SetBool("isMoving", true);
                 break;
             case Direction.LEFT:
                 rb.velocity = new Vector2(1f, 0f) * speed;
+                anim.SetBool("isMoving", true);
                 break;
             case Direction.RIGHT:
                 rb.velocity = new Vector2(-1f, 0f) * speed;
+                anim.SetBool("isMoving", true);
                 break;
         }
 
