@@ -306,6 +306,7 @@ public class Player : MonoBehaviour
                 if(Input.GetButtonDown("Pick"))
                 {
                     isHolding = true;
+                    anim.SetBool("isHolding", true);
                     itemHold = itemPickupable[0].gameObject;
                     itemHold.GetComponent<Loot>().isPickup = true;
                 }
@@ -326,6 +327,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Throw"))
         {
             isHolding = false;
+            anim.SetBool("isHolding", false);
             itemHold.GetComponent<Loot>().isThrow = true;
             itemHold.GetComponent<Loot>().isPickup = false;
             Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
@@ -349,6 +351,7 @@ public class Player : MonoBehaviour
             }
 
             isHolding = false;
+            anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
         }
