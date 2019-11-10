@@ -113,7 +113,8 @@ MonoBehaviour:
   offsetDetectionRange: 0.1
   detectionRadius: 9
   firePoint: {fileID: 8814737615838232178}
-  lemonProjectile: {fileID: 0}
+  lemonProjectile: {fileID: 2229676579559270547, guid: dcaf98e27af8486498119f3f899401e8,
+    type: 3}
   bulletForce: 10
   initRate: 100
 --- !u!95 &8814737615478560478
