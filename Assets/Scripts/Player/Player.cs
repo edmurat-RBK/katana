@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     // Health
     public float maximumHealth = 10f;
-    private float health;
+    [HideInInspector] public float health;
     private bool isAlive = true;
     // Move
     public float speed = 1f;
@@ -95,7 +95,12 @@ public class Player : MonoBehaviour
                 Consume();
                 Throw();
             }
-            
+
+            anim.SetBool("isDead", false);
+        }
+        else
+        {
+            anim.SetBool("isDead", true);
         }
     }
 
@@ -217,9 +222,7 @@ public class Player : MonoBehaviour
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
-                        enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
-                        enemiesHit[i].GetComponent<Enemy>().Knockback();
-
+                        enemiesHit[i].GetComponent<NewEnemy>().TakeDamage(attackMeleeDamage);
                     }
                 }
             }
@@ -364,6 +367,12 @@ public class Player : MonoBehaviour
         {
             isAlive = false;
         }
+
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 
     public void GetAnimationEvent(string eventMessage)

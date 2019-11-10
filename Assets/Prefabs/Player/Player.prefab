@@ -165,7 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 10
+  health: 0
   speed: 5
+  speedModifier: 1
   dashSpeed: 45
   initialDashTime: 0.05
   initialDashCooldown: 1
@@ -173,7 +175,7 @@ MonoBehaviour:
   attackMeleeRange: 0.3
   attackMeleeRadius: 0.5
   attackMeleeMarker: {fileID: 9038376924947114005}
-  layerMask:
+  enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
   initialAttackMeleeCooldown: 0.1
@@ -181,6 +183,13 @@ MonoBehaviour:
     type: 3}
   projectileCount: 3
   initialAttackRangeCooldown: 4
+  itemHold: {fileID: 0}
+  itemPickupable: []
+  lootLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  isHolding: 0
+  throwForce: 20
 --- !u!1 &9038376924947114005
 GameObject:
   m_ObjectHideFlags: 0
