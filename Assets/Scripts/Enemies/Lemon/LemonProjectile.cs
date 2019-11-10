@@ -5,10 +5,14 @@ using UnityEngine;
 public class LemonProjectile : MonoBehaviour
 {
 
-    [SerializeField] private float maxDistance = 10f;
-    [SerializeField] private Transform origin;
-    [SerializeField] private GameObject target;
+    [SerializeField] private float      maxDistance = 10f;
+    [SerializeField] private Transform  origin;
+    private GameObject                  target;
 
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Update is called once per frame
     void Update()
