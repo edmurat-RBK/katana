@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sumobergine_mort_droite
+  m_Name: frappasteque_mort_droite
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,16 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -7222301182989078119, guid: 24622dad3ece0984585de71589005126,
+      value: {fileID: -5137672168122807392, guid: afd9906b0af2f174b8cd5e4b5db0bb6f,
         type: 3}
     - time: 0.083333336
-      value: {fileID: 7324243227155367590, guid: 24622dad3ece0984585de71589005126,
+      value: {fileID: -327872390327078299, guid: afd9906b0af2f174b8cd5e4b5db0bb6f,
         type: 3}
     - time: 0.16666667
-      value: {fileID: 3971877243933137053, guid: 24622dad3ece0984585de71589005126,
+      value: {fileID: -3518956783861487829, guid: afd9906b0af2f174b8cd5e4b5db0bb6f,
         type: 3}
     - time: 0.25
-      value: {fileID: 5158189373159042465, guid: 24622dad3ece0984585de71589005126,
+      value: {fileID: -4440971124742389654, guid: afd9906b0af2f174b8cd5e4b5db0bb6f,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -50,10 +50,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -7222301182989078119, guid: 24622dad3ece0984585de71589005126, type: 3}
-    - {fileID: 7324243227155367590, guid: 24622dad3ece0984585de71589005126, type: 3}
-    - {fileID: 3971877243933137053, guid: 24622dad3ece0984585de71589005126, type: 3}
-    - {fileID: 5158189373159042465, guid: 24622dad3ece0984585de71589005126, type: 3}
+    - {fileID: -5137672168122807392, guid: afd9906b0af2f174b8cd5e4b5db0bb6f, type: 3}
+    - {fileID: -327872390327078299, guid: afd9906b0af2f174b8cd5e4b5db0bb6f, type: 3}
+    - {fileID: -3518956783861487829, guid: afd9906b0af2f174b8cd5e4b5db0bb6f, type: 3}
+    - {fileID: -4440971124742389654, guid: afd9906b0af2f174b8cd5e4b5db0bb6f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -80,10 +80,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.25
-    functionName: OnDeathAnimation()
+    functionName: OnDeathAnimation
     data: 
-    objectReferenceParameter: {fileID: 4921765077664995641, guid: fb3e57ea2205cc849aa9917b188ceda5,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

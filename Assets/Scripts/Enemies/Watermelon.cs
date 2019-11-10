@@ -13,6 +13,7 @@ public class Watermelon : Enemy
     }
     private Direction directionToMove = Direction.NONE;
     private Animator anim;
+    private bool isMoving = false;
 
     private void Start()
     {
@@ -23,25 +24,32 @@ public class Watermelon : Enemy
     void Update()
     {
         if (directionToMove == Direction.NONE)
+        {
             SearchTarget();
+        }
+            
         switch (directionToMove)
         {
 
             case Direction.UP:
                 rb.velocity = new Vector2(0f,1f) * speed;
                 anim.SetBool("isMoving", true);
+                isMoving = true;
                 break;
             case Direction.DOWN:
                 rb.velocity = new Vector2(0f, -1f) * speed;
                 anim.SetBool("isMoving", true);
+                isMoving = true;
                 break;
             case Direction.LEFT:
                 rb.velocity = new Vector2(1f, 0f) * speed;
                 anim.SetBool("isMoving", true);
+                isMoving = true;
                 break;
             case Direction.RIGHT:
                 rb.velocity = new Vector2(-1f, 0f) * speed;
                 anim.SetBool("isMoving", true);
+                isMoving = true;
                 break;
         }
 
@@ -78,6 +86,14 @@ public class Watermelon : Enemy
     }
 
     private void OnCollisionEnter2D(Collision2D collision)//Quand la pastèque rencontre un collider, elle est détruite.
+    {
+        if (isMoving)
+        {
+            anim.SetBool("isDead", true);
+        }
+    }
+
+    public void OnDeathAnimation()
     {
         Loot();
         Destroy(gameObject);
