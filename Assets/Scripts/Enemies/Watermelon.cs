@@ -14,6 +14,7 @@ public class Watermelon : Enemy
     private Direction directionToMove = Direction.NONE;
     private Animator anim;
     private bool isMoving = false;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class Watermelon : Enemy
         if (directionToMove == Direction.NONE)
         {
             SearchTarget();
+        }
+
+        if(isDead)
+        {
+            Loot();
+            Destroy(gameObject);
         }
             
         switch (directionToMove)
@@ -53,6 +60,7 @@ public class Watermelon : Enemy
                 break;
         }
 
+        Orientation();
         anim.SetFloat("horizontalMove", rb.velocity.x);
         anim.SetFloat("verticalMove", rb.velocity.y);
     }
@@ -95,7 +103,14 @@ public class Watermelon : Enemy
 
     public void OnDeathAnimation()
     {
-        Loot();
-        Destroy(gameObject);
+        isDead = true;
+    }
+
+    public void Orientation()
+    {
+        float horizontalOrientation = target.transform.position.x - transform.position.x;
+        float verticalOrientation = target.transform.position.y - transform.position.y;
+        anim.SetFloat("verticalOrientation", verticalOrientation);
+        anim.SetFloat("horizontalOrientation", horizontalOrientation);
     }
 }

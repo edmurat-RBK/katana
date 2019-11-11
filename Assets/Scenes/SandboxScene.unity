@@ -1009,7 +1009,12 @@ PrefabInstance:
     - target: {fileID: 5834332444583154686, guid: e1f592dd56084c34da2fb7b896d18ef3,
         type: 3}
       propertyPath: minimumDistance
-      value: 2
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834332444583154686, guid: e1f592dd56084c34da2fb7b896d18ef3,
+        type: 3}
+      propertyPath: attackDamage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f592dd56084c34da2fb7b896d18ef3, type: 3}

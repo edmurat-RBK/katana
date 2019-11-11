@@ -56,10 +56,15 @@ public class NewOnion : NewEnemy
             {
                 isAttacking = true;
                 attackCooldown = initialAttackCooldown;
+                if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
+                {
+                    player.GetComponent<Player>().TakeDamage(attackDamage);
+                }
             }
         }
         else
         {
+            
             attackCooldown -= Time.deltaTime;
             if (attackCooldown <= 0)
             {
@@ -75,13 +80,10 @@ public class NewOnion : NewEnemy
     {
         if (eventMessage.Equals("AttackEnded"))
         {
-            isAttacking = false;
-            if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
-            {
-                player.GetComponent<Player>().TakeDamage(attackDamage);
-            }
+            isAttacking = false;    
         }
     }
+
 
     public void Orientation()
     {
@@ -89,6 +91,5 @@ public class NewOnion : NewEnemy
         float verticalOrientation = player.transform.position.y - transform.position.y;
         anim.SetFloat("verticalOrientation", verticalOrientation);
         anim.SetFloat("horizontalOrientation", horizontalOrientation);
-
     }
 }
