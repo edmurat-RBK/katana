@@ -27,6 +27,7 @@ public class NewOnion : NewEnemy
         }
 
         Attack();
+        Orientation();
     }
 
     private void Move()
@@ -80,5 +81,14 @@ public class NewOnion : NewEnemy
                 player.GetComponent<Player>().TakeDamage(attackDamage);
             }
         }
+    }
+
+    public void Orientation()
+    {
+        float horizontalOrientation = player.transform.position.x - transform.position.x;
+        float verticalOrientation = player.transform.position.y - transform.position.y;
+        anim.SetFloat("verticalOrientation", verticalOrientation);
+        anim.SetFloat("horizontalOrientation", horizontalOrientation);
+
     }
 }
