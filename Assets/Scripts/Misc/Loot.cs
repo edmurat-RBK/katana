@@ -21,6 +21,7 @@ public class Loot : MonoBehaviour
     {
         if(pickupTime <= 0)
         {
+            pickupTime = 0;
             Destroy(gameObject);
         }
         else
@@ -41,4 +42,10 @@ public class Loot : MonoBehaviour
             isThrow = false;
         }
     }
+
+    public float GetTimeleftinPercentage()
+    {
+        return 1 - (pickupTime / maximumPickupTime);
+    }
+
 }

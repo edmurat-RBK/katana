@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DashBarUI : MonoBehaviour
 {
-    private Image imageComponant;
+    private Image imageComponent;
     private Player player;
     private float cooldown;
     public Sprite[] bars;
@@ -13,7 +13,7 @@ public class DashBarUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        imageComponant = GetComponent<Image>();
+        imageComponent = GetComponent<Image>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
@@ -21,6 +21,6 @@ public class DashBarUI : MonoBehaviour
     void Update()
     {
         cooldown = player.GetCooldownInPercentage();
-        imageComponant.sprite = bars[(int)Mathf.Floor(cooldown * (bars.Length-1))];
+        imageComponent.sprite = bars[(int)Mathf.Floor(cooldown * (bars.Length-1))];
     }
 }
