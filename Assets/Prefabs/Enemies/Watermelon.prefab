@@ -156,7 +156,7 @@ MonoBehaviour:
   maximumHealth: 100
   health: 0
   speed: 8
-  attackDamage: 6
+  attackDamage: 4
   isAttacking: 0
   lootPercentage: 0.5
   loot: {fileID: 2128351048808079814, guid: 2ca6c00017f201742a305877c1c093ce, type: 3}

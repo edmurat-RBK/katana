@@ -95,6 +95,11 @@ public class Watermelon : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)//Quand la pastèque rencontre un collider, elle est détruite.
     {
+        if (collision.collider.CompareTag("Player") && isMoving)
+        {
+            anim.SetBool("isDead", true);
+            target.GetComponent<Player>().TakeDamage(attackDamage);    
+        }
         if (isMoving)
         {
             anim.SetBool("isDead", true);
