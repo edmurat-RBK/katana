@@ -26,7 +26,6 @@ public class LootPickupTimeUI : MonoBehaviour
         if (showTime)
         {
             timeLeft = loot.GetComponent<Loot>().GetTimeleftinPercentage();
-            Debug.Log((int)Mathf.Floor(timeLeft *(bars.Length - 1)));
             imageComponent.sprite = bars[(int)Mathf.Floor(timeLeft * (bars.Length - 1))];
         }
         else
