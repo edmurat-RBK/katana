@@ -22,20 +22,20 @@ AnimationClip:
     - time: 0
       value: {fileID: -5169767833000584800, guid: aa6e970fe38c74447b6b92bb215b6d64,
         type: 3}
-    - time: 0.083333336
+    - time: 0.1
       value: {fileID: -1258246775411782532, guid: aa6e970fe38c74447b6b92bb215b6d64,
         type: 3}
-    - time: 0.16666667
+    - time: 0.2
       value: {fileID: -3815754834698897129, guid: aa6e970fe38c74447b6b92bb215b6d64,
         type: 3}
-    - time: 0.25
+    - time: 0.3
       value: {fileID: 9148571892634583227, guid: aa6e970fe38c74447b6b92bb215b6d64,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +79,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.25
+  - time: 0.3
     functionName: OnDeathAnimation
     data: 
     objectReferenceParameter: {fileID: 0}

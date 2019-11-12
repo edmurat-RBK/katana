@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 4096441890768068068
     second: FX_ninja_attaque_bas_1_1
+  - first:
+      213: 7758510320298407309
+    second: FX_ninja_attaque_bas_1_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -97,38 +100,38 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e7ab4b6977a95447ab61045fb6f557f
+      spriteID: dc93178c8e94f314da7f709a0d1a795b
       internalID: -9046876914530520706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_ninja_attaque_bas_1_1
+      name: FX_ninja_attaque_bas_1_2
       rect:
         serializedVersion: 2
-        x: 24
+        x: 48
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff79a8e2e222d7e459b523e2dfbdb9ff
-      internalID: 4096441890768068068
+      spriteID: f692ad31aa134164a8b53a1b010c09e3
+      internalID: 7758510320298407309
       vertices: []
       indices: 
       edges: []

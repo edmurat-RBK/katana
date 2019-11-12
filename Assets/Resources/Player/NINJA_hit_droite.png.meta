@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 0c39ad9106c89164fa3416d247502990
+guid: eae0980b4e79e304483a6816be1afad0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3872477290635776863
-    second: FX_ninja_attaque_haut_1_0
+      213: 240947968668101492
+    second: NINJA_hit_droite_0
   - first:
-      213: 5478007747337758544
-    second: FX_ninja_attaque_haut_1_1
+      213: -1565600860687721836
+    second: NINJA_hit_droite_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -92,43 +92,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FX_ninja_attaque_haut_1_0
+      name: NINJA_hit_droite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c38f59183502ce34b9527ebb6f54c3d1
-      internalID: 3872477290635776863
+      spriteID: 6c7f57cbe3117a547bd9c5de81925fee
+      internalID: 240947968668101492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_ninja_attaque_haut_1_1
+      name: NINJA_hit_droite_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3631a63d91480984597ee32c8a106b38
-      internalID: 5478007747337758544
+      spriteID: 48066a3f8505acf4d96fa73b8d562551
+      internalID: -1565600860687721836
       vertices: []
       indices: 
       edges: []
