@@ -49,7 +49,6 @@ public class Player : MonoBehaviour
 
 
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,11 +60,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Statistics();
         TestHealthModifier();
 
         if(isAlive)
         {
+            Statistics();
+
             if (!isMeleeAttacking)
             {
                 Move();
@@ -377,16 +377,23 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             isAlive = false;
+            health = 0;
         }
 
     }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        if(health > 0)
+        {
+            health -= damage;
+            if(health <= 0)
+            {
+                health = 0;
+            }
+        }
         //isTakingDamage = true;
     }
-
 
     public void GetAnimationEvent(string eventMessage)
     {
