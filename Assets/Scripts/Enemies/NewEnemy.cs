@@ -11,6 +11,7 @@ public class NewEnemy : MonoBehaviour
     // Health
     public float maximumHealth;
     protected float health;
+    public bool isDead = false;
     // Movement
     public float baseSpeed;
     protected float speedModifier = 1f;
@@ -34,12 +35,6 @@ public class NewEnemy : MonoBehaviour
 
     public void OnUpdate()
     {
-        if(health <= 0)
-        {
-            Loot();
-            Death();
-        }
-
         if(attackCooldown > 0)
         {
             attackCooldown -= Time.deltaTime;
@@ -47,6 +42,17 @@ public class NewEnemy : MonoBehaviour
             {
                 attackCooldown = 0;
             }
+        }
+
+        if(health <= 0)
+        {
+            anim.SetBool("isDead", true);
+        }
+
+        if (isDead)
+        {
+            Loot();
+            Death();
         }
     }
 
@@ -68,6 +74,11 @@ public class NewEnemy : MonoBehaviour
         {
             Instantiate(lootPrefab, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         }
+    }
+
+    public void OnDeathAnimation()
+    {
+        isDead = true;
     }
 
     public void Death()

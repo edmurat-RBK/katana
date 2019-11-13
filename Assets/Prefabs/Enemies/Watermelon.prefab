@@ -154,13 +154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 100
-  health: 0
-  speed: 8
+  isDead: 0
+  baseSpeed: 10
   attackDamage: 4
-  isAttacking: 0
-  lootPercentage: 0.5
-  loot: {fileID: 2128351048808079814, guid: 2ca6c00017f201742a305877c1c093ce, type: 3}
-  target: {fileID: 0}
-  rb: {fileID: 0}
-  knockbackPower: 0
+  attackModifier: 1
+  initialAttackCooldown: 0
+  lootPrefab: {fileID: 2128351048808079814, guid: 2ca6c00017f201742a305877c1c093ce,
+    type: 3}
+  lootChance: 0.5
   offsetDetectionRange: 0.75
