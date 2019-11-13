@@ -74,4 +74,12 @@ public class NewEnemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void Orientation()
+    {
+        float horizontalOrientation = player.transform.position.x - transform.position.x;
+        float verticalOrientation = player.transform.position.y - transform.position.y;
+        anim.SetFloat("verticalOrientation", verticalOrientation);
+        anim.SetFloat("horizontalOrientation", horizontalOrientation);
+    }
 }
