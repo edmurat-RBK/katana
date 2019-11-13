@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public float maximumHealth = 10f;
     [HideInInspector] public float health;
     private bool isAlive = true;
-    //private bool isTakingDamage;
+    private bool isTakingDamage;
+
     // Move
     public float speed = 1f;
     public float speedModifier = 1f;
@@ -102,16 +103,7 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("isDead", true);
-        }
-
-        /*if(isTakingDamage==true)
-        {
-            anim.SetBool("isDamage", true);
-            new WaitForSeconds(0.2f);
-            isTakingDamage = false;
-
-        }*/
-        
+        }   
     }
 
 
@@ -392,7 +384,7 @@ public class Player : MonoBehaviour
                 health = 0;
             }
         }
-        //isTakingDamage = true;
+        anim.SetBool("isDamage", true);
     }
 
     public void GetAnimationEvent(string eventMessage)
@@ -401,6 +393,11 @@ public class Player : MonoBehaviour
         {
             isMeleeAttacking = false;
             attackMeleeCooldown = initialAttackMeleeCooldown;
+        }
+
+        if(eventMessage.Equals("Hit"))
+        {
+            anim.SetBool("isDamage", false);
         }
     }
 
