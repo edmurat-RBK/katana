@@ -6,6 +6,8 @@ public class NewOnion : NewEnemy
 {
     public float minimumDistance;
     public float attackRadius;
+    public float initialAttackLoad = 0.2f;
+    private float attackLoad;
     private bool atAttackRange = true;
     private bool isAttacking = false;
     public LayerMask playerLayerMask;
@@ -54,17 +56,24 @@ public class NewOnion : NewEnemy
         {
             if (atAttackRange)
             {
-                isAttacking = true;
-                attackCooldown = initialAttackCooldown;
-                if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
+                attackLoad -= Time.deltaTime;
+                if (attackLoad <= 0)
                 {
-                    player.GetComponent<Player>().TakeDamage(attackDamage);
+                    isAttacking = true;
+                    attackCooldown = initialAttackCooldown;
+                    if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
+                    {
+                        player.GetComponent<Player>().TakeDamage(attackDamage);
+                    }
                 }
+            }
+            else
+            {
+                attackLoad = initialAttackLoad;
             }
         }
         else
         {
-            
             attackCooldown -= Time.deltaTime;
             if (attackCooldown <= 0)
             {
@@ -82,14 +91,5 @@ public class NewOnion : NewEnemy
         {
             isAttacking = false;    
         }
-    }
-
-
-    public void Orientation()
-    {
-        float horizontalOrientation = player.transform.position.x - transform.position.x;
-        float verticalOrientation = player.transform.position.y - transform.position.y;
-        anim.SetFloat("verticalOrientation", verticalOrientation);
-        anim.SetFloat("horizontalOrientation", horizontalOrientation);
     }
 }
