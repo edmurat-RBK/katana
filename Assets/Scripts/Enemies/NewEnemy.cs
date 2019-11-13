@@ -65,6 +65,7 @@ public class NewEnemy : MonoBehaviour
     public void TakeDamage(float damageDealtByOther)
     {
         health -= damageDealtByOther;
+        anim.SetBool("isDamage", true);
     }
 
     public void Loot()

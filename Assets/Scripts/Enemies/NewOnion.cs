@@ -63,7 +63,7 @@ public class NewOnion : NewEnemy
                     attackCooldown = initialAttackCooldown;
                     if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
                     {
-                        player.GetComponent<Player>().TakeDamage(attackDamage);
+                        player.GetComponent<Player>().TakeDamage(attackDamage);           
                     }
                 }
             }
@@ -90,6 +90,11 @@ public class NewOnion : NewEnemy
         if (eventMessage.Equals("AttackEnded"))
         {
             isAttacking = false;    
+        }
+
+        if (eventMessage.Equals("Hit"))
+        {
+            anim.SetBool("isDamage", false);
         }
     }
 }
