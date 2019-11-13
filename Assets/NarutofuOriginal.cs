@@ -63,27 +63,30 @@ public class NarutofuOriginal : EnemyBehaviour
     }
     void narutofuSpawn()
     {
-        if (SpawnCooldown <= 0 && !isAttacking)//Cooldown du spawn
+
+        Debug.Log("readytospawn");
+        if (Vector3.Distance(target.position, transform.position) <= spawnRange)
         {
-            Debug.Log("readytospawn");
-            if (Vector3.Distance(target.position, transform.position) <= spawnRange)
+            if (SpawnCooldown <= 0 && !isAttacking)//Cooldown du spawn
             {
                 Debug.Log("kagebunshinnojutsu");
                 isAttacking = true;
                 GameObject narutofuClone = Instantiate(narutofuClonePrefab, transform.position, transform.rotation);
 
             }
-            else
+
+
+            else if (!isAttacking)
             {
-                isAttacking = false;
+                SpawnCooldown--;
+
             }
+
+
         }
-        else if (!isAttacking)
+        else
         {
-            SpawnCooldown--;
-
+            isAttacking = false;
         }
-
-
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 208112253447527900}
   - component: {fileID: 208112253447527901}
   - component: {fileID: -6600533171586813087}
+  - component: {fileID: 6337622863110335897}
   m_Layer: 0
   m_Name: narutofuClone
   m_TagString: Untagged
@@ -124,3 +125,23 @@ MonoBehaviour:
   speed: 1.5
   attackDamage: 0
   lootPercentage: 0
+  timetodeath: 200
+  triggerExplosionDistance: 1
+  tailleExplosion: 0.8
+  cooldownSuicide: 20
+--- !u!58 &6337622863110335897
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208112253447527896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.0001
