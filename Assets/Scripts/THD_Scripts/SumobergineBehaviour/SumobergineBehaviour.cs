@@ -8,6 +8,7 @@ public class SumobergineBehaviour : EnemyBehaviour
     public float stoppingDistance;
     float attackCooldown;
     public float iattackCooldown;
+    public float t;
     public float attackRange;
     bool isAttacking;
     private float lootChance;
@@ -15,8 +16,8 @@ public class SumobergineBehaviour : EnemyBehaviour
     public float sizeDiffShock;
     CircleCollider2D shockwave;
     public float speedShockWave;
-    
-   
+
+
 
 
     //ajout arthur
@@ -97,30 +98,33 @@ public class SumobergineBehaviour : EnemyBehaviour
 
     void EggplantAttack()
     {
-        if (attackCooldown <= 0)//Cooldown de l'attaque de l'aubergine
+        if (attackCooldown <= 0 && !isAttacking)//Cooldown de l'attaque de l'aubergine
         {
             Debug.Log("readytoattack");
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
                 Debug.Log("a l'attaque");
                 isAttacking = true;
-                /*if (shockwave.radius < attackRange + sizeDiffShock)
-                {
-                    shockwave.radius = shockwave.radius + 1 * speedShockWave;
-                    Debug.Log("current radius = " + shockwave.radius);
-
-                }*/
 
             }
+        }
+        else if (isAttacking)
+        {
+            if (shockwave.radius < attackRange)
+            {
+                shockwave.radius += speedShockWave;
+                //shockwave.radius = Mathf.Lerp(0, attackRange,t);
+                //t += speedShockWave * Time.deltaTime;
+                //Debug.Log("current radius = " + shockwave.radius);
 
-
+            }
+            else { isAttacking = false; }
             attackCooldown = iattackCooldown;
         }
-        else
+        else if (!isAttacking)
         {
             attackCooldown--;
-            //shockwave.radius = 0;
-            isAttacking = false;
+
         }
 
     }
@@ -129,11 +133,11 @@ public class SumobergineBehaviour : EnemyBehaviour
     {
         if (lootChance <= lootPercentage)
         {
-            
+
             Debug.Log("wah le loot");
         }
     }
 
 
-    
+
 }
