@@ -11,7 +11,7 @@ public class NewEnemy : MonoBehaviour
     // Health
     public float maximumHealth;
     protected float health;
-    public bool isDead = false;
+    [HideInInspector] public bool isDead = false;
     // Movement
     public float baseSpeed;
     protected float speedModifier = 1f;
@@ -66,6 +66,7 @@ public class NewEnemy : MonoBehaviour
     {
         health -= damageDealtByOther;
         anim.SetBool("isDamage", true);
+        attackCooldown = initialAttackCooldown;
     }
 
     public void Loot()

@@ -13,7 +13,6 @@ public class Watermelon : NewEnemy
     }
     private Direction directionToMove = Direction.NONE;
     private bool isMoving = false;
-    private bool isDead = false;
 
     private void Start()
     {

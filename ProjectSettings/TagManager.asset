@@ -9,7 +9,6 @@ TagManager:
   - Loot
   - Basket
   - Enemy
-  - Ennemy
   layers:
   - Default
   - TransparentFX
