@@ -5,13 +5,13 @@ using UnityEngine;
 public class Basket : MonoBehaviour
 {
 
-    private List<Item> content;
+    private GameManager gameManager;
     public Animator playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-        content = new List<Item>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
@@ -21,12 +21,12 @@ public class Basket : MonoBehaviour
         {
             if(other.GetComponent<Loot>().isThrow)
             {
-                content.Add(other.GetComponent<Loot>().item);
+                gameManager.fridgeInventory.Add(other.GetComponent<Loot>().item);
                 Destroy(other.gameObject);
             }
             else if(other.GetComponent<Loot>().isPickup)
             {
-                content.Add(other.GetComponent<Loot>().item);
+                gameManager.fridgeInventory.Add(other.GetComponent<Loot>().item);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isHolding = false;
                 playerAnim.SetBool("isHolding", false);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().speedModifier = 1f;
