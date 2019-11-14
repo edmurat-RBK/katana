@@ -97,16 +97,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f9810d073d910c4ab8f9570ed2ff055
+      spriteID: c38f59183502ce34b9527ebb6f54c3d1
       internalID: 3872477290635776863
       vertices: []
       indices: 
@@ -116,18 +116,18 @@ TextureImporter:
       name: FX_ninja_attaque_haut_1_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 48
         y: 0
-        width: 24
-        height: 24
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6587105ef2ae6444a39ea8b53df78fe
+      spriteID: 3631a63d91480984597ee32c8a106b38
       internalID: 5478007747337758544
       vertices: []
       indices: 

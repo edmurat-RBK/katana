@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
 
     // Health
     public float maximumHealth = 10f;
-    private float health;
+    [HideInInspector] public float health;
     private bool isAlive = true;
+    private bool isTakingDamage;
+
     // Move
     public float speed = 1f;
     public float speedModifier = 1f;
@@ -48,7 +50,6 @@ public class Player : MonoBehaviour
 
 
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,11 +61,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Statistics();
         TestHealthModifier();
 
         if(isAlive)
         {
+            Statistics();
+
             if (!isMeleeAttacking)
             {
                 Move();
@@ -95,8 +97,13 @@ public class Player : MonoBehaviour
                 Consume();
                 Throw();
             }
-            
+
+            anim.SetBool("isDead", false);
         }
+        else
+        {
+            anim.SetBool("isDead", true);
+        }   
     }
 
 
@@ -217,10 +224,9 @@ public class Player : MonoBehaviour
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
-                        enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
-                        enemiesHit[i].GetComponent<Enemy>().Knockback();
-
+                        enemiesHit[i].GetComponent<NewEnemy>().TakeDamage(attackMeleeDamage);
                     }
+
                 }
             }
             else
@@ -306,6 +312,7 @@ public class Player : MonoBehaviour
                 if(Input.GetButtonDown("Pick"))
                 {
                     isHolding = true;
+                    anim.SetBool("isHolding", true);
                     itemHold = itemPickupable[0].gameObject;
                     itemHold.GetComponent<Loot>().isPickup = true;
                 }
@@ -326,6 +333,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Throw"))
         {
             isHolding = false;
+            anim.SetBool("isHolding", false);
             itemHold.GetComponent<Loot>().isThrow = true;
             itemHold.GetComponent<Loot>().isPickup = false;
             Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
@@ -349,6 +357,7 @@ public class Player : MonoBehaviour
             }
 
             isHolding = false;
+            anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
         }
@@ -360,7 +369,22 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             isAlive = false;
+            health = 0;
         }
+
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if(health > 0)
+        {
+            health -= damage;
+            if(health <= 0)
+            {
+                health = 0;
+            }
+        }
+        anim.SetBool("isDamage", true);
     }
 
     public void GetAnimationEvent(string eventMessage)
@@ -369,6 +393,11 @@ public class Player : MonoBehaviour
         {
             isMeleeAttacking = false;
             attackMeleeCooldown = initialAttackMeleeCooldown;
+        }
+
+        if(eventMessage.Equals("Hit"))
+        {
+            anim.SetBool("isDamage", false);
         }
     }
 

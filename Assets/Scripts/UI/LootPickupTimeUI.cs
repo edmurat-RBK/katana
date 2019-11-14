@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LootPickupTimeUI : MonoBehaviour
 {
 
     public GameObject loot;
-    private TextMeshProUGUI textComponent;
+    private Image imageComponent;
     private float timeLeft;
     public bool showTime;
+    public Sprite[] bars;
 
     // Start is called before the first frame update
     void Start()
     {
-        textComponent = GetComponent<TextMeshProUGUI>();
+        imageComponent = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -24,12 +25,11 @@ public class LootPickupTimeUI : MonoBehaviour
 
         if (showTime)
         {
-            timeLeft = loot.GetComponent<Loot>().pickupTime;
-            textComponent.text = string.Format("{0:N1}", timeLeft);
+            timeLeft = loot.GetComponent<Loot>().GetTimeleftinPercentage();
+            imageComponent.sprite = bars[(int)Mathf.Floor(timeLeft * (bars.Length - 1))];
         }
         else
         {
-            textComponent.text = "";
         }
     }
 }

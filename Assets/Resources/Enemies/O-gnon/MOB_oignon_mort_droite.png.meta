@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 69c427c9770947f42aaec515205a95cc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 763224171749432211
+    second: MOB_oignon_mort_droite_0
+  - first:
+      213: 1533175294733050580
+    second: MOB_oignon_mort_droite_1
+  - first:
+      213: -5914082968892270230
+    second: MOB_oignon_mort_droite_2
+  - first:
+      213: 8102208955842213444
+    second: MOB_oignon_mort_droite_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -86,64 +98,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_attaque_bas_0
+      name: MOB_oignon_mort_droite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb63e1a7bf989674da8f57e6c9f7ca9a
-      internalID: -7478873457143099546
+      spriteID: c037cb72bef724f45b1236865b04279a
+      internalID: 763224171749432211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_attaque_bas_1
+      name: MOB_oignon_mort_droite_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ff1b72dba0dd74da4cce6f7060b349
-      internalID: 2312588706681938973
+      spriteID: 0b267bae3c22c364994a1342380096ef
+      internalID: 1533175294733050580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_attaque_bas_2
+      name: MOB_oignon_mort_droite_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56006a0eaaba59c4986318a7391a2796
-      internalID: 4962636346062793145
+      spriteID: e66e89c6b4d15854f94b4225f06536b6
+      internalID: -5914082968892270230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOB_oignon_mort_droite_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e788177aeffcc42b2ba9812c18dd51
+      internalID: 8102208955842213444
       vertices: []
       indices: 
       edges: []

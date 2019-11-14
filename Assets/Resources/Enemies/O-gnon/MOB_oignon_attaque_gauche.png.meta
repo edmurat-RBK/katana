@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: ae119b4d31583b94899917e04a4c5bd8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6982294656027605166
+    second: MOB_oignon_attaque_gauche_0
+  - first:
+      213: 3124406100412798453
+    second: MOB_oignon_attaque_gauche_1
+  - first:
+      213: -3603951815879373800
+    second: MOB_oignon_attaque_gauche_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -86,64 +95,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NINJA_attaque_bas_0
+      name: MOB_oignon_attaque_gauche_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb63e1a7bf989674da8f57e6c9f7ca9a
-      internalID: -7478873457143099546
+      spriteID: 8db86b29d47760e4bb61c7317ef519a8
+      internalID: -6982294656027605166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_attaque_bas_1
+      name: MOB_oignon_attaque_gauche_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ff1b72dba0dd74da4cce6f7060b349
-      internalID: 2312588706681938973
+      spriteID: 233e1c3068e9c414189899cd865618c4
+      internalID: 3124406100412798453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NINJA_attaque_bas_2
+      name: MOB_oignon_attaque_gauche_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56006a0eaaba59c4986318a7391a2796
-      internalID: 4962636346062793145
+      spriteID: d1d576a48644e1c449855024d409c522
+      internalID: -3603951815879373800
       vertices: []
       indices: 
       edges: []

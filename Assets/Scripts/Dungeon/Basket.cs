@@ -6,11 +6,13 @@ public class Basket : MonoBehaviour
 {
 
     private List<Item> content;
+    public Animator playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         content = new List<Item>();
+        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,6 +28,7 @@ public class Basket : MonoBehaviour
             {
                 content.Add(other.GetComponent<Loot>().item);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isHolding = false;
+                playerAnim.SetBool("isHolding", false);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().speedModifier = 1f;
                 Destroy(other.gameObject);
             }

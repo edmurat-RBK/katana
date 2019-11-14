@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ennemy
   - Spawnpoint
   - Template
+  - Loot
+  - Basket
+  - Enemy
+  - Ennemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - 
   - Enemy
   - Loot
-  - 
+  - Player
   - 
   - 
   - 

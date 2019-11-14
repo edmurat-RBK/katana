@@ -50,6 +50,8 @@ MonoBehaviour:
   ratio4Door: 0.05
   spawnpointPrefab: {fileID: 3405203705847998835, guid: 1dbecc10b54ebb243afb3b00df461f7f,
     type: 3}
+  basketPrefab: {fileID: 2043931548736122664, guid: b90677228fd4f1c48a4ca60e57ba30e2,
+    type: 3}
   north:
   - {fileID: 157843212330196212, guid: 0a750c8c293caf648ada64d2d25b9bec, type: 3}
   east:

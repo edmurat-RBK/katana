@@ -9,6 +9,7 @@ public class Loot : MonoBehaviour
     [HideInInspector] public float pickupTime;
     public bool isPickup = false;
     public bool isThrow = false;
+    private float floatingEffect = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Loot : MonoBehaviour
     {
         if(pickupTime <= 0)
         {
+            pickupTime = 0;
             Destroy(gameObject);
         }
         else
@@ -30,15 +32,27 @@ public class Loot : MonoBehaviour
                 pickupTime -= Time.deltaTime;
             }
         }
+
+        if(!isPickup && !isThrow)
+        {
+            floatingEffect += 0.05f;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f * Mathf.Sin(floatingEffect), 0f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // Replace with "Walls" tag when created
-        if(!other.CompareTag("Player") && !other.CompareTag("Ennemy") && !other.CompareTag("Spawnpoint") && !other.CompareTag("Basket"))
+        if(!other.CompareTag("Player") && !other.CompareTag("Enemy") && !other.CompareTag("Spawnpoint") && !other.CompareTag("Basket"))
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             isThrow = false;
         }
     }
+
+    public float GetTimeleftinPercentage()
+    {
+        return 1 - (pickupTime / maximumPickupTime);
+    }
+
 }

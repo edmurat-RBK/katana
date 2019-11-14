@@ -41,7 +41,7 @@ BlendTree:
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
   m_BlendParameter: horizontalMove
-  m_BlendParameterY: VerticalMove
+  m_BlendParameterY: verticalMove
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -224,31 +224,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: VerticalMove
+    m_Controller: {fileID: 0}
+  - m_Name: verticalMove
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isDead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isAttacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -353,7 +353,7 @@ BlendTree:
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
   m_BlendParameter: horizontalMove
-  m_BlendParameterY: VerticalMove
+  m_BlendParameterY: verticalMove
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -425,7 +425,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   m_BlendParameter: horizontalMove
-  m_BlendParameterY: VerticalMove
+  m_BlendParameterY: verticalMove
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -525,7 +525,7 @@ BlendTree:
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
   m_BlendParameter: horizontalMove
-  m_BlendParameterY: VerticalMove
+  m_BlendParameterY: verticalMove
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1

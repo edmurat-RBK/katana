@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3886153129633022527}
   - component: {fileID: 3886153129633022526}
   - component: {fileID: 3886153129633022525}
-  - component: {fileID: 3886153129633022512}
-  - component: {fileID: 3886153129633022524}
+  - component: {fileID: 5834332444583154686}
   - component: {fileID: -2406650148927816596}
+  - component: {fileID: 1247913962673637}
   m_Layer: 8
   m_Name: Onion
   m_TagString: Ennemy
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886153129633022515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03737057, y: 0.022092216, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,7 +105,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!95 &3886153129633022512
+--- !u!114 &5834332444583154686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886153129633022515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8441717c1e9ca49a3615f99e38f150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHealth: 5
+  isDead: 0
+  baseSpeed: 2
+  attackDamage: 1
+  attackModifier: 1
+  initialAttackCooldown: 3
+  lootPrefab: {fileID: 6150950775162080428, guid: 7907d66adc2f81548aec844034079b9d,
+    type: 3}
+  lootChance: 1
+  minimumDistance: 0.8
+  attackRadius: 1
+  initialAttackLoad: 0.25
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!58 &-2406650148927816596
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886153129633022515}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.37}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!95 &1247913962673637
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -124,45 +167,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3886153129633022524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3886153129633022515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d16001a93df834497961abce4e70ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maximumHealth: 10
-  health: 10
-  speed: 4
-  attackDamage: 0
-  isAttacking: 0
-  lootPercentage: 0.7
-  loot: {fileID: 6150950775162080428, guid: 7907d66adc2f81548aec844034079b9d, type: 3}
-  target: {fileID: 2309131142747344048, guid: 4d6edd48469c9a149bfbb5f63b40461f, type: 3}
-  rb: {fileID: 0}
-  knockbackPower: 50
-  stoppingDistance: 1
-  onionSpray: {fileID: 0}
-  pos: {fileID: 0}
-  isDead: 0
---- !u!58 &-2406650148927816596
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3886153129633022515}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.37}
-  serializedVersion: 2
-  m_Radius: 0.3
