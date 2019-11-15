@@ -114,8 +114,9 @@ GameObject:
   - component: {fileID: 8108098142860748109}
   - component: {fileID: 8108098142860748108}
   - component: {fileID: 8108098142860748110}
+  - component: {fileID: -3914454739603916709}
   m_Layer: 10
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,3 +291,17 @@ MonoBehaviour:
     m_Bits: 512
   isHolding: 0
   throwForce: 20
+--- !u!114 &-3914454739603916709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108098142860748115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d7360f32836964e888c134a2c68caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  props: []
+  player: {fileID: 8108098142860748115}

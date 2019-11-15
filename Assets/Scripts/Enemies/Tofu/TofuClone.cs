@@ -98,6 +98,6 @@ public class TofuClone : NewEnemy
         if(eventMessage.Equals("Death"))
         {
             Destroy(gameObject);
-        }
+        }   
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Loot
   - Basket
   - Enemy
+  - Prop
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Enemy
   - Loot
   - Player
-  - 
+  - Props
   - 
   - 
   - 
