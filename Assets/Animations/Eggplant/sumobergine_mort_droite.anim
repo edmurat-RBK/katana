@@ -80,8 +80,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.25
-    functionName: OnDeathAnimation()
-    data: 
+    functionName: GetAnimationEvent
+    data: Death
     objectReferenceParameter: {fileID: 4921765077664995641, guid: fb3e57ea2205cc849aa9917b188ceda5,
       type: 3}
     floatParameter: 0

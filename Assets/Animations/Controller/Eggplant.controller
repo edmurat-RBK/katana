@@ -112,7 +112,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5a66d8fd47e945845bc883b61871f901, type: 2}
+    m_Motion: {fileID: 7400000, guid: dcd4d8742e985054fafb0288e9983d92, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -120,7 +120,7 @@ BlendTree:
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: dcd4d8742e985054fafb0288e9983d92, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5a66d8fd47e945845bc883b61871f901, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -143,8 +143,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
-  m_BlendParameter: horizontalMove
-  m_BlendParameterY: verticalMove
+  m_BlendParameter: horizontalOrientation
+  m_BlendParameterY: verticalOrientation
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -175,7 +175,7 @@ BlendTree:
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4d844413005f47e429b99c8dcf128e1d, type: 2}
+    m_Motion: {fileID: 7400000, guid: 958da897564e46342b7afab076713816, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -190,8 +190,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
-  m_BlendParameter: horizontalMove
-  m_BlendParameterY: verticalMove
+  m_BlendParameter: horizontalMovement
+  m_BlendParameterY: verticalMovement
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -237,8 +237,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: horizontalMove
     m_Mirror: 0
-  m_BlendParameter: horizontalMove
-  m_BlendParameterY: verticalMove
+  m_BlendParameter: horizontalOrientation
+  m_BlendParameterY: verticalOrientation
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -253,13 +253,13 @@ AnimatorController:
   m_Name: Eggplant
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: horizontalMove
+  - m_Name: horizontalMovement
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: verticalMove
+  - m_Name: verticalMovement
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -272,6 +272,24 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: isAttacking
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: horizontalOrientation
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: verticalOrientation
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
