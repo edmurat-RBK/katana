@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd0e7146e7ae0c48b518bc658fd091e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot: {fileID: 0}
+  loot: {fileID: 3733254773928840157}
   showTime: 0
   bars:
   - {fileID: -6054405315666829412, guid: 8f500d64163d81b479501b9ee40c1026, type: 3}

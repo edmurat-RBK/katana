@@ -47,7 +47,7 @@ public class Eggplant : NewEnemy
         {
             shockwave.radius += speedShockWave * Time.deltaTime;
         }
-        else if (shockwave.radius >= stoppingDistance + sizeDiffShock)
+        if (shockwave.radius >= stoppingDistance + sizeDiffShock)
         {
             startShockwave = false;
             shockwave.radius = 0;
@@ -91,6 +91,7 @@ public class Eggplant : NewEnemy
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shockwave.radius);
+        Gizmos.DrawWireSphere(transform.position, stoppingDistance);
     }
 
     public void GetAnimationEvent(string eventMessage)
