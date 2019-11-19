@@ -12,7 +12,7 @@ public class Eggplant : NewEnemy
     public float stoppingDistance;
 
     //Shockwave
-    public float shockwaveCooldown;
+    private float shockwaveCooldown;
     CircleCollider2D shockwave;
     public float sizeDiffShock;   
     public float speedShockWave;
@@ -24,7 +24,7 @@ public class Eggplant : NewEnemy
         OnStart();
         target = player.transform ;
         shockwave = GetComponent<CircleCollider2D>();
-        attackCooldown = initialAttackCooldown;
+        shockwaveCooldown = initialAttackCooldown;
         startShockwave = false;
     }
 
@@ -94,12 +94,22 @@ public class Eggplant : NewEnemy
         Gizmos.DrawWireSphere(transform.position, stoppingDistance);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            Debug.Log("TakeDamage");
+            player.GetComponent<Player>().TakeDamage(attackDamage);
+        }
+        
+    }
+
     public void GetAnimationEvent(string eventMessage)
     {
         if (eventMessage.Equals("AttackEnded"))
         {
             startShockwave = true;
-            attackCooldown = initialAttackCooldown;
+            shockwaveCooldown = initialAttackCooldown;
             anim.SetBool("isAttacking", false);
         }
 
