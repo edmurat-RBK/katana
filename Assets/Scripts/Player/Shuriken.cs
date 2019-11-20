@@ -20,6 +20,7 @@ public class Shuriken : MonoBehaviour
     private float lifetime;
     public float rotationSpeed = 0.01f;
     public float attackDamage = 0.5f;
+    public int shurikenDamage; 
 
     
     void Start()
@@ -54,4 +55,20 @@ public class Shuriken : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<NewEnemy>().TakeDamage(shurikenDamage);
+            collision.gameObject.GetComponent<Animator>().SetBool("isDamage", true);
+        }
+        
+        if(!collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
