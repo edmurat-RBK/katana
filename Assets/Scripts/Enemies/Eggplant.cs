@@ -16,6 +16,7 @@ public class Eggplant : NewEnemy
     CircleCollider2D shockwave;
     public float sizeDiffShock;   
     public float speedShockWave;
+    private bool isAttacking = false;
 
 
     // Start is called before the first frame update
@@ -51,12 +52,13 @@ public class Eggplant : NewEnemy
         {
             startShockwave = false;
             shockwave.radius = 0;
+            isAttacking = false;
         }
     }
 
     void Movement()
     {   
-        if (Vector3.Distance(transform.position, target.position) >= stoppingDistance)
+        if (Vector3.Distance(transform.position, target.position) >= stoppingDistance && !isAttacking)
         {
             rb.velocity = (player.transform.position - transform.position).normalized * (baseSpeed * speedModifier);
             anim.SetBool("isMoving", true);
@@ -66,7 +68,14 @@ public class Eggplant : NewEnemy
         {
             rb.velocity = Vector2.zero;
             anim.SetBool("isMoving", false);
-        }    
+        }   
+        
+        if(isAttacking)
+        {
+            rb.velocity = Vector2.zero;
+            anim.SetBool("isMoving", false);
+        }
+        
     }
 
     void EggplantAttack()
@@ -78,13 +87,14 @@ public class Eggplant : NewEnemy
                 if(shockwaveCooldown <= 0)
                 {
                     anim.SetBool("isAttacking", true);
+                    isAttacking = true;
                 }
                 else
                 {
                     shockwaveCooldown -= Time.deltaTime;
                 }
 
-            }  
+            }        
     }
 
     private void OnDrawGizmos()
