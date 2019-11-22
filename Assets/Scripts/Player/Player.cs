@@ -349,7 +349,16 @@ public class Player : MonoBehaviour
             switch (itemHold.GetComponent<Loot>().item)
             {
                 case Item.ONION:
-                    // Onion effet 
+                    health++;
+                    break;
+                case Item.WATERMELON:
+                    health++;
+                    break;
+                case Item.TOFU:
+                    health = health+2;
+                    break;
+                case Item.EGGPLANT:
+                    health = health+2;
                     break;
                 default:
                     //Do nothing
