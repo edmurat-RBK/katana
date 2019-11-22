@@ -47,11 +47,26 @@ public class Player : MonoBehaviour
     public LayerMask lootLayerMask;
     [HideInInspector] public bool isHolding = false;
     public float throwForce = 20f;
+    //manger loot
+    private bool underOnionEffect = false;
+    private bool underWatermelonEffect = false;
+    private bool underTofuEffect = false;
+    private bool underEggplantEffect = false;
+    //loot effects
+    private float waterMelonEffectCooldown;
+    public float initWaterMelonEffectCooldown ;
+    public float waterMelonSpeedBoost ;
+    public float watermelonDashCooldown;
+    private float originalSpeedModifier;
+    private float originalInitialDashCooldown;
+
 
 
 
     void Start()
     {
+        originalInitialDashCooldown = initialDashCooldown;
+        originalSpeedModifier = speedModifier;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -104,6 +119,11 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isDead", true);
         }   
+    }
+
+    void FixedUpdate()
+    {
+        lootEatEffects();
     }
 
 
@@ -350,15 +370,19 @@ public class Player : MonoBehaviour
             {
                 case Item.ONION:
                     health++;
+                    underOnionEffect = true;
                     break;
                 case Item.WATERMELON:
-                    health++;
+                    waterMelonEffectCooldown = initWaterMelonEffectCooldown;
+                    underWatermelonEffect = true;
                     break;
                 case Item.TOFU:
                     health = health+2;
+                    underTofuEffect = true;
                     break;
                 case Item.EGGPLANT:
                     health = health+2;
+                    underEggplantEffect = true;
                     break;
                 default:
                     //Do nothing
@@ -371,6 +395,23 @@ public class Player : MonoBehaviour
             Destroy(itemHold);
         }
 
+    }
+    private void lootEatEffects()
+    {
+        if (underWatermelonEffect == true)
+        {
+            if (waterMelonEffectCooldown > 0) //on augmente la vitesse mais on augmente le CD d
+            {
+                speedModifier = waterMelonSpeedBoost;
+                initialDashCooldown = watermelonDashCooldown;
+                waterMelonEffectCooldown--;
+            }
+            else // on reinitialise tt
+            {
+                initialDashCooldown = originalInitialDashCooldown;
+                speedModifier = originalSpeedModifier;
+            }
+        }
     }
 
     private void Statistics()
