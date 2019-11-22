@@ -270,8 +270,8 @@ MonoBehaviour:
   speed: 5
   speedModifier: 1
   dashSpeed: 45
-  initialDashTime: 0.05
-  initialDashCooldown: 1
+  initialDashTime: 0.08
+  initialDashCooldown: 0.7
   attackMeleeDamage: 2
   attackMeleeRange: 0.3
   attackMeleeRadius: 0.5
@@ -279,11 +279,12 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  initialAttackMeleeCooldown: 0.1
+  initialAttackMeleeCooldown: 0.05
   projectilePrefab: {fileID: 3782794491880227671, guid: 64fc6f1e9c9133e4c9a0c8749de23002,
     type: 3}
   projectileCount: 3
-  initialAttackRangeCooldown: 4
+  initialAttackRangeCooldown: 0.5
+  projectileSpeed: 1000
   itemHold: {fileID: 0}
   itemPickupable: []
   lootLayerMask:
@@ -303,5 +304,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d7360f32836964e888c134a2c68caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  props: []
-  player: {fileID: 8108098142860748115}

@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     private float attackRangeCooldown;
     public float initialAttackRangeCooldown = 4f;
     private bool isRangeAttacking = false;
+    public float projectileSpeed;
+    private Transform projectileOrigin;
+    private float heldTimer = 0;
     // Hold
     public GameObject itemHold;
     public Collider2D[] itemPickupable;
@@ -67,10 +70,9 @@ public class Player : MonoBehaviour
         {
             Statistics();
 
-            if (!isMeleeAttacking)
-            {
-                Move();
-            }
+            
+            Move();
+            
 
             if (!isMeleeAttacking)
             {
@@ -226,7 +228,6 @@ public class Player : MonoBehaviour
                     {
                         enemiesHit[i].GetComponent<NewEnemy>().TakeDamage(attackMeleeDamage);
                     }
-
                 }
             }
             else
@@ -237,10 +238,6 @@ public class Player : MonoBehaviour
                     attackMeleeCooldown = 0;
                 }
             }
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
         }
 
         // Animation
@@ -266,28 +263,38 @@ public class Player : MonoBehaviour
         {
             if(inputRange)
             {
-                Debug.Log("SHURIKEN");
-                if (Input.GetAxis("Horizontal") >= Math.Sqrt(2) / 2)
-                {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.EAST;
-                }
-                else if (Input.GetAxis("Horizontal") <= -Math.Sqrt(2) / 2)
-                {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x - 0.5f, transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.WEST;
-                }
-                else if (Input.GetAxis("Vertical") >= Math.Sqrt(2) / 2)
-                {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y + 0.5f, 0f), Quaternion.identity);
-                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.NORTH;
-                }
-                else if (Input.GetAxis("Vertical") <= -Math.Sqrt(2) / 2)
-                {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y - 0.5f, 0f), Quaternion.identity);
-                    instance.GetComponent<Shuriken>().direction = Shuriken.Direction.SOUTH;
-                }
+                heldTimer = Time.time;
+            }
 
+            if(Input.GetButtonUp("RangeAttack"))
+            {
+                float elapsedTime = Time.time - heldTimer;
+                Vector3 directionOffset = new Vector3(0.1f, 0.1f, 0f);
+
+                if (elapsedTime < 0.4f) 
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f))).normalized * projectileSpeed);     
+                }
+                else if (elapsedTime > 1f && elapsedTime <2f)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) + directionOffset).normalized * projectileSpeed);
+
+                    GameObject instance2 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
+                    instance2.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) - directionOffset).normalized * projectileSpeed);
+                }
+                else if(elapsedTime > 2f)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f))).normalized * projectileSpeed);
+
+                    GameObject instance3 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
+                    instance3.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) + directionOffset).normalized * projectileSpeed);
+
+                    GameObject instance2 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
+                    instance2.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) - directionOffset).normalized * projectileSpeed);
+                }
                 attackRangeCooldown = initialAttackRangeCooldown;
             }
         }
@@ -301,7 +308,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Pickup()
+    private void Pickup() 
     {
         itemPickupable = Physics2D.OverlapCircleAll(transform.position, 1f, lootLayerMask);
 

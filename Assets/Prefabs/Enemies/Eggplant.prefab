@@ -101,15 +101,16 @@ MonoBehaviour:
   maximumHealth: 20
   isDead: 0
   baseSpeed: 1.5
+  realSpeed: 0
   attackDamage: 4
   attackModifier: 1
-  initialAttackCooldown: 2
+  initialAttackCooldown: 1
   lootPrefab: {fileID: 3733254773928840157, guid: 087f90e3626d90945bb8a8513d776eb7,
     type: 3}
   lootChance: 0.8
   stoppingDistance: 3
   sizeDiffShock: 1
-  speedShockWave: 5
+  speedShockWave: 10
 --- !u!95 &488115363778775761
 Animator:
   serializedVersion: 3

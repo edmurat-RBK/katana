@@ -15,6 +15,9 @@ public class NewEnemy : MonoBehaviour
     // Movement
     public float baseSpeed;
     protected float speedModifier = 1f;
+    public float realSpeed;
+    Vector3 mLastPosition;
+
     // Attack
     public float attackDamage;
     public float attackModifier = 1f;
@@ -54,6 +57,9 @@ public class NewEnemy : MonoBehaviour
             Loot();
             Death();
         }
+
+        //float realSpeed = (transform.position - this.mLastPosition).magnitude / elapsedTime;
+        //this.mLastPosition = transform.position;
     }
 
     public void DealDamage()
