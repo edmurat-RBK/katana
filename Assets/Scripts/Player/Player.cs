@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     private bool underWatermelonEffect = false;
     private bool underTofuEffect = false;
     private bool underEggplantEffect = false;
+    public GameObject fxMarker;
     //loot effects
     private float waterMelonEffectCooldown;
     public float initWaterMelonEffectCooldown ;
@@ -289,6 +290,7 @@ public class Player : MonoBehaviour
             if(Input.GetButtonUp("RangeAttack"))
             {
                 float elapsedTime = Time.time - heldTimer;
+                Debug.Log(elapsedTime);
                 Vector3 directionOffset = new Vector3(0.1f, 0.1f, 0f);
 
                 if (elapsedTime < 0.4f) 
@@ -315,6 +317,7 @@ public class Player : MonoBehaviour
                     GameObject instance2 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
                     instance2.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) - directionOffset).normalized * projectileSpeed);
                 }
+                elapsedTime = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
             }
         }
@@ -372,7 +375,7 @@ public class Player : MonoBehaviour
     private void Consume()
     {
         if (Input.GetButtonDown("Consume"))
-        {
+        {  
             switch (itemHold.GetComponent<Loot>().item)
             {
                 case Item.ONION:
@@ -397,6 +400,7 @@ public class Player : MonoBehaviour
             }
 
             isHolding = false;
+            fxMarker.GetComponent<Animator>().SetBool("isConsuming", true);
             anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
