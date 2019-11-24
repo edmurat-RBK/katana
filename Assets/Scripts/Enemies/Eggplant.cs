@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eggplant : NewEnemy
+public class Eggplant : Enemy
 {
     //public float t;
     bool startShockwave;

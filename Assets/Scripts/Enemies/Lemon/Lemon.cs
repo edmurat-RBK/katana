@@ -16,8 +16,6 @@ public class Lemon : Enemy
     private Transform               targetTransform;
     [SerializeField] private float  detectionRadius;
 
-    //Animator-----------------------------------------------------------
-    private Animator                anim;
 
 
     //Shoot--------------------------------------------------------------
@@ -31,10 +29,10 @@ public class Lemon : Enemy
 
     private void Start()
     {
+        OnStart();
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        targetTransform = target.transform;
+        targetTransform = player.transform;
         rate = initRate;
     }
 
@@ -85,12 +83,12 @@ public class Lemon : Enemy
     {
         if (Mathf.Abs(targ.position.x - transform.position.x) > Mathf.Abs(targ.position.y - transform.position.y))
         {
-            rb.velocity = new Vector2(0f, (targ.position.y - transform.position.y)) * speed;
+            rb.velocity = new Vector2(0f, (targ.position.y - transform.position.y)) * baseSpeed;
             anim.SetBool("isMoving", true);
         }
         else
         {
-            rb.velocity = new Vector2((targ.position.x - transform.position.x), 0f) * speed;
+            rb.velocity = new Vector2((targ.position.x - transform.position.x), 0f) * baseSpeed;
             anim.SetBool("isMoving", true);
         }
     }

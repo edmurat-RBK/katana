@@ -247,7 +247,7 @@ public class Player : MonoBehaviour
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
                     for (int i = 0; i < enemiesHit.Length; i++)
                     {
-                        enemiesHit[i].GetComponent<NewEnemy>().TakeDamage(attackMeleeDamage);
+                        enemiesHit[i].GetComponent<Enemy>().TakeDamage(attackMeleeDamage);
                     }
                 }
             }

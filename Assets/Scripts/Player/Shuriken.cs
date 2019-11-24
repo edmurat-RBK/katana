@@ -34,7 +34,7 @@ public class Shuriken : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<NewEnemy>().TakeDamage(shurikenDamage);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(shurikenDamage);
             collision.gameObject.GetComponent<Animator>().SetBool("isDamage", true);
         }
         

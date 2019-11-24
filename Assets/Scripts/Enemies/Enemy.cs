@@ -4,57 +4,101 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // Component
+    protected Rigidbody2D rb;
+    protected Animator anim;
+    protected GameObject player;
+    // Health
     public float maximumHealth;
-    [HideInInspector]
-    public float health;
-    public float speed;
-    public float attackDamage;
-    public bool isAttacking;
-    private float lootChance; //proba de drop init au spawn du mob
-    public float lootPercentage; // proba de drop attaché à un type d'ennemi
-    public GameObject loot;
-    [HideInInspector]
-    public GameObject target;
-    [HideInInspector]
-    public Rigidbody2D rb;
-    public float knockbackPower;
+    protected float health;
+    [HideInInspector] public bool isDead = false;
+    // Movement
+    public float baseSpeed;
+    protected float speedModifier = 1f;
+    public float realSpeed;
+    Vector3 mLastPosition;
 
-    void Start()
+    // Attack
+    public float attackDamage;
+    public float attackModifier = 1f;
+    protected float attackCooldown;
+    public float initialAttackCooldown;
+    // Loot
+    public GameObject lootPrefab;
+    public float lootChance;
+
+    public void OnStart()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
         health = maximumHealth;
-        target = GameObject.FindGameObjectWithTag("Player");       
     }
-    
-    //Don't use the Update method in this script, call this script's methods in the other realted scripts (onionbehaviour, watermelon behaviour...)
-    public void TakeDamage(float damage)
+
+    public void OnUpdate()
     {
-        health -= damage; 
+        if (attackCooldown > 0)
+        {
+            attackCooldown -= Time.deltaTime;
+            if (attackCooldown < 0)
+            {
+                attackCooldown = 0;
+            }
+        }
+
+        if (health <= 0)
+        {
+            anim.SetBool("isDead", true);
+        }
+
+        if (isDead)
+        {
+            Loot();
+            Death();
+        }
+
+        //float realSpeed = (transform.position - this.mLastPosition).magnitude / elapsedTime;
+        //this.mLastPosition = transform.position;
+    }
+
+    public void DealDamage()
+    {
+        player.GetComponent<Player>().health -= attackDamage;
+        attackCooldown = initialAttackCooldown;
+    }
+
+    public void TakeDamage(float damageDealtByOther)
+    {
+        health -= damageDealtByOther;
+        anim.SetBool("isDamage", true);
+        attackCooldown = initialAttackCooldown;
     }
 
     public void Loot()
     {
-        lootChance = Random.Range(0f, 1f);
-        if (lootChance <= lootPercentage)
+        float lootProbability = Random.Range(0f, 1f);
+        if (lootChance >= lootProbability)
         {
-            Instantiate(loot, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(lootPrefab, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         }
     }
 
-    public void OnDeath()
+    public void OnDeathAnimation()
     {
-        if (health <= 0)
-        {
-            // Death animation event
-            Loot();
-            Destroy(gameObject); //pour l'instant
-        }
+        isDead = true;
     }
 
-    public void Knockback()
+    public void Death()
     {
-        rb.AddForce(-rb.velocity.normalized * knockbackPower, ForceMode2D.Impulse);
+        Destroy(gameObject);
     }
 
-   
+    public void Orientation()
+    {
+        float horizontalOrientation = player.transform.position.x - transform.position.x;
+        float verticalOrientation = player.transform.position.y - transform.position.y;
+        anim.SetFloat("verticalOrientation", verticalOrientation);
+        anim.SetFloat("horizontalOrientation", horizontalOrientation);
+    }
 }

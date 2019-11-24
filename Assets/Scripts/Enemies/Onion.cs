@@ -4,58 +4,97 @@ using UnityEngine;
 
 public class Onion : Enemy
 {
-    private Animator        anim;
-    public float            stoppingDistance;
-    public ParticleSystem   onionSpray;
-    public Transform        pos;
-    public bool             isDead = false;
+    public float minimumDistance;
+    public float attackRadius;
+    public float initialAttackLoad = 0.2f;
+    private float attackLoad;
+    private bool atAttackRange = true;
+    private bool isAttacking = false;
+    public LayerMask playerLayerMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player");
-        pos = target.transform;
-        rb = GetComponent<Rigidbody2D>();
+        OnStart();
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        Movement();
-        anim.SetFloat("horizontalMove", rb.velocity.x);
-        anim.SetFloat("verticalMove", rb.velocity.y);
-        if (health <= 0 && !isDead)
-        {
-            Loot();
-            Destroy(gameObject);
-            isDead = true;
-        }
+        OnUpdate();
 
-    }
-
-
-    private void Movement()
-    {
         if (!isAttacking)
         {
-            if (Vector2.Distance(transform.position, pos.position) > stoppingDistance)
-            {
-                rb.velocity = (pos.position - transform.position).normalized * speed;
-            }
-            else
-            {
-                rb.velocity = Vector2.zero;
-            }
-            
+            Move();
         }
 
+        Attack();
+        Orientation();
+    }
+
+    private void Move()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > minimumDistance)
+        {
+            rb.velocity = (player.transform.position - transform.position).normalized * (baseSpeed * speedModifier);
+            atAttackRange = false;
+        }
         else
         {
             rb.velocity = Vector2.zero;
+            atAttackRange = true;
         }
+
+        //Animation
+        anim.SetFloat("horizontalMove", rb.velocity.x);
+        anim.SetFloat("verticalMove", rb.velocity.y);
     }
 
+    private void Attack()
+    {
+        if (attackCooldown <= 0)
+        {
+            if (atAttackRange)
+            {
+                attackLoad -= Time.deltaTime;
+                if (attackLoad <= 0)
+                {
+                    isAttacking = true;
+                    attackCooldown = initialAttackCooldown;
+                    if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
+                    {
+                        player.GetComponent<Player>().TakeDamage(attackDamage);
+                    }
+                }
+            }
+            else
+            {
+                attackLoad = initialAttackLoad;
+            }
+        }
+        else
+        {
+            attackCooldown -= Time.deltaTime;
+            if (attackCooldown <= 0)
+            {
+                attackCooldown = 0;
+            }
+        }
 
-    
+        // Animation
+        anim.SetBool("isAttacking", isAttacking);
+    }
+
+    public void GetAnimationEvent(string eventMessage)
+    {
+        if (eventMessage.Equals("AttackEnded"))
+        {
+            isAttacking = false;
+        }
+
+        if (eventMessage.Equals("Hit"))
+        {
+            anim.SetBool("isDamage", false);
+        }
+    }
 }

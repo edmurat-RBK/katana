@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Watermelon : NewEnemy
+public class Watermelon : Enemy
 {
 
     [SerializeField]

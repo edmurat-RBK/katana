@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tofu : NewEnemy
+public class Tofu : Enemy
 { 
     //Clone Spawning
     float SpawnCooldown;

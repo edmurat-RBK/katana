@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TofuClone : NewEnemy
+public class TofuClone : Enemy
 {
     
     public float timetodeath = 100;
