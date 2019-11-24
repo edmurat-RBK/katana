@@ -57,9 +57,6 @@ public class Enemy : MonoBehaviour
             Loot();
             Death();
         }
-
-        //float realSpeed = (transform.position - this.mLastPosition).magnitude / elapsedTime;
-        //this.mLastPosition = transform.position;
     }
 
     public void DealDamage()

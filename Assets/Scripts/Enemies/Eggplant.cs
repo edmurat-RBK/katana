@@ -33,9 +33,10 @@ public class Eggplant : Enemy
     void Update()
     {
         OnUpdate();
-        EggplantAttack();
 
+        EggplantAttack();
         Movement();
+
         Orientation();
 
         anim.SetFloat("horizontalMovement", rb.velocity.x);

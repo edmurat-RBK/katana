@@ -291,34 +291,36 @@ public class Player : MonoBehaviour
             {
                 float elapsedTime = Time.time - heldTimer;
                 Debug.Log(elapsedTime);
-                Vector3 directionOffset = new Vector3(0.1f, 0.1f, 0f);
+                Vector3 directionOffset = new Vector3(0.0f, 0.0f, 0f);
+                Vector3 direction = gameObject.transform.position + new Vector3(0f, 0.5f, 0f);
 
-                if (elapsedTime < 0.4f) 
+                if (elapsedTime <= 1f) 
                 {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f))).normalized * projectileSpeed);     
+                    projectileCount = 1;
                 }
-                else if (elapsedTime > 1f && elapsedTime <2f)
+                else if (elapsedTime > 1f && elapsedTime <= 2f)
                 {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
-                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) + directionOffset).normalized * projectileSpeed);
+                    projectileCount = 2;
+                    directionOffset = new Vector3(0.1f, 0.1f, 0f);
 
-                    GameObject instance2 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
-                    instance2.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) - directionOffset).normalized * projectileSpeed);
                 }
                 else if(elapsedTime > 2f)
                 {
+                    projectileCount = 2;
                     GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f))).normalized * projectileSpeed);
-
-                    GameObject instance3 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
-                    instance3.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) + directionOffset).normalized * projectileSpeed);
-
-                    GameObject instance2 = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f) + directionOffset, Quaternion.identity);
-                    instance2.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (gameObject.transform.position + new Vector3(0f, 0.5f, 0f)) - directionOffset).normalized * projectileSpeed);
+                    instance.GetComponent<Rigidbody2D>().AddForce(((attackMeleeMarker.transform.position - direction)).normalized * projectileSpeed);
+                    directionOffset = new Vector3(0.1f, 0.1f, 0f);
                 }
+
                 elapsedTime = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
+
+                for(int i = 0; i <= projectileCount; i++)
+                {
+                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce(((attackMeleeMarker.transform.position - direction) + directionOffset).normalized * projectileSpeed);
+                    directionOffset *= -1;
+                }
             }
         }
         else
