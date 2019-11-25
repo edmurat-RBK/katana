@@ -130,7 +130,13 @@ public class Player : MonoBehaviour
         lootEatEffects();
     }
 
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("StartRun"))
+        {
+            SceneManager.LoadScene("SandboxScene");
+        }
+    }
 
     private void Move()
     {

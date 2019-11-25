@@ -7,7 +7,7 @@ public class TitleScreen : MonoBehaviour
 {
     public void OnNewGame()
     {
-        SceneManager.LoadScene("SandboxScene");
+        SceneManager.LoadScene("HubScene");
     }
 
     public void OnOptions()

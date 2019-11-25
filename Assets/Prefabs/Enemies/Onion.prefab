@@ -167,4 +167,4 @@ MonoBehaviour:
   initialAttackLoad: 0.25
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024

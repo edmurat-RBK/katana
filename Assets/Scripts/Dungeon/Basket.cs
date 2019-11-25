@@ -17,15 +17,19 @@ public class Basket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Pik 0");
         if(other.CompareTag("Loot"))
         {
-            if(other.GetComponent<Loot>().isThrow)
+            Debug.Log("Pik 1");
+            if (other.GetComponent<Loot>().isThrow)
             {
+                Debug.Log("Pik 21");
                 gameManager.fridgeInventory.Add(other.GetComponent<Loot>().item);
                 Destroy(other.gameObject);
             }
             else if(other.GetComponent<Loot>().isPickup)
             {
+                Debug.Log("Pik 22");
                 gameManager.fridgeInventory.Add(other.GetComponent<Loot>().item);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isHolding = false;
                 playerAnim.SetBool("isHolding", false);
