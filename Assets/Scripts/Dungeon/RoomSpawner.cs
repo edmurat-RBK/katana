@@ -40,7 +40,7 @@ public class RoomSpawner : MonoBehaviour
         {
             if (northDoor)
             {
-                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x, transform.position.y + 18.667f, 0f), Quaternion.identity);
+                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x, transform.position.y + 11f, 0f), Quaternion.identity);
                 newInstance.GetComponent<RoomSpawner>().roomDistance = roomDistance + 1;
                 newInstance.GetComponent<RoomSpawner>().originSouth = true;
                 float rdm1 = Random.Range(0f, 1f);
@@ -100,7 +100,7 @@ public class RoomSpawner : MonoBehaviour
 
             if (eastDoor)
             {
-                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x + 29.334f, transform.position.y, 0f), Quaternion.identity);
+                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x + 17f, transform.position.y, 0f), Quaternion.identity);
                 newInstance.GetComponent<RoomSpawner>().roomDistance = roomDistance + 1;
                 newInstance.GetComponent<RoomSpawner>().originWest = true;
                 float rdm1 = Random.Range(0f, 1f);
@@ -160,7 +160,7 @@ public class RoomSpawner : MonoBehaviour
 
             if (southDoor)
             {
-                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x, transform.position.y - 18.667f, 0f), Quaternion.identity);
+                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x, transform.position.y - 11f, 0f), Quaternion.identity);
                 newInstance.GetComponent<RoomSpawner>().roomDistance = roomDistance + 1;
                 newInstance.GetComponent<RoomSpawner>().originNorth = true;
                 float rdm1 = Random.Range(0f, 1f);
@@ -220,7 +220,7 @@ public class RoomSpawner : MonoBehaviour
 
             if (westDoor)
             {
-                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x - 29.334f, transform.position.y, 0f), Quaternion.identity);
+                GameObject newInstance = Instantiate(template.spawnpointPrefab, new Vector3(transform.position.x - 17f, transform.position.y, 0f), Quaternion.identity);
                 newInstance.GetComponent<RoomSpawner>().roomDistance = roomDistance + 1;
                 newInstance.GetComponent<RoomSpawner>().originEast = true;
                 float rdm1 = Random.Range(0f, 1f);
@@ -278,7 +278,7 @@ public class RoomSpawner : MonoBehaviour
                 }
             }
 
-            Instantiate(template.basketPrefab, new Vector3(transform.position.x + Random.Range(-6.04f, 6.04f), transform.position.y + Random.Range(-3.48f, 3.48f), 0f), Quaternion.identity);
+            //Instantiate(template.basketPrefab, new Vector3(transform.position.x + Random.Range(-6.04f, 6.04f), transform.position.y + Random.Range(-3.48f, 3.48f), 0f), Quaternion.identity);
 
             spawned = true;
         }
