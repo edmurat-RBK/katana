@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Prop
   - EnemySpawner
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -163,7 +163,7 @@ MonoBehaviour:
     type: 3}
   lootChance: 0.4
   minimumDistance: 1
-  attackRadius: 0.1
+  attackRadius: 0.5
   initialAttackLoad: 0.25
   playerLayerMask:
     serializedVersion: 2

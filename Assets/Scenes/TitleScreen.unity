@@ -466,8 +466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 360.2, y: 96.9}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 95.63001}
+  m_SizeDelta: {x: 459.64, y: 191.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610170053
 MonoBehaviour:
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 111c020527399ee408fa0f06108c7922, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5497462d511d60841ae09537264caf61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 837631422}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6b711421169d747b6ae1dda71f3ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fridgeInventory: 
 --- !u!4 &837631423
 Transform:
   m_ObjectHideFlags: 0
@@ -848,7 +849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d22bccd237b4ae48b4667f75cf8a426, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 742a2b4d664a4f14abb1653067417ca4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
