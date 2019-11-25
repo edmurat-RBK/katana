@@ -16,12 +16,29 @@ public class CameraRecenter : MonoBehaviour
         travellingSpeed = 0.08f;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
             nextPositionX = transform.position.x;
             nextPositionY = transform.position.y;
+
+            GameObject parent = transform.parent.gameObject;
+            Transform[] tsfm = parent.GetComponentsInChildren<Transform>();
+            List<GameObject> children = new List<GameObject>();
+            foreach(Transform child in tsfm)
+            {
+                if (child.tag == "EnemySpawner")
+                { 
+                    children.Add(child.gameObject);
+                }
+            }
+
+            foreach(GameObject go in children)
+            {
+                go.GetComponent<EnemySpawner>().ActivateSpawn();
+                Destroy(go);
+            }
         }
     }
 
