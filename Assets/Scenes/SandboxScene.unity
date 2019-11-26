@@ -187,6 +187,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: initWaterMelonEffectCooldown
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: waterMelonSpeedBoost
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: watermelonDashCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2542101673248869533, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1036,7 +1051,7 @@ RectTransform:
   - {fileID: 1405274294}
   - {fileID: 230710423}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1365,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 7508504650060563590, guid: 890229ec28587354d963f8f375adbc09,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7508504650060563590, guid: 890229ec28587354d963f8f375adbc09,
         type: 3}

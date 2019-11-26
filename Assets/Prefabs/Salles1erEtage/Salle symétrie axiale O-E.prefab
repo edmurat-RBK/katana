@@ -2841,12 +2841,12 @@ PrefabInstance:
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.56
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.71
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
@@ -2913,6 +2913,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9080413744298453339}
     m_Modifications:
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2968,11 +2973,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
 --- !u!4 &4261927701517198644 stripped
@@ -2988,6 +2988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9080413744298453339}
     m_Modifications:
+    - target: {fileID: 703297191499481146, guid: 294fe3478c081f7479f4545e9a238f11,
+        type: 3}
+      propertyPath: m_Name
+      value: Watermelon Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 703297191499481126, guid: 294fe3478c081f7479f4545e9a238f11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3043,11 +3048,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 703297191499481146, guid: 294fe3478c081f7479f4545e9a238f11,
-        type: 3}
-      propertyPath: m_Name
-      value: Watermelon Spawner
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294fe3478c081f7479f4545e9a238f11, type: 3}
 --- !u!4 &4718371135753424124 stripped
@@ -3063,6 +3063,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9080413744298453339}
     m_Modifications:
+    - target: {fileID: 703297191499481146, guid: 294fe3478c081f7479f4545e9a238f11,
+        type: 3}
+      propertyPath: m_Name
+      value: Watermelon Spawner (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 703297191499481126, guid: 294fe3478c081f7479f4545e9a238f11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3118,11 +3123,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 703297191499481146, guid: 294fe3478c081f7479f4545e9a238f11,
-        type: 3}
-      propertyPath: m_Name
-      value: Watermelon Spawner (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294fe3478c081f7479f4545e9a238f11, type: 3}
 --- !u!4 &6365419341178621550 stripped
@@ -3138,6 +3138,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9080413744298453339}
     m_Modifications:
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3192,11 +3197,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
