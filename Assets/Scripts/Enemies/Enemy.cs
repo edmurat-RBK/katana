@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public float attackModifier = 1f;
     protected float attackCooldown;
     public float initialAttackCooldown;
+    public bool isAttacking = false;
     // Loot
     public GameObject lootPrefab;
     public float lootChance;
@@ -62,14 +63,16 @@ public class Enemy : MonoBehaviour
     public void DealDamage()
     {
         player.GetComponent<Player>().health -= attackDamage;
-        attackCooldown = initialAttackCooldown;
     }
 
     public void TakeDamage(float damageDealtByOther)
     {
-        health -= damageDealtByOther;
-        anim.SetBool("isDamage", true);
-        attackCooldown = initialAttackCooldown;
+        if (health > 0)
+        {
+            health -= damageDealtByOther;
+            anim.SetBool("isDamage", true);
+            attackCooldown = initialAttackCooldown;
+        }    
     }
 
     public void Loot()

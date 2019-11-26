@@ -16,7 +16,7 @@ public class Eggplant : Enemy
     CircleCollider2D shockwave;
     public float sizeDiffShock;   
     public float speedShockWave;
-    private bool isAttacking = false;
+
 
 
     // Start is called before the first frame update
@@ -89,6 +89,7 @@ public class Eggplant : Enemy
                 {
                     anim.SetBool("isAttacking", true);
                     isAttacking = true;
+                    gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 }
                 else
                 {
@@ -121,6 +122,7 @@ public class Eggplant : Enemy
             startShockwave = true;
             shockwaveCooldown = initialAttackCooldown;
             anim.SetBool("isAttacking", false);
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (eventMessage.Equals("Death"))

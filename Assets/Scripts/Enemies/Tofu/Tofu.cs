@@ -55,6 +55,7 @@ public class Tofu : Enemy
             if (SpawnCooldown <= 0)
             {                
                 anim.SetBool("isAttacking", true);
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
             else
             {
