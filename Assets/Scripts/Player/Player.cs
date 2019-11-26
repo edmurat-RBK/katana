@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
     public float projectileSpeed;
     private Transform projectileOrigin;
     private float heldTimer = 0;
+    private Vector3 directionOffsetA;
+    private Vector3 directionOffsetB;
     // Hold
     public GameObject itemHold;
     public Collider2D[] itemPickupable;
@@ -224,24 +226,32 @@ public class Player : MonoBehaviour
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(attackMeleeRange + 0.5f, 0.5f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 1f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+                directionOffsetA = new Vector3(0f,0.1f,0f);
+                directionOffsetB = new Vector3(0f, -0.1f, 0f);
             }
             else if (inputHorizontal <= -Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(-attackMeleeRange - 0.5f, 0.5f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", -1f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 0f);
+                directionOffsetA = new Vector3(0f, 0.1f, 0f);
+                directionOffsetB = new Vector3(0f, -0.1f, 0f);
             }
             else if (inputVertical >= Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 1f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
+                directionOffsetA = new Vector3(0.1f, 0f, 0f);
+                directionOffsetB = new Vector3(-0.1f, 0f, 0f);
             }
             else if (inputVertical <= -Math.Sqrt(2) / 2)
             {
                 attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, -attackMeleeRange, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", -1);
+                directionOffsetA = new Vector3(0.1f, 0f, 0f);
+                directionOffsetB = new Vector3(-0.1f, 0f, 0f);
             }
 
             // If cooldown up
@@ -298,36 +308,39 @@ public class Player : MonoBehaviour
             {
                 float elapsedTime = Time.time - heldTimer;
                 Debug.Log(elapsedTime);
-                Vector3 directionOffset = new Vector3(0.0f, 0.0f, 0f);
-                Vector3 direction = gameObject.transform.position + new Vector3(0f, 0.5f, 0f);
+                Vector3 direction = transform.position + new Vector3(0f, 0.5f, 0f);
 
                 if (elapsedTime <= 1f) 
                 {
-                    projectileCount = 1;
+                    GameObject instance = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - direction).normalized * projectileSpeed);
                 }
+
                 else if (elapsedTime > 1f && elapsedTime <= 2f)
                 {
-                    projectileCount = 2;
-                    directionOffset = new Vector3(0.1f, 0.1f, 0f);
+                    GameObject instanceA = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instanceA.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (direction + directionOffsetA)).normalized * projectileSpeed);
+
+                    GameObject instanceB = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instanceB.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (direction + directionOffsetB)).normalized * projectileSpeed);
 
                 }
+
                 else if(elapsedTime > 2f)
                 {
-                    projectileCount = 2;
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Rigidbody2D>().AddForce(((attackMeleeMarker.transform.position - direction)).normalized * projectileSpeed);
-                    directionOffset = new Vector3(0.1f, 0.1f, 0f);
+                    GameObject instance = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - direction).normalized * projectileSpeed);
+
+                    GameObject instanceA = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instanceA.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (direction + directionOffsetA)).normalized * projectileSpeed);
+
+                    GameObject instanceB = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
+                    instanceB.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (direction + directionOffsetB)).normalized * projectileSpeed);
+
                 }
 
                 elapsedTime = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
-
-                for(int i = 0; i <= projectileCount; i++)
-                {
-                    GameObject instance = Instantiate(projectilePrefab, new Vector3(attackMeleeMarker.transform.position.x, attackMeleeMarker.transform.position.y, 0f), Quaternion.identity);
-                    instance.GetComponent<Rigidbody2D>().AddForce(((attackMeleeMarker.transform.position - direction) + directionOffset).normalized * projectileSpeed);
-                    directionOffset *= -1;
-                }
             }
         }
         else

@@ -72,6 +72,7 @@ public class Tofu : Enemy
             Instantiate(tofuClone, transform.position, transform.rotation);
             anim.SetBool("isAttacking", false);
             SpawnCooldown = iSpawnCooldown;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (eventMessage.Equals("Death"))

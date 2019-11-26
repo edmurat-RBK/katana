@@ -90,7 +90,8 @@ public class Eggplant : Enemy
                     anim.SetBool("isAttacking", true);
                     isAttacking = true;
                     gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                }
+                    gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            }
                 else
                 {
                     shockwaveCooldown -= Time.deltaTime;
@@ -111,7 +112,8 @@ public class Eggplant : Enemy
         if(collision.CompareTag("Player"))
         {
             Debug.Log("TakeDamage");
-            player.GetComponent<Player>().TakeDamage(attackDamage);
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            player.GetComponent<Player>().TakeDamage(attackDamage); 
         }    
     }
 
@@ -122,6 +124,7 @@ public class Eggplant : Enemy
             startShockwave = true;
             shockwaveCooldown = initialAttackCooldown;
             anim.SetBool("isAttacking", false);
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
