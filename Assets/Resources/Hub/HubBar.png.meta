@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9dedb6d4549917e4699cc9d828908d0f
+guid: 95fa28828aab05c4fbcb855c3711ecfd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 794318256659744733
-    second: Table centre_0
+      213: 5070241007332298907
+    second: HubBar_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -89,13 +89,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Table centre_0
+      name: HubBar_1
       rect:
         serializedVersion: 2
-        x: 158
-        y: 106
-        width: 84
-        height: 36
+        x: 92
+        y: 43
+        width: 184
+        height: 132
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,8 +103,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b85077d12578c44a776f58a2a31456
-      internalID: 794318256659744733
+      spriteID: 60a4fc21238179e439a2346938cea4b7
+      internalID: 5070241007332298907
       vertices: []
       indices: 
       edges: []
