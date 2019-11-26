@@ -36,8 +36,7 @@ public class CameraRecenter : MonoBehaviour
 
             foreach(GameObject go in children)
             {
-                go.GetComponent<EnemySpawner>().ActivateSpawn();
-                Destroy(go);
+                go.GetComponent<EnemySpawner>().Invoke("ActivateSpawn",0.5f);
             }
         }
     }
