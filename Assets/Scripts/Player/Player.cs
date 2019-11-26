@@ -233,7 +233,7 @@ public class Player : MonoBehaviour
             }
             else if (inputVertical >= Math.Sqrt(2) / 2)
             {
-                attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 0.5f, 0f);
+                attackMeleeMarker.transform.position = gameObject.transform.position + new Vector3(0f, attackMeleeRange + 1f, 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("horizontalDirection", 0f);
                 attackMeleeMarker.GetComponent<Animator>().SetFloat("verticalDirection", 1f);
             }
@@ -338,6 +338,12 @@ public class Player : MonoBehaviour
                 attackRangeCooldown = 0;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine((gameObject.transform.position + new Vector3(0f, 0.5f, 0f)), attackMeleeMarker.transform.position);
     }
 
     private void Pickup() 

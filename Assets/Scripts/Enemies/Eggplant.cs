@@ -111,8 +111,7 @@ public class Eggplant : Enemy
         {
             Debug.Log("TakeDamage");
             player.GetComponent<Player>().TakeDamage(attackDamage);
-        }
-        
+        }    
     }
 
     public void GetAnimationEvent(string eventMessage)

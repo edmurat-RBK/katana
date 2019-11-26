@@ -14,6 +14,7 @@ public class TofuClone : Enemy
     //Explosion
     CircleCollider2D explosion;
     public float tailleExplosion;
+    public float explosionDamage;
 
     //Movement
     private Transform target;
@@ -23,6 +24,7 @@ public class TofuClone : Enemy
         OnStart();
         target = player.transform;
         explosion = GetComponent<CircleCollider2D>();
+        explosion.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
     }
     void Update()
     {
@@ -99,5 +101,13 @@ public class TofuClone : Enemy
         {
             Destroy(gameObject);
         }   
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            player.GetComponent<Player>().TakeDamage(explosionDamage);
+        }
+
     }
 }
