@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     public float projectileSpeed;
     private Transform projectileOrigin;
     private float heldTimer = 0;
+    public int shurikenLoaded = 0;
     private Vector3 directionOffsetA;
     private Vector3 directionOffsetB;
     // Hold
@@ -103,7 +104,7 @@ public class Player : MonoBehaviour
                 MeleeAttack();
             }
             
-            if (!isMeleeAttacking && !isDashing)
+            if (!isMeleeAttacking && !isDashing && !isHolding)
             {
                 RangeAttack();
             }
@@ -293,30 +294,43 @@ public class Player : MonoBehaviour
 
     private void RangeAttack()
     {
-        bool inputRange = Input.GetButtonDown("RangeAttack");
+        bool inputRange = Input.GetButton("RangeAttack");
         float inputHorizontal = Input.GetAxis("Horizontal");
         float inputVertical = Input.GetAxis("Vertical");
+        
 
         if (attackRangeCooldown <= 0)
         {
             if(inputRange)
             {
-                heldTimer = Time.time;
+                heldTimer += Time.deltaTime;
+
+                // For UI
+                if(heldTimer <= 0.6f)
+                {
+                    shurikenLoaded = 1;
+                }
+                else if (heldTimer > 0.6f && heldTimer <= 1.2f)
+                {
+                    shurikenLoaded = 2;
+                }
+                else if (heldTimer > 1.2f)
+                {
+                    shurikenLoaded = 3;
+                }
             }
 
             if(Input.GetButtonUp("RangeAttack"))
             {
-                float elapsedTime = Time.time - heldTimer;
-                Debug.Log(elapsedTime);
                 Vector3 direction = transform.position + new Vector3(0f, 0.5f, 0f);
 
-                if (elapsedTime <= 1f) 
+                if (heldTimer <= 0.6f) 
                 {
                     GameObject instance = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
                     instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - direction).normalized * projectileSpeed);
                 }
 
-                else if (elapsedTime > 1f && elapsedTime <= 2f)
+                else if (heldTimer > 0.6f && heldTimer <= 1.2f)
                 {
                     GameObject instanceA = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
                     instanceA.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - (direction + directionOffsetA)).normalized * projectileSpeed);
@@ -326,7 +340,7 @@ public class Player : MonoBehaviour
 
                 }
 
-                else if(elapsedTime > 2f)
+                else if(heldTimer > 1.2f)
                 {
                     GameObject instance = Instantiate(projectilePrefab, attackMeleeMarker.transform.position, Quaternion.identity);
                     instance.GetComponent<Rigidbody2D>().AddForce((attackMeleeMarker.transform.position - direction).normalized * projectileSpeed);
@@ -339,8 +353,9 @@ public class Player : MonoBehaviour
 
                 }
 
-                elapsedTime = 0;
+                heldTimer = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
+                shurikenLoaded = 0;
             }
         }
         else

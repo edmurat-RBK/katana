@@ -111,7 +111,6 @@ public class Eggplant : Enemy
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("TakeDamage");
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             player.GetComponent<Player>().TakeDamage(attackDamage); 
         }    
