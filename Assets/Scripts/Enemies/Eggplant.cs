@@ -18,8 +18,8 @@ public class Eggplant : Enemy
     public float sizeDiffShock;   
     public float speedShockWave;
 
-
-
+    //Particle
+    public GameObject fxOnde;
 
 
 
@@ -145,6 +145,11 @@ public class Eggplant : Enemy
         if (eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
+        }
+
+        if (eventMessage.Equals("StartFX"))
+        {
+            fxOnde.GetComponent<ParticleSystem>().Play();
         }
     }
 }

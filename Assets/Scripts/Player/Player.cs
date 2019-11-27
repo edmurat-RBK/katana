@@ -175,8 +175,6 @@ public class Player : MonoBehaviour
 
     private void Dash()
     {
-        float inputHorizontal = Input.GetAxis("Horizontal");
-        float inputVertical = Input.GetAxis("Vertical");
         bool inputDash = Input.GetButtonDown("Dash");
 
         if(!isDashing)
@@ -306,9 +304,6 @@ public class Player : MonoBehaviour
     private void RangeAttack()
     {
         bool inputRange = Input.GetButton("RangeAttack");
-        float inputHorizontal = Input.GetAxis("Horizontal");
-        float inputVertical = Input.GetAxis("Vertical");
-        
 
         if (attackRangeCooldown <= 0)
         {
