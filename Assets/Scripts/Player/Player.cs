@@ -67,12 +67,14 @@ public class Player : MonoBehaviour
     public float watermelonDashCooldown;
     private float originalSpeedModifier;
     private float originalInitialDashCooldown;
+    public GameObject speedParticule;
     //tofu effect
     private float tofuEffectCooldown;
     public float initTofuEffectCooldown;
     private float tofuAttackDmg;
     private float initattackdmg;
     public float tofubonusdmg;
+    public GameObject attackParticule;
 
 
 
@@ -478,11 +480,13 @@ public class Player : MonoBehaviour
                 speedModifier = waterMelonSpeedBoost;
                 initialDashCooldown = watermelonDashCooldown;
                 waterMelonEffectCooldown--;
+                speedParticule.SetActive(true);
             }
             else // on reinitialise tt
             {
                 initialDashCooldown = originalInitialDashCooldown;
                 speedModifier = originalSpeedModifier;
+                speedParticule.SetActive(false);
             }
         }
         if (underTofuEffect == true)
@@ -491,12 +495,15 @@ public class Player : MonoBehaviour
             {
                 attackMeleeDamage = tofuAttackDmg;
                 tofuEffectCooldown--;
+                attackParticule.SetActive(true);
+            
             }
             else
             {
                 attackMeleeDamage = initattackdmg;
                 underTofuEffect = false;
                 tofuEffectCooldown = initTofuEffectCooldown;
+                attackParticule.SetActive(false);
             }
         }
         
