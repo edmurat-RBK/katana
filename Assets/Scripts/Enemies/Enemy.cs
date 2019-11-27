@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,8 +8,6 @@ public class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator anim;
     protected GameObject player;
-    public GameObject cameraShakeController;
-
     // Health
     public float maximumHealth;
     protected float health;
@@ -27,18 +24,16 @@ public class Enemy : MonoBehaviour
     protected float attackCooldown;
     public float initialAttackCooldown;
     public bool isAttacking = false;
-
     // Loot
     public GameObject lootPrefab;
     public float lootChance;
-
 
     public void OnStart()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        cameraShakeController = GameObject.FindGameObjectWithTag("CameraController");
+
         health = maximumHealth;
     }
 
