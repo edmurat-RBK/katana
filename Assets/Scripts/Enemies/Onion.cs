@@ -11,6 +11,7 @@ public class Onion : Enemy
     private bool atAttackRange = true;
     private bool isAttacking = false;
     public LayerMask playerLayerMask;
+    public GameObject deathParticuleOnion;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,11 @@ public class Onion : Enemy
         if (eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
+        }
+
+        if (eventMessage.Equals("isDead"))
+        {
+            deathParticuleOnion.GetComponent<ParticleSystem>().Play();
         }
     }
 }

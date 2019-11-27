@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Watermelon : Enemy
 {
+    public GameObject fxDeadWatermelon;
 
     [SerializeField]
     private float offsetDetectionRange = .75f;
@@ -26,11 +29,11 @@ public class Watermelon : Enemy
         {
             SearchPlayer();
         }
-            
+
         switch (directionToMove)
         {
             case Direction.UP:
-                rb.velocity = new Vector2(0f,1f) * (baseSpeed*speedModifier);
+                rb.velocity = new Vector2(0f, 1f) * (baseSpeed * speedModifier);
                 anim.SetBool("isMoving", true);
                 isMoving = true;
                 break;
@@ -93,7 +96,7 @@ public class Watermelon : Enemy
     {
         rb.velocity = Vector2.zero;
         if (collision.collider.CompareTag("Player") && isMoving)
-        {   
+        {
             anim.SetBool("isDead", true);
             player.GetComponent<Player>().TakeDamage(attackDamage);
             cameraShakeController.GetComponent<CameraShake>().isShaking = true;
@@ -102,6 +105,16 @@ public class Watermelon : Enemy
         {
             anim.SetBool("isDead", true);
             cameraShakeController.GetComponent<CameraShake>().isShaking = true;
+        }
+
+
+    }
+
+    public void GetAnimationEvent(string eventMessage)
+    {
+        if (eventMessage.Equals("isDead"))
+        {
+            fxDeadWatermelon.GetComponent<ParticleSystem>().Play();
         }
     }
 }

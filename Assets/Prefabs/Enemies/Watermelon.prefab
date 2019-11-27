@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.69, y: 2.92, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_Children: []
+  m_Children:
+  - {fileID: 9073607320149096427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,13 +154,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a15d4a7e82e75e40a7c24a1566c4713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeController: {fileID: 0}
   maximumHealth: 100
   isDead: 0
   baseSpeed: 10
+  realSpeed: 0
   attackDamage: 4
   attackModifier: 1
   initialAttackCooldown: 0
+  isAttacking: 0
   lootPrefab: {fileID: 2128351048808079814, guid: 2ca6c00017f201742a305877c1c093ce,
     type: 3}
   lootChance: 0.5
-  offsetDetectionRange: 0.75
+  fxDeadWatermelon: {fileID: 9073607320149096426}
+--- !u!1001 &9168750836630599415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4921765077664995647}
+    m_Modifications:
+    - target: {fileID: 204385494949183773, guid: 8127db1448500f547941f6346d5ba9c4,
+        type: 3}
+      propertyPath: m_Name
+      value: "_Fx_Frappast\xE8que"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8127db1448500f547941f6346d5ba9c4, type: 3}
+--- !u!1 &9073607320149096426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 204385494949183773, guid: 8127db1448500f547941f6346d5ba9c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9168750836630599415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9073607320149096427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 204385494949183772, guid: 8127db1448500f547941f6346d5ba9c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9168750836630599415}
+  m_PrefabAsset: {fileID: 0}

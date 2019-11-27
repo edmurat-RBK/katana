@@ -20,6 +20,7 @@ public class Eggplant : Enemy
 
     //Particle
     public GameObject fxOnde;
+    public GameObject fxDeadEggplant;
 
 
 
@@ -150,6 +151,11 @@ public class Eggplant : Enemy
         if (eventMessage.Equals("StartFX"))
         {
             fxOnde.GetComponent<ParticleSystem>().Play();
+        }
+
+        if (eventMessage.Equals("isDead"))
+        {
+            fxDeadEggplant.GetComponent<ParticleSystem>().Play();
         }
     }
 }
