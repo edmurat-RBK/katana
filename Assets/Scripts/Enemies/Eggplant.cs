@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
 public class Eggplant : Enemy
 {
@@ -17,10 +16,6 @@ public class Eggplant : Enemy
     CircleCollider2D shockwave;
     public float sizeDiffShock;   
     public float speedShockWave;
-
-
-
-
 
 
 
@@ -46,11 +41,6 @@ public class Eggplant : Enemy
 
         anim.SetFloat("horizontalMovement", rb.velocity.x);
         anim.SetFloat("verticalMovement", rb.velocity.y);
-
-        if(cameraShakeController.GetComponent<CameraShake>().isShaking)
-        {
-            cameraShakeController.GetComponent<CameraShake>().CameraShaking(0.3f, 1.2f, 2f);
-        }
     }
 
     private void FixedUpdate()
@@ -86,8 +76,9 @@ public class Eggplant : Enemy
             rb.velocity = Vector2.zero;
             anim.SetBool("isMoving", false);
         }
+        
     }
-    
+
     void EggplantAttack()
     {
 
@@ -106,7 +97,7 @@ public class Eggplant : Enemy
                     shockwaveCooldown -= Time.deltaTime;
                 }
 
-            }   
+            }        
     }
 
     private void OnDrawGizmos()
@@ -134,7 +125,6 @@ public class Eggplant : Enemy
             anim.SetBool("isAttacking", false);
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            cameraShakeController.GetComponent<CameraShake>().isShaking = true ;
         }
 
         if (eventMessage.Equals("Death"))

@@ -12,7 +12,6 @@ TagManager:
   - Prop
   - EnemySpawner
   - GameManager
-  - CameraController
   layers:
   - Default
   - TransparentFX
