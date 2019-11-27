@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        TestHealthModifier();
+        //TestHealthModifier();
 
         if(isAlive)
         {
@@ -445,12 +445,13 @@ public class Player : MonoBehaviour
                     underTofuEffect = true;
                     break;
                 case Item.EGGPLANT:
+                    if (health == 9)
+                    {
+                        health++;
+                    }
                     if (health < maximumHealth)
                     {
-                        if (health == 9)
-                        {
-                            health++;
-                        }
+
                         health = health + 2;
                     }
                     underEggplantEffect = true;

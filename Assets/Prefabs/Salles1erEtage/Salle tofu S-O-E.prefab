@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2829963543726514442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9008850969667387564}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6165394008971243702}
+  m_Layer: 0
+  m_Name: TofuSpawner (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6165394008971243702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9008850969667387564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829963543726514442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1765143569225483661}
+  m_Father: {fileID: 613241835731098139}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6840593478379002575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,13 +2955,44 @@ Transform:
   m_LocalPosition: {x: -0.2265, y: 1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1765143569225483661}
+  - {fileID: 6165394008971243702}
   - {fileID: 7515298127971959591}
   - {fileID: 8775043887771121280}
   - {fileID: 5067282403831261370}
   - {fileID: 6840593479678916073}
   - {fileID: 6066138498507892832}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7690629782856605926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9008850969667387564}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765143569225483661}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765143569225483661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 9008850969667387564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690629782856605926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6165394008971243702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &582612224236448962
@@ -3023,12 +3085,12 @@ PrefabInstance:
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.56
+      value: 7.27
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.71
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
@@ -3245,11 +3307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613241835731098139}
     m_Modifications:
-    - target: {fileID: 7312388394405152061, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
-        type: 3}
-      propertyPath: m_Name
-      value: TofuSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3305,11 +3362,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312388394405152061, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
+        type: 3}
+      propertyPath: m_Name
+      value: TofuSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10b15b4bc6090e4799175f0ec3fe1b9, type: 3}
---- !u!4 &1765143569225483661 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 9008850969667387564}
-  m_PrefabAsset: {fileID: 0}

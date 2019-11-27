@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1967973904197374310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 8694103163460572694}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2152010625379701559}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2152010625379701559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8694103163460572694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967973904197374310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8993407005998104163}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6436623662152696152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 8694103163460572694}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8993407005998104163}
+  m_Layer: 0
+  m_Name: TofuSpawner (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8993407005998104163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 8694103163460572694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436623662152696152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2152010625379701559}
+  m_Father: {fileID: 945996478704684193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6578876682645174958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,7 +2950,7 @@ Transform:
   m_LocalPosition: {x: -0.2265, y: 1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2152010625379701559}
+  - {fileID: 8993407005998104163}
   - {fileID: 7920078221892310429}
   - {fileID: 8963642196780703802}
   - {fileID: 4895672855140548096}
@@ -2987,12 +3049,12 @@ PrefabInstance:
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.56
+      value: 7.27
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.71
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1782354499638367293, guid: b90677228fd4f1c48a4ca60e57ba30e2,
         type: 3}
@@ -3209,11 +3271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 945996478704684193}
     m_Modifications:
-    - target: {fileID: 7312388394405152061, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
-        type: 3}
-      propertyPath: m_Name
-      value: TofuSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3269,11 +3326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312388394405152061, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
+        type: 3}
+      propertyPath: m_Name
+      value: TofuSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10b15b4bc6090e4799175f0ec3fe1b9, type: 3}
---- !u!4 &2152010625379701559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7312388394405152033, guid: b10b15b4bc6090e4799175f0ec3fe1b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 8694103163460572694}
-  m_PrefabAsset: {fileID: 0}
