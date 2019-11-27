@@ -60,19 +60,28 @@ public class Player : MonoBehaviour
     private bool underTofuEffect = false;
     private bool underEggplantEffect = false;
     public GameObject fxMarker;
-    //loot effects
+    //loot effects watermelon
     private float waterMelonEffectCooldown;
     public float initWaterMelonEffectCooldown ;
     public float waterMelonSpeedBoost ;
     public float watermelonDashCooldown;
     private float originalSpeedModifier;
     private float originalInitialDashCooldown;
+    //tofu effect
+    private float tofuEffectCooldown;
+    public float initTofuEffectCooldown;
+    private float tofuAttackDmg;
+    private float initattackdmg;
+    public float tofubonusdmg;
 
 
 
 
     void Start()
     {
+        tofuEffectCooldown = initTofuEffectCooldown;
+        initattackdmg = attackMeleeDamage;
+        tofuAttackDmg = attackMeleeDamage + tofubonusdmg;
         originalInitialDashCooldown = initialDashCooldown;
         originalSpeedModifier = speedModifier;
         rb = GetComponent<Rigidbody2D>();
@@ -422,7 +431,10 @@ public class Player : MonoBehaviour
             switch (itemHold.GetComponent<Loot>().item)
             {
                 case Item.ONION:
-                    health++;
+                    if (health < maximumHealth)
+                    {
+                        health++;
+                    }
                     underOnionEffect = true;
                     break;
                 case Item.WATERMELON:
@@ -430,11 +442,17 @@ public class Player : MonoBehaviour
                     underWatermelonEffect = true;
                     break;
                 case Item.TOFU:
-                    health = health+2;
                     underTofuEffect = true;
                     break;
                 case Item.EGGPLANT:
-                    health = health+2;
+                    if (health < maximumHealth)
+                    {
+                        if (health == 9)
+                        {
+                            health++;
+                        }
+                        health = health + 2;
+                    }
                     underEggplantEffect = true;
                     break;
                 default:
@@ -466,7 +484,22 @@ public class Player : MonoBehaviour
                 speedModifier = originalSpeedModifier;
             }
         }
-    }
+        if (underTofuEffect == true)
+        {
+            if (tofuEffectCooldown > 0)
+            {
+                attackMeleeDamage = tofuAttackDmg;
+                tofuEffectCooldown--;
+            }
+            else
+            {
+                attackMeleeDamage = initattackdmg;
+                underTofuEffect = false;
+                tofuEffectCooldown = initTofuEffectCooldown;
+            }
+        }
+        
+        }
 
     private void Statistics()
     {

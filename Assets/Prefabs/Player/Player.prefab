@@ -10023,9 +10023,11 @@ MonoBehaviour:
   isHolding: 0
   throwForce: 20
   fxMarker: {fileID: 533935518692821785}
-  initWaterMelonEffectCooldown: 0
-  waterMelonSpeedBoost: 0
-  watermelonDashCooldown: 0
+  initWaterMelonEffectCooldown: 200
+  waterMelonSpeedBoost: 1.3
+  watermelonDashCooldown: 1.5
+  initTofuEffectCooldown: 200
+  tofubonusdmg: 1
 --- !u!114 &-3914454739603916709
 MonoBehaviour:
   m_ObjectHideFlags: 0
