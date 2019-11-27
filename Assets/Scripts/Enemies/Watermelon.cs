@@ -54,6 +54,11 @@ public class Watermelon : Enemy
         Orientation();
         anim.SetFloat("horizontalMove", rb.velocity.x);
         anim.SetFloat("verticalMove", rb.velocity.y);
+
+        if (cameraShakeController.GetComponent<CameraShake>().isShaking)
+        {
+            cameraShakeController.GetComponent<CameraShake>().CameraShaking(0.2f, 0.9f, 2f);
+        }
     }
 
     private void SearchPlayer() //recherche du joueur dans les colonnes definies par offsetdetectionrange
@@ -90,11 +95,13 @@ public class Watermelon : Enemy
         if (collision.collider.CompareTag("Player") && isMoving)
         {   
             anim.SetBool("isDead", true);
-            player.GetComponent<Player>().TakeDamage(attackDamage);    
+            player.GetComponent<Player>().TakeDamage(attackDamage);
+            cameraShakeController.GetComponent<CameraShake>().isShaking = true;
         }
         if (isMoving)
         {
             anim.SetBool("isDead", true);
+            cameraShakeController.GetComponent<CameraShake>().isShaking = true;
         }
     }
 }
