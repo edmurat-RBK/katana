@@ -3569,21 +3569,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6208544650967236648, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6208544650967236648, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6208544650967236648, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: ColorModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6208544650967236648, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
       value: 1
       objectReference: {fileID: 0}
@@ -3611,6 +3596,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208544650967236648, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365199615994525093, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 1405131456683062177, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
@@ -3645,12 +3640,12 @@ PrefabInstance:
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3333334
+      value: -1.4166667
       objectReference: {fileID: 0}
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.083333336
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
