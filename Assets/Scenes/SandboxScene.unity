@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
         type: 3}
@@ -186,6 +186,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542101673248869533, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542101673248869533, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: initWaterMelonEffectCooldown
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: waterMelonSpeedBoost
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
+        type: 3}
+      propertyPath: watermelonDashCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62912d8d23a615d4c89699e98fa6b3f3, type: 3}
@@ -219,7 +244,6 @@ RectTransform:
   m_Children:
   - {fileID: 220345585}
   - {fileID: 878859489}
-  - {fileID: 1808820875}
   m_Father: {fileID: 1279623556}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -242,11 +266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstShuriken: {fileID: 220345584}
   secondShuriken: {fileID: 878859488}
-  thirdShuriken: {fileID: 1808820874}
-  emptyShurikenSprite: {fileID: 2604008059781712887, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
-    type: 3}
-  loadedShurikenSprite: {fileID: -1979618183947041394, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
-    type: 3}
+  thirdShuriken: {fileID: 0}
+  emptyShurikenSprite: {fileID: 0}
+  loadedShurikenSprite: {fileID: 0}
 --- !u!1 &220345584
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +557,7 @@ Transform:
   - {fileID: 1303260497}
   - {fileID: 1897058752}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &306716525
 MonoBehaviour:
@@ -1391,7 +1413,7 @@ RectTransform:
   - {fileID: 132773245}
   - {fileID: 230710423}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1655,7 +1677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405274293
 GameObject:
@@ -2501,5 +2523,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
