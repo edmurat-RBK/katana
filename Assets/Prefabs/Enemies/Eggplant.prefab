@@ -117,6 +117,7 @@ MonoBehaviour:
   sizeDiffShock: 1
   speedShockWave: 10
   fxOnde: {fileID: 1085875057495581778}
+  fxDeadEggplant: {fileID: 3629528926517752967}
 --- !u!95 &488115363778775761
 Animator:
   serializedVersion: 3
@@ -5181,21 +5182,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 488115363778775763}
     m_Modifications:
-    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 5985741715798961530, guid: 5de7a69051298b84897ee9f92f4dbfec,
         type: 3}
       propertyPath: m_Name
@@ -5271,6 +5257,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188472027398475630, guid: 5de7a69051298b84897ee9f92f4dbfec,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5985741715798961529, guid: 5de7a69051298b84897ee9f92f4dbfec,
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -5338,6 +5339,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de7a69051298b84897ee9f92f4dbfec, type: 3}
+--- !u!1 &3629528926517752967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5985741715798961530, guid: 5de7a69051298b84897ee9f92f4dbfec,
+    type: 3}
+  m_PrefabInstance: {fileID: 7011837663715482109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3629528926517752966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5985741715798961531, guid: 5de7a69051298b84897ee9f92f4dbfec,
