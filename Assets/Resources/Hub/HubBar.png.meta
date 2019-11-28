@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 5070241007332298907
     second: HubBar_1
+  - first:
+      213: -8904908309817378641
+    second: HubBar_0
+  - first:
+      213: 3116757444925488699
+    second: HubBar_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -89,22 +95,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HubBar_1
+      name: HubBar_0
       rect:
         serializedVersion: 2
-        x: 92
-        y: 43
-        width: 184
-        height: 132
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 99
+        y: 117
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a4fc21238179e439a2346938cea4b7
+      spriteID: 1eb90e046e8c6504d99794e3b739fdf7
+      internalID: -8904908309817378641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HubBar_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 43
+        width: 168
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5055791, y: 0.24081923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd35d84738bd1141a71f95413c079e9
       internalID: 5070241007332298907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HubBar_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 54
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1250f28ef1751b04aa4b50cac591a709
+      internalID: 3116757444925488699
       vertices: []
       indices: 
       edges: []
