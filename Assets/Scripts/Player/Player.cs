@@ -516,14 +516,19 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+        float timeScale = 0.7f - ((damage / 10) * (damage / 10));
         if(health > 0)
         {
             health -= damage;
-            if(health <= 0)
+            Time.timeScale = timeScale;
+            if (health <= 0)
             {
                 health = 0;
+                Time.timeScale = 1f;
             }
         }
+        
         anim.SetBool("isDamage", true);
     }
 
@@ -538,6 +543,7 @@ public class Player : MonoBehaviour
         if(eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
+            Time.timeScale = 1f;
         }
 
         if (eventMessage.Equals("DeathEnded"))
