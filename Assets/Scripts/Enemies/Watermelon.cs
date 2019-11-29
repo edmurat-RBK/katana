@@ -103,6 +103,7 @@ public class Watermelon : Enemy
         {
             anim.SetBool("isDead", true);
             cameraShakeController.GetComponent<CameraShake>().isShaking = true;
+            Time.timeScale = 1f;
             if(collision.collider.CompareTag("Player"))
             {
                 player.GetComponent<Player>().TakeDamage(attackDamage);

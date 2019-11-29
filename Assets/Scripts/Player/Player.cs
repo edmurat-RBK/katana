@@ -144,12 +144,64 @@ public class Player : MonoBehaviour
         lootEatEffects();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.name.Equals("StartRun"))
         {
-            SceneManager.LoadScene("SandboxScene");
+            if(Input.GetButtonDown("Dash"))
+            {
+                SceneManager.LoadScene("SandboxScene");
+            }
         }
+
+        if(other.gameObject.name.Equals("StartTuto"))
+        {
+            if(Input.GetButtonDown("Dash"))
+            {
+                //SceneManager.LoadScene("TutorialScene");
+            }
+        }
+
+        if (other.gameObject.name.Equals("OpenMenu"))
+        {
+            other.gameObject.transform.Find("GlowMenu").gameObject.SetActive(true);   
+            if (Input.GetButtonDown("Dash"))
+            {
+                //Set Menu UI Active
+            }
+        }
+
+        if (other.gameObject.name.Equals("OpenFridge"))
+        {
+            other.gameObject.transform.Find("GlowFridge").gameObject.SetActive(true);
+            if (Input.GetButtonDown("Dash"))
+            {
+                //Set Fridge UI Active 
+            }
+        }
+
+        if (other.gameObject.name.Equals("ReturnToHub"))
+        {
+            if(Input.GetButtonDown("Dash"))
+            {
+                SceneManager.LoadScene("HubScene");
+            }  
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("OpenMenu"))
+        {
+            other.gameObject.transform.Find("GlowMenu").gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.name.Equals("OpenFridge"))
+        {
+            other.gameObject.transform.Find("GlowFridge").gameObject.SetActive(false);
+        }
+
+
     }
 
     private void Move()
