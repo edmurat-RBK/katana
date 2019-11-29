@@ -165,8 +165,8 @@ MonoBehaviour:
   lootPrefab: {fileID: 6150950775162080428, guid: 7907d66adc2f81548aec844034079b9d,
     type: 3}
   lootChance: 0.4
-  minimumDistance: 1
-  attackRadius: 0.5
+  minimumDistance: 0.8
+  attackRadius: 0.8
   initialAttackLoad: 0.25
   playerLayerMask:
     serializedVersion: 2
