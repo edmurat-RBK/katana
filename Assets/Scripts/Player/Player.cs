@@ -374,12 +374,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine((gameObject.transform.position + new Vector3(0f, 0.5f, 0f)), attackMeleeMarker.transform.position);
-    }
-
     private void Pickup() 
     {
         itemPickupable = Physics2D.OverlapCircleAll(transform.position, 1f, lootLayerMask);
@@ -415,8 +409,18 @@ public class Player : MonoBehaviour
             anim.SetBool("isHolding", false);
             itemHold.GetComponent<Loot>().isThrow = true;
             itemHold.GetComponent<Loot>().isPickup = false;
-            Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
-            itemHold.GetComponent<Rigidbody2D>().AddForce(force,ForceMode2D.Impulse);
+            if (rb.velocity.x != 0 || rb.velocity.y != 0)
+            {
+                Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
+                itemHold.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Vector2 force = ((transform.position + new Vector3(0f, 0.5f, 0f)) - attackMeleeMarker.transform.position).normalized * throwForce;
+                itemHold.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            }
+            
+
             speedModifier = 1f;
         }
     }
@@ -550,12 +554,6 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("HubScene");
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackMeleeMarker.transform.position, attackMeleeRadius);
     }
 
     // UI methods

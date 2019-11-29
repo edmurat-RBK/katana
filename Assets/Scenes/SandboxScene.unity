@@ -120,100 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &69951084
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7751247171338822149, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_Name
-      value: LOOT_tofu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.340455
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.81781244
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685693368428280402, guid: 62912d8d23a615d4c89699e98fa6b3f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2542101673248869533, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2542101673248869533, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: initWaterMelonEffectCooldown
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: waterMelonSpeedBoost
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108098142860748110, guid: 6fec2f8a4045b55478a7392351b79010,
-        type: 3}
-      propertyPath: watermelonDashCooldown
-      value: 1.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 62912d8d23a615d4c89699e98fa6b3f3, type: 3}
 --- !u!1 &132773244
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +150,7 @@ RectTransform:
   m_Children:
   - {fileID: 220345585}
   - {fileID: 878859489}
+  - {fileID: 1808820875}
   m_Father: {fileID: 1279623556}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1448,12 +1355,12 @@ PrefabInstance:
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.003034234
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65131354
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108098142860748113, guid: 6fec2f8a4045b55478a7392351b79010,
         type: 3}
