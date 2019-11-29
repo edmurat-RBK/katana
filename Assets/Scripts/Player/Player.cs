@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
             other.gameObject.transform.Find("GlowFridge").gameObject.SetActive(true);
             if (Input.GetButtonDown("Dash"))
             {
-                //Set Fridge UI Active 
+                GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
             }
         }
 

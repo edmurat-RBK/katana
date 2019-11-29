@@ -12,6 +12,7 @@ public class Onion : Enemy
     private bool isAttacking = false;
     public LayerMask playerLayerMask;
     public GameObject deathParticuleOnion;
+    private bool dealDamage; 
 
     // Start is called before the first frame update
     void Start()
@@ -57,21 +58,11 @@ public class Onion : Enemy
         {
             if (atAttackRange)
             {
-                attackLoad -= Time.deltaTime;
-                if (attackLoad <= 0)
-                {
-                    isAttacking = true;
-                    attackCooldown = initialAttackCooldown;
-                    if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
-                    {
-                        player.GetComponent<Player>().TakeDamage(attackDamage);
-                    }
-                }
+                isAttacking = true;
+                attackCooldown = initialAttackCooldown;
+                rb.bodyType = RigidbodyType2D.Static;
             }
-            else
-            {
-                attackLoad = initialAttackLoad;
-            }
+        
         }
         else
         {
@@ -80,6 +71,12 @@ public class Onion : Enemy
             {
                 attackCooldown = 0;
             }
+        }
+
+        if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius && dealDamage)
+        {
+            player.GetComponent<Player>().TakeDamage(attackDamage);
+            dealDamage = false;
         }
 
         // Animation
@@ -91,11 +88,14 @@ public class Onion : Enemy
         if (eventMessage.Equals("AttackEnded"))
         {
             isAttacking = false;
+            dealDamage = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
         if (eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
+           
         }
 
         if (eventMessage.Equals("isDead"))
