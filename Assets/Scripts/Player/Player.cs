@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     public LayerMask lootLayerMask;
     [HideInInspector] public bool isHolding = false;
     public float throwForce = 20f;
+   
     //manger loot
     private bool underOnionEffect = false;
     private bool underWatermelonEffect = false;
@@ -76,11 +77,16 @@ public class Player : MonoBehaviour
     public float tofubonusdmg;
     public GameObject attackParticule;
 
+    //Audio
+    public GameObject soundSource;
+    public AudioSource source;
+
 
 
 
     void Start()
     {
+        source = soundSource.GetComponent<AudioSource>();
         tofuEffectCooldown = initTofuEffectCooldown;
         initattackdmg = attackMeleeDamage;
         tofuAttackDmg = attackMeleeDamage + tofubonusdmg;
@@ -176,7 +182,8 @@ public class Player : MonoBehaviour
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
-                GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
+                //GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
+                GameObject.FindGameObjectWithTag("UI").GetComponent<FridgeUI>().Pause();
             }
         }
 
@@ -236,6 +243,8 @@ public class Player : MonoBehaviour
                 if(inputDash && (rb.velocity.x != 0 || rb.velocity.y != 0))
                 {
                     isDashing = true;
+                    source.clip = soundSource.GetComponent<PlayerAudioManager>().dashSound;
+                    source.Play();
                 }
             }
             else
@@ -263,10 +272,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Animation
+        // Animation & Sound
         if (isDashing)
         {
             anim.SetBool("isDashing", true);
+            
         }
         else
         {
@@ -321,6 +331,9 @@ public class Player : MonoBehaviour
             {
                 if(inputMelee)
                 {
+                    source.clip = soundSource.GetComponent<PlayerAudioManager>().attackSound;
+                    source.Play();
+
                     isMeleeAttacking = true;
 
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
@@ -340,7 +353,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Animation
+        // Animation & Sounds
         if (isMeleeAttacking)
         {
             anim.SetBool("isMeleeAttacking", true);
@@ -411,6 +424,9 @@ public class Player : MonoBehaviour
 
                 }
 
+                source.clip = soundSource.GetComponent<PlayerAudioManager>().shurikenSound;
+                source.Play();
+
                 heldTimer = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
                 shurikenLoaded = 0;
@@ -440,6 +456,10 @@ public class Player : MonoBehaviour
                     anim.SetBool("isHolding", true);
                     itemHold = itemPickupable[0].gameObject;
                     itemHold.GetComponent<Loot>().isPickup = true;
+
+                    //Audio
+                    source.clip = soundSource.GetComponent<PlayerAudioManager>().pickupSound;
+                    source.Play();
                 }
             }
         }
@@ -457,6 +477,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Throw"))
         {
+            //Audio
+            source.clip = soundSource.GetComponent<PlayerAudioManager>().throwSound;
+            source.Play();
+
             isHolding = false;
             anim.SetBool("isHolding", false);
             itemHold.GetComponent<Loot>().isThrow = true;
@@ -471,6 +495,7 @@ public class Player : MonoBehaviour
                 Vector2 force = ((transform.position + new Vector3(0f, 0.5f, 0f)) - attackMeleeMarker.transform.position).normalized * throwForce;
                 itemHold.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
             }
+
             
 
             speedModifier = 1f;
@@ -519,6 +544,10 @@ public class Player : MonoBehaviour
             anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
+            
+            //Audio
+            source.clip = soundSource.GetComponent<PlayerAudioManager>().bonusSound;
+            source.Play();
         }
 
     }
@@ -584,7 +613,11 @@ public class Player : MonoBehaviour
                 Time.timeScale = 1f;
             }
         }
-        
+
+        //Animation & Sound 
+        source.clip = soundSource.GetComponent<PlayerAudioManager>().hitSound;
+        source.Play();
+
         anim.SetBool("isDamage", true);
     }
 
