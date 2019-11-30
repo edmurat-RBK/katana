@@ -163,8 +163,8 @@ public class Player : MonoBehaviour
         }
 
         if (other.gameObject.name.Equals("OpenMenu"))
-        {
-            other.gameObject.transform.Find("GlowMenu").gameObject.SetActive(true);   
+        { 
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
                 //Set Menu UI Active
@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("OpenFridge"))
         {
-            other.gameObject.transform.Find("GlowFridge").gameObject.SetActive(true);
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
                 GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
@@ -193,12 +193,12 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name.Equals("OpenMenu"))
         {
-            other.gameObject.transform.Find("GlowMenu").gameObject.SetActive(false);
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
         }
 
         if (other.gameObject.name.Equals("OpenFridge"))
         {
-            other.gameObject.transform.Find("GlowFridge").gameObject.SetActive(false);
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
         }
 
 
