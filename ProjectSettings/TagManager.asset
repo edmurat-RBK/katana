@@ -14,6 +14,7 @@ TagManager:
   - GameManager
   - CameraController
   - UI
+  - AudioManager
   layers:
   - Default
   - TransparentFX

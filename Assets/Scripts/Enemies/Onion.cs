@@ -73,9 +73,12 @@ public class Onion : Enemy
             }
         }
 
-        if (Vector2.Distance(player.transform.position, transform.position) <= attackRadius && dealDamage)
+        if (dealDamage)
         {
-            player.GetComponent<Player>().TakeDamage(attackDamage);
+            if(Vector2.Distance(player.transform.position, transform.position) <= attackRadius)
+            {
+                player.GetComponent<Player>().TakeDamage(attackDamage);
+            }
             dealDamage = false;
         }
 
