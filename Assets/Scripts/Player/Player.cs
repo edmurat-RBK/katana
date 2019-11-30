@@ -243,8 +243,9 @@ public class Player : MonoBehaviour
                 if(inputDash && (rb.velocity.x != 0 || rb.velocity.y != 0))
                 {
                     isDashing = true;
-                    source.clip = soundSource.GetComponent<PlayerAudioManager>().dashSound;
-                    source.Play();
+
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().dashSound);
+
                 }
             }
             else
@@ -331,8 +332,7 @@ public class Player : MonoBehaviour
             {
                 if(inputMelee)
                 {
-                    source.clip = soundSource.GetComponent<PlayerAudioManager>().attackSound;
-                    source.Play();
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().attackSound);
 
                     isMeleeAttacking = true;
 
@@ -424,8 +424,7 @@ public class Player : MonoBehaviour
 
                 }
 
-                source.clip = soundSource.GetComponent<PlayerAudioManager>().shurikenSound;
-                source.Play();
+                soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().shurikenSound);
 
                 heldTimer = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
@@ -458,8 +457,7 @@ public class Player : MonoBehaviour
                     itemHold.GetComponent<Loot>().isPickup = true;
 
                     //Audio
-                    source.clip = soundSource.GetComponent<PlayerAudioManager>().pickupSound;
-                    source.Play();
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().pickupSound);
                 }
             }
         }
@@ -478,8 +476,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Throw"))
         {
             //Audio
-            source.clip = soundSource.GetComponent<PlayerAudioManager>().throwSound;
-            source.Play();
+            soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().throwSound);
 
             isHolding = false;
             anim.SetBool("isHolding", false);
@@ -544,10 +541,9 @@ public class Player : MonoBehaviour
             anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
-            
+
             //Audio
-            source.clip = soundSource.GetComponent<PlayerAudioManager>().bonusSound;
-            source.Play();
+            soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().bonusSound);
         }
 
     }
@@ -615,8 +611,7 @@ public class Player : MonoBehaviour
         }
 
         //Animation & Sound 
-        source.clip = soundSource.GetComponent<PlayerAudioManager>().hitSound;
-        source.Play();
+        soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().hitSound);
 
         anim.SetBool("isDamage", true);
     }
