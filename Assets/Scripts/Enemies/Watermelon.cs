@@ -65,6 +65,7 @@ public class Watermelon : Enemy
 
         if(!isMoving)
         {
+
             rb.velocity = Vector2.zero;
         }
     }
@@ -99,12 +100,12 @@ public class Watermelon : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)//Quand la pastèque rencontre un collider, elle est détruite.
     {
+        GetComponent<AudioSource>().Play();
         if (isMoving)
         {
             anim.SetBool("isDead", true);
             cameraShakeController.GetComponent<CameraShake>().isShaking = true;
             Time.timeScale = 1f;
-            GetComponent<AudioSource>().Play();
             if(collision.collider.CompareTag("Player"))
             {
                 player.GetComponent<Player>().TakeDamage(attackDamage);
@@ -118,6 +119,7 @@ public class Watermelon : Enemy
         if (eventMessage.Equals("isDead"))
         {
             fxDeadWatermelon.GetComponent<ParticleSystem>().Play();
+            GetComponent<AudioSource>().Play();
         }
     }
 }

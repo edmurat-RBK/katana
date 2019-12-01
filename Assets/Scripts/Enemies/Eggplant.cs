@@ -22,6 +22,8 @@ public class Eggplant : Enemy
     public GameObject fxOnde;
     public GameObject fxDeadEggplant;
 
+    //Audio
+    
 
 
 
@@ -130,6 +132,7 @@ public class Eggplant : Enemy
     {
         if (eventMessage.Equals("AttackEnded"))
         {
+            GetComponent<AudioSource>().Play();   
             startShockwave = true;
             shockwaveCooldown = initialAttackCooldown;
             anim.SetBool("isAttacking", false);

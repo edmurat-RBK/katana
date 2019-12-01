@@ -222,6 +222,7 @@ public class Player : MonoBehaviour
         // Animation
         if (rb.velocity.x != 0 || rb.velocity.y != 0)
         {
+            //soundSource.GetComponent<PlayerAudioManager>().PlayClipDelay(soundSource.GetComponent<PlayerAudioManager>().stepSound, 0.2f); CEST BEUGUÉ
             anim.SetBool("isMoving", true);
             anim.SetFloat("horizontalMovement", rb.velocity.x);
             anim.SetFloat("verticalMovement", rb.velocity.y);
