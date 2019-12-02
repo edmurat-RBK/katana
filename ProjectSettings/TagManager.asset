@@ -13,6 +13,8 @@ TagManager:
   - EnemySpawner
   - GameManager
   - CameraController
+  - UI
+  - AudioManager
   layers:
   - Default
   - TransparentFX

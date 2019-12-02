@@ -20,19 +20,34 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2123665473660595771, guid: 54d985629978a60488ce9f9b8023c505,
+      value: {fileID: 5360783054306629976, guid: ac64d628db7c3844ab9f998ddda8a656,
         type: 3}
-    - time: 0.125
-      value: {fileID: -7828698569853864017, guid: 54d985629978a60488ce9f9b8023c505,
+    - time: 0.1
+      value: {fileID: -1731328191035157914, guid: ac64d628db7c3844ab9f998ddda8a656,
         type: 3}
-    - time: 0.25
-      value: {fileID: 4014453098093814106, guid: 54d985629978a60488ce9f9b8023c505,
+    - time: 0.2
+      value: {fileID: 6916462100229006146, guid: ac64d628db7c3844ab9f998ddda8a656,
+        type: 3}
+    - time: 0.3
+      value: {fileID: -7999158179732647544, guid: ac64d628db7c3844ab9f998ddda8a656,
+        type: 3}
+    - time: 0.4
+      value: {fileID: -2507187307183313880, guid: ac64d628db7c3844ab9f998ddda8a656,
+        type: 3}
+    - time: 0.5
+      value: {fileID: -1153243585561714387, guid: ac64d628db7c3844ab9f998ddda8a656,
+        type: 3}
+    - time: 0.6
+      value: {fileID: -3778708092035434396, guid: ac64d628db7c3844ab9f998ddda8a656,
+        type: 3}
+    - time: 0.7
+      value: {fileID: 668422996296756506, guid: ac64d628db7c3844ab9f998ddda8a656,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 8
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,15 +62,20 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2123665473660595771, guid: 54d985629978a60488ce9f9b8023c505, type: 3}
-    - {fileID: -7828698569853864017, guid: 54d985629978a60488ce9f9b8023c505, type: 3}
-    - {fileID: 4014453098093814106, guid: 54d985629978a60488ce9f9b8023c505, type: 3}
+    - {fileID: 5360783054306629976, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: -1731328191035157914, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: 6916462100229006146, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: -7999158179732647544, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: -2507187307183313880, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: -1153243585561714387, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: -3778708092035434396, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
+    - {fileID: 668422996296756506, guid: ac64d628db7c3844ab9f998ddda8a656, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.375
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,7 +95,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.25
+  - time: 0.7
     functionName: GetAnimationEvent
     data: AttackEnded
     objectReferenceParameter: {fileID: 0}

@@ -46,7 +46,6 @@ public class CameraShake : MonoBehaviour
 
                 // Update Shake Timer
                 ShakeElapsedTime -= Time.deltaTime;
-                Debug.Log(ShakeElapsedTime);
             }
             else
             {

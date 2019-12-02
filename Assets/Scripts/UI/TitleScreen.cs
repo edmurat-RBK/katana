@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+    //Audio
+    public AudioSource source;
+    public AudioClip selectedClip;
+    public AudioClip pressedClip;
+
     public void OnNewGame()
     {
         SceneManager.LoadScene("HubScene");
@@ -23,5 +28,17 @@ public class TitleScreen : MonoBehaviour
     public void OnQuit()
     {
         Application.Quit();
+    }
+
+    public void SelectedSound()
+    {
+        source.clip = selectedClip;
+        source.Play();
+    }
+
+    public void PressedSound()
+    {
+        source.clip = pressedClip;
+        source.Play();
     }
 }

@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             anim.SetBool("isDead", true);
+            Time.timeScale = 1f;
         }
 
         if (isDead)
@@ -77,7 +78,8 @@ public class Enemy : MonoBehaviour
             health -= damageDealtByOther;
             anim.SetBool("isDamage", true);
             attackCooldown = initialAttackCooldown;
-        }    
+            Time.timeScale = 0.8f;
+        }  
     }
 
     public void Loot()
@@ -105,5 +107,11 @@ public class Enemy : MonoBehaviour
         float verticalOrientation = player.transform.position.y - transform.position.y;
         anim.SetFloat("verticalOrientation", verticalOrientation);
         anim.SetFloat("horizontalOrientation", horizontalOrientation);
+    }
+
+    public void HitEnded()
+    {
+        anim.SetBool("isDamage", false);
+        Time.timeScale = 1f;
     }
 }

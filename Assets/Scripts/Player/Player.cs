@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     public LayerMask lootLayerMask;
     [HideInInspector] public bool isHolding = false;
     public float throwForce = 20f;
+   
     //manger loot
     private bool underOnionEffect = false;
     private bool underWatermelonEffect = false;
@@ -76,11 +77,16 @@ public class Player : MonoBehaviour
     public float tofubonusdmg;
     public GameObject attackParticule;
 
+    //Audio
+    public GameObject soundSource;
+    public AudioSource source;
+
 
 
 
     void Start()
     {
+        source = soundSource.GetComponent<AudioSource>();
         tofuEffectCooldown = initTofuEffectCooldown;
         initattackdmg = attackMeleeDamage;
         tofuAttackDmg = attackMeleeDamage + tofubonusdmg;
@@ -144,12 +150,65 @@ public class Player : MonoBehaviour
         lootEatEffects();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.name.Equals("StartRun"))
         {
-            SceneManager.LoadScene("SandboxScene");
+            if(Input.GetButtonDown("Dash"))
+            {
+                SceneManager.LoadScene("SandboxScene");
+            }
         }
+
+        if(other.gameObject.name.Equals("StartTuto"))
+        {
+            if(Input.GetButtonDown("Dash"))
+            {
+                //SceneManager.LoadScene("TutorialScene");
+            }
+        }
+
+        if (other.gameObject.name.Equals("OpenMenu"))
+        { 
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
+            if (Input.GetButtonDown("Dash"))
+            {
+                //Set Menu UI Active
+            }
+        }
+
+        if (other.gameObject.name.Equals("OpenFridge"))
+        {
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
+            if (Input.GetButtonDown("Dash"))
+            {
+                //GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
+                GameObject.FindGameObjectWithTag("UI").GetComponent<FridgeUI>().Pause();
+            }
+        }
+
+        if (other.gameObject.name.Equals("ReturnToHub"))
+        {
+            if(Input.GetButtonDown("Dash"))
+            {
+                SceneManager.LoadScene("HubScene");
+            }  
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("OpenMenu"))
+        {
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
+        }
+
+        if (other.gameObject.name.Equals("OpenFridge"))
+        {
+            other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
+        }
+
+
     }
 
     private void Move()
@@ -163,6 +222,7 @@ public class Player : MonoBehaviour
         // Animation
         if (rb.velocity.x != 0 || rb.velocity.y != 0)
         {
+            //soundSource.GetComponent<PlayerAudioManager>().PlayClipDelay(soundSource.GetComponent<PlayerAudioManager>().stepSound, 0.2f); CEST BEUGUÉ
             anim.SetBool("isMoving", true);
             anim.SetFloat("horizontalMovement", rb.velocity.x);
             anim.SetFloat("verticalMovement", rb.velocity.y);
@@ -184,6 +244,9 @@ public class Player : MonoBehaviour
                 if(inputDash && (rb.velocity.x != 0 || rb.velocity.y != 0))
                 {
                     isDashing = true;
+
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().dashSound);
+
                 }
             }
             else
@@ -211,10 +274,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Animation
+        // Animation & Sound
         if (isDashing)
         {
             anim.SetBool("isDashing", true);
+            
         }
         else
         {
@@ -269,6 +333,8 @@ public class Player : MonoBehaviour
             {
                 if(inputMelee)
                 {
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().attackSound);
+
                     isMeleeAttacking = true;
 
                     Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(attackMeleeMarker.transform.position, attackMeleeRadius, enemyLayerMask);
@@ -288,7 +354,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Animation
+        // Animation & Sounds
         if (isMeleeAttacking)
         {
             anim.SetBool("isMeleeAttacking", true);
@@ -359,6 +425,8 @@ public class Player : MonoBehaviour
 
                 }
 
+                soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().shurikenSound);
+
                 heldTimer = 0;
                 attackRangeCooldown = initialAttackRangeCooldown;
                 shurikenLoaded = 0;
@@ -372,12 +440,6 @@ public class Player : MonoBehaviour
                 attackRangeCooldown = 0;
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine((gameObject.transform.position + new Vector3(0f, 0.5f, 0f)), attackMeleeMarker.transform.position);
     }
 
     private void Pickup() 
@@ -394,6 +456,9 @@ public class Player : MonoBehaviour
                     anim.SetBool("isHolding", true);
                     itemHold = itemPickupable[0].gameObject;
                     itemHold.GetComponent<Loot>().isPickup = true;
+
+                    //Audio
+                    soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().pickupSound);
                 }
             }
         }
@@ -411,12 +476,26 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Throw"))
         {
+            //Audio
+            soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().throwSound);
+
             isHolding = false;
             anim.SetBool("isHolding", false);
             itemHold.GetComponent<Loot>().isThrow = true;
             itemHold.GetComponent<Loot>().isPickup = false;
-            Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
-            itemHold.GetComponent<Rigidbody2D>().AddForce(force,ForceMode2D.Impulse);
+            if (rb.velocity.x != 0 || rb.velocity.y != 0)
+            {
+                Vector2 force = new Vector2(inputHorizontal, inputVertical).normalized * throwForce;
+                itemHold.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Vector2 force = ((transform.position + new Vector3(0f, 0.5f, 0f)) - attackMeleeMarker.transform.position).normalized * throwForce;
+                itemHold.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            }
+
+            
+
             speedModifier = 1f;
         }
     }
@@ -463,6 +542,9 @@ public class Player : MonoBehaviour
             anim.SetBool("isHolding", false);
             speedModifier = 1f;
             Destroy(itemHold);
+
+            //Audio
+            soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().bonusSound);
         }
 
     }
@@ -528,7 +610,10 @@ public class Player : MonoBehaviour
                 Time.timeScale = 1f;
             }
         }
-        
+
+        //Animation & Sound 
+        soundSource.GetComponent<PlayerAudioManager>().PlayClip(soundSource.GetComponent<PlayerAudioManager>().hitSound);
+
         anim.SetBool("isDamage", true);
     }
 
@@ -550,12 +635,6 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("HubScene");
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackMeleeMarker.transform.position, attackMeleeRadius);
     }
 
     // UI methods

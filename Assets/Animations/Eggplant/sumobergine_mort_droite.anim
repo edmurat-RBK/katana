@@ -86,7 +86,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.5
     functionName: GetAnimationEvent
     data: Death
     objectReferenceParameter: {fileID: 4921765077664995641, guid: fb3e57ea2205cc849aa9917b188ceda5,
