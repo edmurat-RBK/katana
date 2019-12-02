@@ -2151,7 +2151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350665585694511150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.377996, y: 6.9959717, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 759315221223537604}
@@ -2545,7 +2545,7 @@ Tilemap:
   - first: {x: 1, y: -6, z: 0}
     second:
       m_TileIndex: 20
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -2554,7 +2554,7 @@ Tilemap:
   - first: {x: 4, y: -6, z: 0}
     second:
       m_TileIndex: 21
-      m_TileSpriteIndex: 19
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3729,18 +3729,17 @@ Tilemap:
       type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -274439252612248372, guid: 6733a3b503c58b047b40972a1b89236c,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 6731456519925971350, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 20
     m_Data: {fileID: 3896303288468080024, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
@@ -3756,8 +3755,9 @@ Tilemap:
   - m_RefCount: 13
     m_Data: {fileID: 1406471441961333451, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -274439252612248372, guid: 6733a3b503c58b047b40972a1b89236c,
+      type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 3006616307062337175, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
@@ -4060,21 +4060,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box Camera Recenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
         type: 3}
