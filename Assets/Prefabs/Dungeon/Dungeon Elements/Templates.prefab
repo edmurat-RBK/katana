@@ -77,7 +77,8 @@ MonoBehaviour:
   - {fileID: 1592589874513731705, guid: 250d431e628f4a14390b4968c5f217b6, type: 3}
   northSouth:
   - {fileID: 194039999249860878, guid: f517aa46e661ef644a91f76721d9baf7, type: 3}
-  northWest: []
+  northWest:
+  - {fileID: 754266023431702952, guid: ffe35df5d95005f41b98f6b28a7c15c5, type: 3}
   southEast:
   - {fileID: 6068166153116000973, guid: a80a054695d522c4380dab8b4428e416, type: 3}
   southWest:
