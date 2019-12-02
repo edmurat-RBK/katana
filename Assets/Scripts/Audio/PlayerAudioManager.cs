@@ -27,10 +27,11 @@ public class PlayerAudioManager : MonoBehaviour
         
     }
 
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(AudioClip clip, float volume)
     {
         float pitch = Random.Range(0.8f, 1.2f);
         soundSource.pitch = pitch;
+        soundSource.volume = volume;
         soundSource.clip = clip;
         soundSource.Play();
     }
