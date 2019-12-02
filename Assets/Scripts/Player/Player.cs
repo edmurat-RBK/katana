@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
-                //Set Menu UI Active
+                GameObject.FindGameObjectWithTag("UI").GetComponent<MenuUI>().Pause();
             }
         }
 
@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
-                //GameObject.FindGameObjectWithTag("UI").transform.Find("FridgeUI").gameObject.SetActive(true);
+
                 GameObject.FindGameObjectWithTag("UI").GetComponent<FridgeUI>().Pause();
             }
         }

@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
 
     public static bool gameIsPaused = false;
     public GameObject pauseMenu;
+    public GameObject firstSelectedObject;
     public AudioSource source;
     public AudioClip selectedClip;
     public AudioClip pressedClip;
+    private EventSystem eventSystem;
 
-
+    void Start()
+    {
+        eventSystem = EventSystem.current;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     private void Pause()
     {
         pauseMenu.SetActive(true);
+        eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstSelectedObject;
         Time.timeScale = 0f;
         gameIsPaused = true;
         GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().SoundCutoffOn();
