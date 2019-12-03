@@ -21,6 +21,7 @@ public class Eggplant : Enemy
     //Particle
     public GameObject fxOnde;
     public GameObject fxDeadEggplant;
+    public GameObject hitParticleEgg;
 
     //Audio
     
@@ -154,6 +155,11 @@ public class Eggplant : Enemy
         if (eventMessage.Equals("StartFX"))
         {
             fxOnde.GetComponent<ParticleSystem>().Play();
+        }
+
+        if (eventMessage.Equals("isHit"))
+        {
+            hitParticleEgg.GetComponent<ParticleSystem>().Play();
         }
 
         if (eventMessage.Equals("isDead"))

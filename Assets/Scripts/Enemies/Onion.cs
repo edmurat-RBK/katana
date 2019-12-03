@@ -12,6 +12,7 @@ public class Onion : Enemy
     private bool isAttacking = false;
     public LayerMask playerLayerMask;
     public GameObject deathParticuleOnion;
+    public GameObject hitParticle;
     private bool dealDamage; 
 
     // Start is called before the first frame update
@@ -99,6 +100,11 @@ public class Onion : Enemy
         {
             anim.SetBool("isDamage", false);
            
+        }
+
+        if (eventMessage.Equals("isHit"))
+        {
+            hitParticle.GetComponent<ParticleSystem>().Play();
         }
 
         if (eventMessage.Equals("isDead"))

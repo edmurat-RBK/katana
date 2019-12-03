@@ -13,6 +13,8 @@ public class Tofu : Enemy
     private Transform target;
     public float stoppingDistance;
 
+    //Animation
+    public GameObject deathParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +82,10 @@ public class Tofu : Enemy
             isDead = true; 
         }
 
+        if (eventMessage.Equals("isDead"))
+        {
+            deathParticle.GetComponent<ParticleSystem>().Play();
+        }
         if (eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
