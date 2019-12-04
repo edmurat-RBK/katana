@@ -5483,6 +5483,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987241755970992767, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: -20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dec37b983a6afe4e8dbf0a6cfedacd3, type: 3}
 --- !u!1 &5763872160227632997 stripped
