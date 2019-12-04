@@ -15,6 +15,7 @@ public class Tofu : Enemy
 
     //Animation
     public GameObject deathParticle;
+    public GameObject hitParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +87,12 @@ public class Tofu : Enemy
         {
             deathParticle.GetComponent<ParticleSystem>().Play();
         }
+
+        if (eventMessage.Equals("isHit"))
+        {
+            hitParticle.GetComponent<ParticleSystem>().Play();
+        }
+
         if (eventMessage.Equals("Hit"))
         {
             anim.SetBool("isDamage", false);
