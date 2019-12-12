@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a13d9979ee53fc429f57da35feba8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumDistance: 8
+  maximumDistance: 4
   ratio1Door: 0.05
   ratio2Door: 0.75
   ratio3Door: 0.15
@@ -53,7 +53,7 @@ MonoBehaviour:
   basketPrefab: {fileID: 2043931548736122664, guid: b90677228fd4f1c48a4ca60e57ba30e2,
     type: 3}
   north:
-  - {fileID: 8257338386003650744, guid: 5514697afce62354590ba25bc1f9f6b6, type: 3}
+  - {fileID: 8257338386003650744, guid: f9e30a21bced1c841ae178382149394d, type: 3}
   - {fileID: 3773689839800293523, guid: f7458297525d0814881625bc8bc143ef, type: 3}
   - {fileID: 9191082057801196548, guid: f4c4d4dee40d00a40978be7df247c485, type: 3}
   - {fileID: 8229244725113491706, guid: 8bbb3b9726be1884ca286bf2ba80f8cb, type: 3}
