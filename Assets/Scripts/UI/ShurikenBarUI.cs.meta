@@ -3,7 +3,14 @@ guid: 659848203c1bfcd4299ec47d70280878
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - firstShuriken: {instanceID: 0}
+  - secondShuriken: {instanceID: 0}
+  - thirdShuriken: {instanceID: 0}
+  - emptyShurikenSprite: {fileID: 2604008059781712887, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
+      type: 3}
+  - loadedShurikenSprite: {fileID: -1979618183947041394, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

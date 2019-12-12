@@ -26,17 +26,27 @@ public class ShurikenBarUI : MonoBehaviour
         switch(player.shurikenLoaded)
         {
             case 0:
+                Debug.Log("Set 0");
                 firstShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
                 secondShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
                 thirdShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
                 break;
             case 1:
+                Debug.Log("Set 1");
                 firstShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
+                secondShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
+                thirdShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
                 break;
             case 2:
+                Debug.Log("Set 2");
+                firstShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
                 secondShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
+                thirdShuriken.GetComponent<Image>().sprite = emptyShurikenSprite;
                 break;
             case 3:
+                Debug.Log("Set 3");
+                firstShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
+                secondShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
                 thirdShuriken.GetComponent<Image>().sprite = loadedShurikenSprite;
                 break;
         }
