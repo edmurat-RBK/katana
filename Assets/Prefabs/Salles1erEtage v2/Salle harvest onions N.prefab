@@ -4835,11 +4835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1155374736917528886}
     m_Modifications:
-    - target: {fileID: 5157599575817092880, guid: f11b37d8acf02004ca981d7ac7b19d87,
-        type: 3}
-      propertyPath: m_Name
-      value: PROPS_vase1
-      objectReference: {fileID: 0}
     - target: {fileID: 687057943759062126, guid: f11b37d8acf02004ca981d7ac7b19d87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4895,6 +4890,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157599575817092880, guid: f11b37d8acf02004ca981d7ac7b19d87,
+        type: 3}
+      propertyPath: m_Name
+      value: PROPS_vase1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368262701238011569, guid: f11b37d8acf02004ca981d7ac7b19d87,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17707205
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368262701238011569, guid: f11b37d8acf02004ca981d7ac7b19d87,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5175028
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11b37d8acf02004ca981d7ac7b19d87, type: 3}
 --- !u!4 &1574223654495947669 stripped
@@ -4910,11 +4920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 969056291230379329, guid: 8f2a727c68e35e5479b3f47f69207684,
-        type: 3}
-      propertyPath: m_Name
-      value: Box Camera Recenter
-      objectReference: {fileID: 0}
     - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -4960,6 +4965,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.22
       objectReference: {fileID: 0}
+    - target: {fileID: 969056291230379329, guid: 8f2a727c68e35e5479b3f47f69207684,
+        type: 3}
+      propertyPath: m_Name
+      value: Box Camera Recenter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2a727c68e35e5479b3f47f69207684, type: 3}
 --- !u!4 &1514003351642837598 stripped
@@ -4975,11 +4985,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner
-      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5035,6 +5040,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
 --- !u!4 &7022709306812417451 stripped
@@ -5050,11 +5060,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5110,6 +5115,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
 --- !u!4 &7022709307201995183 stripped
@@ -5125,11 +5135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5185,6 +5190,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
 --- !u!4 &7022709307446368787 stripped
@@ -5200,11 +5210,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5260,6 +5265,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
 --- !u!4 &7022709308007517796 stripped
@@ -5275,11 +5285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
-        type: 3}
-      propertyPath: m_Name
-      value: Onion Spawner (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 758618067792356509, guid: 3212b6fdb823e8f46b3f82232f59aa75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5334,6 +5339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 758618067792356481, guid: 3212b6fdb823e8f46b3f82232f59aa75,
+        type: 3}
+      propertyPath: m_Name
+      value: Onion Spawner (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3212b6fdb823e8f46b3f82232f59aa75, type: 3}
@@ -5425,11 +5435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5012012560552076542}
     m_Modifications:
-    - target: {fileID: 5643526036494523569, guid: c5b666a3e1c47664f9f9cb0f99bec302,
-        type: 3}
-      propertyPath: m_Name
-      value: PROPS_table3
-      objectReference: {fileID: 0}
     - target: {fileID: 7945065307178959644, guid: c5b666a3e1c47664f9f9cb0f99bec302,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5484,6 +5489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643526036494523569, guid: c5b666a3e1c47664f9f9cb0f99bec302,
+        type: 3}
+      propertyPath: m_Name
+      value: PROPS_table3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5b666a3e1c47664f9f9cb0f99bec302, type: 3}

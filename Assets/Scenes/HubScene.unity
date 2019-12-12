@@ -5668,7 +5668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &272281740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6105,9 +6105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 792790374}
+    m_SelectOnDown: {fileID: 760351791}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -6905,9 +6905,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 431968694}
+    m_SelectOnDown: {fileID: 792790374}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -6990,9 +6990,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 760351791}
+    m_SelectOnDown: {fileID: 431968694}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -7704,9 +7704,9 @@ GameObject:
   - component: {fileID: 1121467647}
   - component: {fileID: 1121467646}
   - component: {fileID: 1121467645}
+  - component: {fileID: 1121467651}
   - component: {fileID: 1121467649}
   - component: {fileID: 1121467650}
-  - component: {fileID: 1121467651}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -7810,9 +7810,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1594503882}
   firstSelectedObject: {fileID: 1498115242}
+  firstSelectedButton: {fileID: 0}
   source: {fileID: 1594503886}
   selectedClip: {fileID: 8300000, guid: 6c322eb450db17c40a85b9002ac40b20, type: 3}
   pressedClip: {fileID: 0}
+  eventSystem: {fileID: 1492684622}
 --- !u!114 &1121467650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,7 +7852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1762707700}
   firstSelectedObject: {fileID: 431968692}
-  eventSystem: {fileID: 0}
+  eventSystem: {fileID: 1492684622}
 --- !u!1 &1224153020
 GameObject:
   m_ObjectHideFlags: 0

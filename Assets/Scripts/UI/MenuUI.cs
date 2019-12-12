@@ -28,6 +28,7 @@ public class MenuUI : MonoBehaviour
     {
         menuUI.SetActive(true);
         eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstSelectedObject;
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstSelectedObject);
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
