@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     private bool isRangeAttacking = false;
     public float projectileSpeed;
     private Transform projectileOrigin;
-    private float heldTimer = 0;
+    public float heldTimer = 0;
     public int shurikenLoaded = 0;
     private Vector3 directionOffsetA;
     private Vector3 directionOffsetB;

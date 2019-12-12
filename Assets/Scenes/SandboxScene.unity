@@ -174,10 +174,13 @@ MonoBehaviour:
   firstShuriken: {fileID: 220345584}
   secondShuriken: {fileID: 878859488}
   thirdShuriken: {fileID: 1808820874}
-  emptyShurikenSprite: {fileID: 2604008059781712887, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
-    type: 3}
-  loadedShurikenSprite: {fileID: -1979618183947041394, guid: ec5ce136c4ba2d44cbc6210cbbe33618,
-    type: 3}
+  shurikenSprite:
+  - {fileID: 2604008059781712887, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
+  - {fileID: 8875173045569197720, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
+  - {fileID: 6093130483595777826, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
+  - {fileID: 64190334102977123, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
+  - {fileID: -1979618183947041394, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
+  - {fileID: -1979618183947041394, guid: ec5ce136c4ba2d44cbc6210cbbe33618, type: 3}
 --- !u!1 &220345584
 GameObject:
   m_ObjectHideFlags: 0
