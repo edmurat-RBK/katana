@@ -10,7 +10,6 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject pauseMenu;
     public GameObject firstSelectedObject;
-    public Button firstSelectedButton;
     public AudioSource source;
     public AudioClip selectedClip;
     public AudioClip pressedClip;
@@ -20,7 +19,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         eventSystem = EventSystem.current;
-        firstSelectedButton = firstSelectedObject.GetComponent<Button>();
         
     }
     // Update is called once per frame
@@ -45,7 +43,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
-        //GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().SoundCutoffOff();
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().SoundCutoffOff();
     }
     
     private void Pause()
@@ -56,7 +54,7 @@ public class PauseMenu : MonoBehaviour
         eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstSelectedObject);
         Time.timeScale = 0f;
         gameIsPaused = true;
-        //GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().SoundCutoffOn();
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().SoundCutoffOn();
     }
 
     public void onQuit()
