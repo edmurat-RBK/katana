@@ -171,6 +171,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("OpenMenu"))
         { 
+
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
@@ -180,6 +181,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("OpenFridge"))
         {
+           GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", true);
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
@@ -206,6 +208,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("OpenFridge"))
         {
+            GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", false);
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
         }
 

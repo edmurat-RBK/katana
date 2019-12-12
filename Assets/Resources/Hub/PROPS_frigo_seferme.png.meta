@@ -1,40 +1,16 @@
 fileFormatVersion: 2
-guid: 65ac68eb27efe574f8002e60ee3d0299
+guid: 650190d70edea264bbc4fe5f85e7519e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -506835271304916085
-    second: Meuble_0
+      213: 4973726647168581646
+    second: PROPS_frigo_seferme_0
   - first:
-      213: -7387487114034869021
-    second: Meuble_1
+      213: -513720361073054754
+    second: PROPS_frigo_seferme_1
   - first:
-      213: -7788262618930910602
-    second: Meuble_2
-  - first:
-      213: 2494051749713805494
-    second: Meuble_3
-  - first:
-      213: -2513587136996257002
-    second: Meuble_4
-  - first:
-      213: 1688574072471056557
-    second: Meuble_5
-  - first:
-      213: 5123260193161259813
-    second: Meuble_6
-  - first:
-      213: -7911593406487584137
-    second: Meuble_7
-  - first:
-      213: 8258272513597299086
-    second: Meuble_8
-  - first:
-      213: -6691505091719620731
-    second: Meuble_9
-  - first:
-      213: 7948345704759120043
-    second: Meuble_10
+      213: -1183560339371181750
+    second: PROPS_frigo_seferme_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,85 +95,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Meuble_1
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 111
-        width: 98
-        height: 94
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d54e9465d7579ad40aaeb5ad757d9ea3
-      internalID: -7387487114034869021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meuble_0
+      name: PROPS_frigo_seferme_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 114
-        height: 222
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 519108cd1a6d2034b86d66cdbc6d11b3
-      internalID: -506835271304916085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meuble_2
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 188
-        width: 28
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51f91f638fa46f74ba46cdefcc937b8e
-      internalID: -7788262618930910602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meuble_3
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 141
-        width: 24
-        height: 48
+        width: 44
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.5, y: 0.07}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26d202f23099c804c8298c68f59fcccd
-      internalID: 2494051749713805494
+      spriteID: 6e9edd1c40eb64547b5d8b205dee97f1
+      internalID: 4973726647168581646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROPS_frigo_seferme_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 44
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26264e77d2440334ead6c1939e13faec
+      internalID: -513720361073054754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PROPS_frigo_seferme_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 44
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbcfe58b4ded2e4d835b381109c4d13
+      internalID: -1183560339371181750
       vertices: []
       indices: 
       edges: []
@@ -205,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 56676af1dfad9e24dac7ee8f808140d3
     internalID: 0
     vertices: []
     indices: 
