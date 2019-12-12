@@ -156,7 +156,8 @@ public class Player : MonoBehaviour
         {
             if(Input.GetButtonDown("Dash"))
             {
-                SceneManager.LoadScene("SandboxScene");
+                transform.position = new Vector3(1.667f, 1.416f, 0);
+                anim.SetBool("isInTheChatiere", true);
             }
         }
 
@@ -548,6 +549,7 @@ public class Player : MonoBehaviour
         }
 
     }
+
     private void lootEatEffects()
     {
         if (underWatermelonEffect == true)
@@ -634,6 +636,12 @@ public class Player : MonoBehaviour
         if (eventMessage.Equals("DeathEnded"))
         {
             SceneManager.LoadScene("HubScene");
+        }
+
+        if (eventMessage.Equals("ChatiereEnded"))
+        {
+            anim.SetBool("isInTheChatiere", false);
+            SceneManager.LoadScene("SandboxScene");
         }
     }
 
