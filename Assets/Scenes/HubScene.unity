@@ -5680,7 +5680,6 @@ Transform:
   m_LocalPosition: {x: 2.5377312, y: 0.020860136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1629994240}
   - {fileID: 1054462740}
   m_Father: {fileID: 1426180364}
   m_RootOrder: 3
@@ -7368,7 +7367,6 @@ GameObject:
   m_Component:
   - component: {fileID: 656216050}
   - component: {fileID: 656216049}
-  - component: {fileID: 656216048}
   - component: {fileID: 656216047}
   m_Layer: 0
   m_Name: hub_pnj5_idle_0
@@ -7396,21 +7394,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &656216048
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656216046}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2ca39ffcdfb4e6b48bb8d07a39e73ea9, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &656216049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8381,7 +8364,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1040462608}
   - component: {fileID: 1040462607}
-  - component: {fileID: 1040462606}
   - component: {fileID: 1040462605}
   m_Layer: 11
   m_Name: hub_pnj2_idle_0
@@ -8409,21 +8391,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1040462606
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040462604}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 01e1aa78f905c5b4898603ef56361da8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &1040462607
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8461,7 +8428,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7192211636624197927, guid: 7e027062b6afd374aad9b62619abb6dd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8649,7 +8616,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1050386450}
   - component: {fileID: 1050386449}
-  - component: {fileID: 1050386448}
   - component: {fileID: 1050386447}
   m_Layer: 0
   m_Name: hub_pnj4_idle_0
@@ -8677,21 +8643,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1050386448
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050386446}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 50879bf0f9c976f4882543d2bd481c33, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &1050386449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8782,11 +8733,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054462739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9166667, y: 1.25, z: 0}
+  m_LocalPosition: {x: -3.0416667, y: 1.2083333, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 171803383}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1054462741
 SpriteRenderer:
@@ -8826,7 +8777,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 2494051749713805494, guid: 65ac68eb27efe574f8002e60ee3d0299,
+  m_Sprite: {fileID: -1183560339371181750, guid: 650190d70edea264bbc4fe5f85e7519e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8848,7 +8799,7 @@ Animator:
   m_GameObject: {fileID: 1054462739}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 387b41e160dbd854ea0ca0fe2c8fec2b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d0eddb597d54eb44ad20cfc2259f0d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9342,7 +9293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1224153024}
   - component: {fileID: 1224153023}
-  - component: {fileID: 1224153022}
   - component: {fileID: 1224153021}
   m_Layer: 0
   m_Name: hub_pnj1_idle_0
@@ -9370,21 +9320,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1224153022
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224153020}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: af523354637079b469e46d4142ef6119, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &1224153023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21239,86 +21174,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627612696}
   m_CullTransparentMesh: 0
---- !u!1 &1629994239
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1629994240}
-  - component: {fileID: 1629994241}
-  m_Layer: 0
-  m_Name: OutlineFridge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1629994240
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629994239}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9166667, y: 2.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 171803383}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1629994241
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629994239}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 093e822a310eb5346980841d90cf661a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.0833334, y: 2.0833333}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1642557407
 GameObject:
   m_ObjectHideFlags: 0
@@ -22565,7 +22420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2011897284}
   - component: {fileID: 2011897283}
-  - component: {fileID: 2011897282}
   - component: {fileID: 2011897285}
   m_Layer: 11
   m_Name: hub_pnj3_idle_0
@@ -22574,21 +22428,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &2011897282
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011897281}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fb733f882eb8c3744acebbc9072e771b, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &2011897283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22626,7 +22465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -5592920996119614601, guid: b708538a2b1de6d45b74a168aaba0656,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
