@@ -24,7 +24,6 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Debug.Log(eventSystem.GetComponent<EventSystem>().currentSelectedGameObject);
        if(Input.GetButtonDown("Pause"))
        {
             if(gameIsPaused)

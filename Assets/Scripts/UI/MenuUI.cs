@@ -11,7 +11,13 @@ public class MenuUI : MonoBehaviour
     private bool gameIsPaused = false;
     public EventSystem eventSystem;
 
+    //Courses and Description
     public List<Toggle> menuToggles = new List<Toggle>();
+    public List<Sprite> courseDescription = new List<Sprite>();
+    public GameObject EntryDescription;
+    public GameObject MainDescription;
+    public GameObject DesertDescription;
+    private Vector3 offset = new Vector3 (120f, 0f, 0f);
 
     //Text 
     [Header("Inventory")]
@@ -20,10 +26,19 @@ public class MenuUI : MonoBehaviour
     public GameObject lemonNumber;
     public GameObject watermelonNumber;
     public GameObject tofuNumber;
+    private GameManager gameManager;
+    private int onionCount = 0;
+    private int watermelonCount = 0;
+    private int lemonCount = 0;
+    private int eggplantCount = 0;
+    private int tofuCount = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
         eventSystem = EventSystem.current;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -37,15 +52,18 @@ public class MenuUI : MonoBehaviour
 
     public void Pause()
     {
+        UpdateCount();
         menuUI.SetActive(true);
         eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstSelectedObject;
         eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstSelectedObject);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        SetTogglesDisabled();
     }
 
     public void Resume()
     {
+        ResetCount(); 
         menuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -58,4 +76,141 @@ public class MenuUI : MonoBehaviour
             menuToggles[i].isOn = false;
         }
     }
+
+    private void ResetCount()
+    {
+        onionCount = 0;
+        watermelonCount = 0;
+        lemonCount = 0;
+        eggplantCount = 0;
+        tofuCount = 0;
+    }
+
+    private void UpdateCount()
+    {
+        for (int i = 0; i < gameManager.fridgeInventory.Count; i++)
+        {
+            switch (gameManager.fridgeInventory[i])
+            {
+                case Item.ONION:
+                    onionCount++;
+                    break;
+
+                case Item.WATERMELON:
+                    watermelonCount++;
+                    break;
+
+
+                case Item.LEMON:
+                    lemonCount++;
+                    break;
+
+                case Item.EGGPLANT:
+                    eggplantCount++;
+                    break;
+
+                case Item.TOFU:
+                    tofuCount++;
+                    break;
+
+                default: break;
+            }
+        }
+
+        eggplantNumber.GetComponent<Text>().text = eggplantCount.ToString();
+        onionNumber.GetComponent<Text>().text = onionCount.ToString();
+        lemonNumber.GetComponent<Text>().text = lemonCount.ToString();
+        watermelonNumber.GetComponent<Text>().text = watermelonCount.ToString();
+        tofuNumber.GetComponent<Text>().text = tofuCount.ToString();
+    }
+
+    private void SetTogglesDisabled()
+    {
+        for (int i = 0; i < menuToggles.Count; i++)
+        {
+            CourseCost cost = menuToggles[i].GetComponent<CourseCost>();
+            if(cost.onionCost > onionCount || cost.eggplantCost > eggplantCount || cost.watermelonCost > watermelonCount || cost.lemonCost > lemonCount || cost.tofuCost > tofuCount)
+            {
+                menuToggles[i].interactable = false;
+            }
+            else
+            {
+                menuToggles[i].interactable = true;
+            }
+         }
+    }
+
+    public void CourseDescription()
+    {
+        if(eventSystem.currentSelectedGameObject == menuToggles[0].gameObject)
+        {
+            EntryDescription.GetComponent<Image>().sprite = courseDescription[0];
+            EntryDescription.transform.position += offset; 
+            Debug.Log("Selected Entry 1");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[1].gameObject)
+        {
+            EntryDescription.GetComponent<Image>().sprite = courseDescription[1];
+            EntryDescription.transform.position += offset;
+            Debug.Log("Selected Entry 2");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[2].gameObject)
+        {
+            EntryDescription.GetComponent<Image>().sprite = courseDescription[2];
+            EntryDescription.transform.position += offset;
+            Debug.Log("Selected Entry 3");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[3].gameObject)
+        {
+            MainDescription.GetComponent<Image>().sprite = courseDescription[3];
+            Debug.Log("Selected Main 1");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[4].gameObject)
+        {
+            MainDescription.GetComponent<Image>().sprite = courseDescription[4];
+            Debug.Log("Selected Main 2");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[5].gameObject)
+        {
+            MainDescription.GetComponent<Image>().sprite = courseDescription[5];
+            Debug.Log("Selected Main 3");
+        }
+
+        else if (eventSystem.currentSelectedGameObject == menuToggles[6].gameObject)
+        {
+            DesertDescription.GetComponent<Image>().sprite = courseDescription[6];
+            Debug.Log("Selected Deserted 1");
+        }
+        else if (eventSystem.currentSelectedGameObject == menuToggles[7].gameObject)
+        {
+            DesertDescription.GetComponent<Image>().sprite = courseDescription[7];
+            Debug.Log("Selected Deserted 2");
+        }
+        else if (eventSystem.currentSelectedGameObject == menuToggles[8].gameObject)
+        {
+            DesertDescription.GetComponent<Image>().sprite = courseDescription[8];
+            Debug.Log("Selected Deserted 3");
+        }
+    }
+
+    public void ResetDescriptionEntry()
+    {
+        EntryDescription.transform.position = new Vector3(-250f,177f,0f);
+    }
+
+    public void ResetDescriptionMain()
+    {
+        MainDescription.transform.position = new Vector3(-250f, -8f, 0f);
+    }
+
+    public void ResetDescriptionDesert()
+    {
+        DesertDescription.transform.position = new Vector3(-250f,-208f, 0f);
+    }
+
 }

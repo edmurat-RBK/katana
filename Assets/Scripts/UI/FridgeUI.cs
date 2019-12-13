@@ -71,6 +71,7 @@ public class FridgeUI : MonoBehaviour
                     watermelonCount++;
                     break;
 
+
                 case Item.LEMON:
                     lemonCount++;
                     break;

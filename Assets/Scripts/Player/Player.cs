@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("OpenFridge"))
         {
-           GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", true);
+            GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", true);
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
             if (Input.GetButtonDown("Dash"))
             {
