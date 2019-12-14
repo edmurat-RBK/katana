@@ -39,6 +39,7 @@ public class MenuUI : MonoBehaviour
     {
         eventSystem = EventSystem.current;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.GetUIAndToggles();
     }
 
     // Update is called once per frame

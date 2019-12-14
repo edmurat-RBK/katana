@@ -9115,9 +9115,6 @@ MonoBehaviour:
   EntryDescription: {fileID: 2096508654}
   MainDescription: {fileID: 390611611}
   DesertDescription: {fileID: 1810848715}
-  EntryDescriptionPos: {fileID: 0}
-  MainDescriptionPos: {fileID: 0}
-  DesertDescriptionPos: {fileID: 0}
   eggplantNumber: {fileID: 47894792}
   onionNumber: {fileID: 1139135033}
   lemonNumber: {fileID: 1658221715}
@@ -21825,7 +21822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1762707701
 RectTransform:
   m_ObjectHideFlags: 0
