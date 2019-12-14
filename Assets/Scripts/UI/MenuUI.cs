@@ -146,71 +146,68 @@ public class MenuUI : MonoBehaviour
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[0];
             EntryDescription.transform.position += offset; 
-            Debug.Log("Selected Entry 1");
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[1].gameObject)
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[1];
             EntryDescription.transform.position += offset;
-            Debug.Log("Selected Entry 2");
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[2].gameObject)
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[2];
             EntryDescription.transform.position += offset;
-            Debug.Log("Selected Entry 3");
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[3].gameObject)
         {
             MainDescription.GetComponent<Image>().sprite = courseDescription[3];
-            Debug.Log("Selected Main 1");
+            MainDescription.transform.position += offset;
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[4].gameObject)
         {
             MainDescription.GetComponent<Image>().sprite = courseDescription[4];
-            Debug.Log("Selected Main 2");
+            MainDescription.transform.position += offset;
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[5].gameObject)
         {
             MainDescription.GetComponent<Image>().sprite = courseDescription[5];
-            Debug.Log("Selected Main 3");
+            MainDescription.transform.position += offset;
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[6].gameObject)
         {
             DesertDescription.GetComponent<Image>().sprite = courseDescription[6];
-            Debug.Log("Selected Deserted 1");
+            DesertDescription.transform.position += offset;
         }
         else if (eventSystem.currentSelectedGameObject == menuToggles[7].gameObject)
         {
             DesertDescription.GetComponent<Image>().sprite = courseDescription[7];
-            Debug.Log("Selected Deserted 2");
+            DesertDescription.transform.position += offset;
         }
         else if (eventSystem.currentSelectedGameObject == menuToggles[8].gameObject)
         {
             DesertDescription.GetComponent<Image>().sprite = courseDescription[8];
-            Debug.Log("Selected Deserted 3");
+            DesertDescription.transform.position += offset;
         }
     }
 
     public void ResetDescriptionEntry()
     {
-        EntryDescription.transform.position = new Vector3(-250f,177f,0f);
+        EntryDescription.transform.position -= offset;
     }
 
     public void ResetDescriptionMain()
     {
-        MainDescription.transform.position = new Vector3(-250f, -8f, 0f);
+        MainDescription.transform.position -= offset;
     }
 
     public void ResetDescriptionDesert()
     {
-        DesertDescription.transform.position = new Vector3(-250f,-208f, 0f);
+        DesertDescription.transform.position -= offset;
     }
 
 }
