@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     // Components
     private Rigidbody2D rb;
     private Animator anim;
+    private GameObject manager;
 
     // Health
     public float maximumHealth = 10f;
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameManager");
         source = soundSource.GetComponent<AudioSource>();
         tofuEffectCooldown = initTofuEffectCooldown;
         initattackdmg = attackMeleeDamage;
@@ -156,6 +158,7 @@ public class Player : MonoBehaviour
         {
             if(Input.GetButtonDown("Dash"))
             {
+                manager.GetComponent<GameManager>().ConsumeOnRun();
                 transform.position = new Vector3(1.667f, 1.416f, 0);
                 anim.SetBool("isInTheChatiere", true);
             }
@@ -682,4 +685,6 @@ public class Player : MonoBehaviour
     {
         return (int)Mathf.Ceil(health);
     }
+
+    
 }
