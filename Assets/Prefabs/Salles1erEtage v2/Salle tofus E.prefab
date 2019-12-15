@@ -3000,8 +3000,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 13, y: 1, z: 0}
     second:
-      m_TileIndex: 31
-      m_TileSpriteIndex: 31
+      m_TileIndex: 29
+      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3913,11 +3913,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ee260f39ed646564fa5ea80cc44d2872, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 241cf6baa615bbf469508b75da14863a, type: 2}
-  - m_RefCount: 8
+  - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 2bae6cfc4ebb78442b2041384114e274, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: f297133c25b86be428428059d1be5d3b, type: 2}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 75726139d9f023d4a81792a6f07c98a4, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -4003,13 +4003,13 @@ Tilemap:
   - m_RefCount: 9
     m_Data: {fileID: 2253816331469833606, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
-  - m_RefCount: 8
+  - m_RefCount: 9
     m_Data: {fileID: -1967234243018991677, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -3317392778981008440, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 7715579466416446528, guid: 6733a3b503c58b047b40972a1b89236c,
       type: 3}
   m_TileMatrixArray:
@@ -4308,6 +4308,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5868775057220452621}
     m_Modifications:
+    - target: {fileID: 969056291230379329, guid: 8f2a727c68e35e5479b3f47f69207684,
+        type: 3}
+      propertyPath: m_Name
+      value: Box Camera Recenter
+      objectReference: {fileID: 0}
     - target: {fileID: 6645793972453868706, guid: 8f2a727c68e35e5479b3f47f69207684,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -4348,11 +4353,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 969056291230379329, guid: 8f2a727c68e35e5479b3f47f69207684,
-        type: 3}
-      propertyPath: m_Name
-      value: Box Camera Recenter
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2a727c68e35e5479b3f47f69207684, type: 3}
 --- !u!4 &6443525130051981593 stripped
@@ -4368,6 +4368,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5868775059142100451}
     m_Modifications:
+    - target: {fileID: 984427441017430866, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TofuSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 984427441017430862, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4422,11 +4427,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 984427441017430866, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TofuSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c3768dd6429cd41a8d9c88ffb99b70, type: 3}
@@ -4988,6 +4988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5868775059142100451}
     m_Modifications:
+    - target: {fileID: 984427441017430866, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TofuSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 984427441017430862, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5042,11 +5047,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 984427441017430866, guid: 08c3768dd6429cd41a8d9c88ffb99b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TofuSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c3768dd6429cd41a8d9c88ffb99b70, type: 3}
