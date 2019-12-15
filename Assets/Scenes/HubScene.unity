@@ -6121,7 +6121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6268,7 +6268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6297,6 +6297,7 @@ GameObject:
   - component: {fileID: 318921714}
   - component: {fileID: 318921713}
   - component: {fileID: 318921712}
+  - component: {fileID: 318921715}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -6359,6 +6360,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 141.66667, y: 141.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &318921715
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318921711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &382703277
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,6 +6392,7 @@ GameObject:
   - component: {fileID: 382703278}
   - component: {fileID: 382703280}
   - component: {fileID: 382703279}
+  - component: {fileID: 382703281}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -6432,6 +6455,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382703277}
   m_CullTransparentMesh: 0
+--- !u!223 &382703281
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382703277}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &389777075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,7 +6532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6649,7 +6693,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6903,7 +6947,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963331551}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6920,6 +6964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521535751}
   - component: {fileID: 521535752}
+  - component: {fileID: 521535753}
   m_Layer: 5
   m_Name: MainGroup
   m_TagString: Untagged
@@ -6962,6 +7007,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 1
+--- !u!223 &521535753
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521535750}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_TargetDisplay: 0
 --- !u!1 &560164705
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,6 +7391,7 @@ GameObject:
   - component: {fileID: 587681093}
   - component: {fileID: 587681092}
   - component: {fileID: 587681091}
+  - component: {fileID: 587681094}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -7387,6 +7454,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 141.66667, y: 141.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &587681094
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587681090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &656216046
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,7 +7836,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -7894,7 +7982,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -8055,7 +8143,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -8106,7 +8194,7 @@ MonoBehaviour:
   onionCost: 1
   eggplantCost: 0
   lemonCost: 0
-  tofuCost: 2
+  tofuCost: 0
   watermelonCost: 0
 --- !u!114 &942758998
 MonoBehaviour:
@@ -8260,6 +8348,7 @@ RectTransform:
   - {fileID: 1987465136}
   - {fileID: 521535751}
   - {fileID: 1230778024}
+  - {fileID: 1339562116}
   - {fileID: 1673223763}
   - {fileID: 507630629}
   - {fileID: 1445448824}
@@ -8626,7 +8715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9247,7 +9336,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -9454,6 +9543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230778024}
   - component: {fileID: 1230778025}
+  - component: {fileID: 1230778026}
   m_Layer: 5
   m_Name: DesertGroup
   m_TagString: Untagged
@@ -9496,6 +9586,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 1
+--- !u!223 &1230778026
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230778023}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 4
+  m_TargetDisplay: 0
 --- !u!1 &1232474347
 GameObject:
   m_ObjectHideFlags: 0
@@ -19127,7 +19238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19630,6 +19741,101 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fec2f8a4045b55478a7392351b79010, type: 3}
+--- !u!1 &1339562115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339562116}
+  - component: {fileID: 1339562118}
+  - component: {fileID: 1339562117}
+  - component: {fileID: 1339562119}
+  m_Layer: 5
+  m_Name: Dishes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1339562116
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339562115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.1, y: 4.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963331551}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 384, y: 216}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1339562117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339562115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 07da56e06d84a6b4795bfa2e298ff89b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1339562118
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339562115}
+  m_CullTransparentMesh: 0
+--- !u!223 &1339562119
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339562115}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &1347086946
 GameObject:
   m_ObjectHideFlags: 0
@@ -19928,7 +20134,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -20035,6 +20241,7 @@ GameObject:
   - component: {fileID: 1381705077}
   - component: {fileID: 1381705076}
   - component: {fileID: 1381705075}
+  - component: {fileID: 1381705078}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -20097,6 +20304,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 141.66667, y: 141.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1381705078
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381705074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1389493049
 GameObject:
   m_ObjectHideFlags: 0
@@ -20240,6 +20468,7 @@ GameObject:
   - component: {fileID: 1414575119}
   - component: {fileID: 1414575118}
   - component: {fileID: 1414575117}
+  - component: {fileID: 1414575120}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -20302,6 +20531,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 141.66667, y: 141.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1414575120
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414575116}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1426180363
 GameObject:
   m_ObjectHideFlags: 0
@@ -20394,7 +20644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -20443,7 +20693,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963331551}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20884,7 +21134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -21172,7 +21422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -21536,7 +21786,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 963331551}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21822,7 +22072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1762707701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22154,6 +22404,7 @@ GameObject:
   - component: {fileID: 1868774402}
   - component: {fileID: 1868774404}
   - component: {fileID: 1868774403}
+  - component: {fileID: 1868774405}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -22216,6 +22467,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868774401}
   m_CullTransparentMesh: 0
+--- !u!223 &1868774405
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868774401}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1943837718
 GameObject:
   m_ObjectHideFlags: 0
@@ -22266,7 +22538,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -22432,7 +22704,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -22518,6 +22790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987465136}
   - component: {fileID: 1987465137}
+  - component: {fileID: 1987465138}
   m_Layer: 5
   m_Name: EntryGroup
   m_TagString: Untagged
@@ -22560,6 +22833,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 1
+--- !u!223 &1987465138
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987465135}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &2011897281
 GameObject:
   m_ObjectHideFlags: 0
@@ -22672,6 +22966,7 @@ GameObject:
   - component: {fileID: 2013724127}
   - component: {fileID: 2013724129}
   - component: {fileID: 2013724128}
+  - component: {fileID: 2013724130}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -22734,6 +23029,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013724126}
   m_CullTransparentMesh: 0
+--- !u!223 &2013724130
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013724126}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &2014624482
 GameObject:
   m_ObjectHideFlags: 0
@@ -22745,6 +23061,7 @@ GameObject:
   - component: {fileID: 2014624483}
   - component: {fileID: 2014624485}
   - component: {fileID: 2014624484}
+  - component: {fileID: 2014624486}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -22807,6 +23124,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014624482}
   m_CullTransparentMesh: 0
+--- !u!223 &2014624486
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014624482}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &2015738486
 GameObject:
   m_ObjectHideFlags: 0
@@ -22857,7 +23195,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: c89589ab900f23840ac2894f6a69e5a8, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 842c76999bef1ba4f98259bad7102cbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5ff5fe6e4d5dd0b4b898961a9a77f45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -23124,7 +23462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe5a346fdfd0734998abae03db4821d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45751710abfbe1b4d839267ecf7e977a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -23285,6 +23623,7 @@ GameObject:
   - component: {fileID: 2120576748}
   - component: {fileID: 2120576747}
   - component: {fileID: 2120576746}
+  - component: {fileID: 2120576749}
   m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
@@ -23347,3 +23686,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 141.66667, y: 141.66667}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &2120576749
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120576745}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
