@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     // Move
     public float speed = 1f;
     public float speedModifier = 1f;
+    public bool isInTheChatiere = false;
     // Dash
     public float dashSpeed = 1.5f;
     private float dashTime;
@@ -109,9 +110,10 @@ public class Player : MonoBehaviour
         {
             Statistics();
 
-            
-            Move();
-            
+            if (!isInTheChatiere)
+            {
+                Move();
+            }            
 
             if (!isMeleeAttacking)
             {
@@ -159,6 +161,8 @@ public class Player : MonoBehaviour
             if(Input.GetButtonDown("Dash"))
             {
                 manager.GetComponent<GameManager>().ConsumeOnRun();
+                rb.velocity = Vector3.zero;
+                isInTheChatiere = true;
                 transform.position = new Vector3(1.667f, 1.416f, 0);
                 anim.SetBool("isInTheChatiere", true);
             }
