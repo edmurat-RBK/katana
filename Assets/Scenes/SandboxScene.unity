@@ -1982,7 +1982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VirtualCamera: {fileID: 306716523}
-  isShaking: 0
+  isShaking: 1
 --- !u!1001 &2093931554
 PrefabInstance:
   m_ObjectHideFlags: 0
