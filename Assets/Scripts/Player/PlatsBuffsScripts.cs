@@ -48,6 +48,7 @@ public class PlatsBuffsScripts : MonoBehaviour
     }
     private void EatEffects()
     {
+        /*
         switch ()
         {
 
@@ -132,6 +133,7 @@ public class PlatsBuffsScripts : MonoBehaviour
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
+        */
     }
 
     IEnumerator RegenPlat1()

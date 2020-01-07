@@ -10,7 +10,7 @@ public class UIShurikenBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("RangeAttack"))
+        if (Mathf.Abs(Input.GetAxis("RangeAttack")) == 1)
         {
             UIshuriken.SetActive(true);
         }

@@ -59,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1278265272718598590
 MonoBehaviour:
@@ -19774,6 +19774,7 @@ MonoBehaviour:
   health: 0
   speed: 5
   speedModifier: 1
+  isInTheChatiere: 0
   dashSpeed: 45
   initialDashTime: 0.08
   initialDashCooldown: 0.7
