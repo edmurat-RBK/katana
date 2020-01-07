@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name.Equals("StartRun"))
         {
-            if(Input.GetButtonDown("Dash"))
+            if(Input.GetButtonDown("MeleeAttack"))
             {
                 manager.GetComponent<GameManager>().ConsumeOnRun();
                 rb.velocity = Vector3.zero;
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
 
         if(other.gameObject.name.Equals("StartTuto"))
         {
-            if(Input.GetButtonDown("Dash"))
+            if(Input.GetButtonDown("MeleeAttack"))
             {
                 //SceneManager.LoadScene("TutorialScene");
             }
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
         { 
 
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("MeleeAttack"))
             {
                 GameObject.FindGameObjectWithTag("UI").GetComponent<MenuUI>().Pause();
             }
@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
         {
             GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", true);
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("MeleeAttack"))
             {
 
                 GameObject.FindGameObjectWithTag("UI").GetComponent<FridgeUI>().Pause();
@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("ReturnToHub"))
         {
-            if(Input.GetButtonDown("Dash"))
+            if(Input.GetButtonDown("MeleeAttack"))
             {
                 SceneManager.LoadScene("HubScene");
             }  
@@ -380,7 +380,7 @@ public class Player : MonoBehaviour
 
     private void RangeAttack()
     {
-        float inputRange = Input.GetAxis("RangeAttack");
+        float inputRange = Mathf.Abs(Input.GetAxis("RangeAttack"));
 
         if (attackRangeCooldown <= 0)
         {
