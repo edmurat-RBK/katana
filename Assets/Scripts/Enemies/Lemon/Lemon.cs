@@ -39,44 +39,44 @@ public class Lemon : Enemy
     void Update()
     {
 
-        DirectionToMoveAway();
+    //    DirectionToMoveAway();
 
-        if (Vector3.Distance(transform.position, targetTransform.position) < detectionRadius)
-        {
-            MoveTowardsTarget(targetTransform);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-            anim.SetBool("isMoving", false);
-        }
+    //    if (Vector3.Distance(transform.position, targetTransform.position) < detectionRadius)
+    //    {
+    //        MoveTowardsTarget(targetTransform);
+    //    }
+    //    else
+    //    {
+    //        rb.velocity = Vector2.zero;
+    //        anim.SetBool("isMoving", false);
+    //    }
 
-        if (Vector3.Distance(transform.position, targetTransform.position) < fuiteDist)
-        {     
-            MoveAway();
-        }
-        else
-        {
+    //    if (Vector3.Distance(transform.position, targetTransform.position) < fuiteDist)
+    //    {     
+    //        MoveAway();
+    //    }
+    //    else
+    //    {
 
-        }
+    //    }
 
-        DirectionToShoot();
-        Turn();
+    //    DirectionToShoot();
+    //    Turn();
  
 
-        if (Vector3.Distance(transform.position, targetTransform.position) < detectionRadius)
-        {
-            rate--;
-            if (rate <= 0)
-            {
-                Shoot();
-                Debug.Log("tir");
-                rate = initRate;
-            }
-        }
+    //    if (Vector3.Distance(transform.position, targetTransform.position) < detectionRadius)
+    //    {
+    //        rate--;
+    //        if (rate <= 0)
+    //        {
+    //            Shoot();
+    //            Debug.Log("tir");
+    //            rate = initRate;
+    //        }
+    //    }
 
-        anim.SetFloat("horizontalMove", rb.velocity.x);
-        anim.SetFloat("verticalMove", rb.velocity.y);
+    //    anim.SetFloat("horizontalMove", rb.velocity.x);
+    //    anim.SetFloat("verticalMove", rb.velocity.y);
     }
 
     private void MoveTowardsTarget(Transform targ)
