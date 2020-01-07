@@ -8,12 +8,11 @@ public class CameraRecenter : MonoBehaviour
     private GameObject mainCamera;
     private static float nextPositionX;
     private static float nextPositionY;
-    private float travellingSpeed;
+    public float travellingSpeed = 1f;
 
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        travellingSpeed = 0.08f;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -45,15 +44,15 @@ public class CameraRecenter : MonoBehaviour
     {
         if(mainCamera.transform.position.x < nextPositionX)
         {
-            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x + travellingSpeed, mainCamera.transform.position.y, mainCamera.transform.position.z);
-            if(mainCamera.transform.position.x >= nextPositionX)
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z), travellingSpeed * Time.deltaTime);
+            if (mainCamera.transform.position.x >= nextPositionX)
             {
                 mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
             }
         }
         else if(mainCamera.transform.position.x > nextPositionX)
         {
-            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x - travellingSpeed, mainCamera.transform.position.y, mainCamera.transform.position.z);
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z), travellingSpeed * Time.deltaTime);
             if (mainCamera.transform.position.x <= nextPositionX)
             {
                 mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
@@ -63,7 +62,7 @@ public class CameraRecenter : MonoBehaviour
 
         if (mainCamera.transform.position.y < nextPositionY)
         {
-            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y + travellingSpeed, mainCamera.transform.position.z);
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z), travellingSpeed * Time.deltaTime);
             if (mainCamera.transform.position.y >= nextPositionY)
             {
                 mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
@@ -71,7 +70,7 @@ public class CameraRecenter : MonoBehaviour
         }
         else if (mainCamera.transform.position.y > nextPositionY)
         {
-            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y - travellingSpeed, mainCamera.transform.position.z);
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z), travellingSpeed * Time.deltaTime);
             if (mainCamera.transform.position.y <= nextPositionY)
             {
                 mainCamera.transform.position = new Vector3(nextPositionX, nextPositionY, mainCamera.transform.position.z);
