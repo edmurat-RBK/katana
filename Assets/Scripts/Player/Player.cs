@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name.Equals("StartRun"))
         {
-            if(Input.GetButtonDown("MeleeAttack"))
+            if(Input.GetButtonDown("Dash"))
             {
                 manager.GetComponent<GameManager>().ConsumeOnRun();
                 rb.velocity = Vector3.zero;
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
 
         if(other.gameObject.name.Equals("StartTuto"))
         {
-            if(Input.GetButtonDown("MeleeAttack"))
+            if(Input.GetButtonDown("Dash"))
             {
                 //SceneManager.LoadScene("TutorialScene");
             }
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
         { 
 
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
-            if (Input.GetButtonDown("MeleeAttack"))
+            if (Input.GetButtonDown("Dash"))
             {
                 GameObject.FindGameObjectWithTag("UI").GetComponent<MenuUI>().Pause();
             }
@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("ReturnToHub"))
         {
-            if(Input.GetButtonDown("MeleeAttack"))
+            if(Input.GetButtonDown("Dash"))
             {
                 SceneManager.LoadScene("HubScene");
             }  
