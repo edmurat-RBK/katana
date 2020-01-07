@@ -69,8 +69,16 @@ public class PlatsBuffsScripts : MonoBehaviour
                 CurrentMeleeDmg = initRangeDmg + Starter3RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
-
-
+            default:
+                //reinitialiser
+                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
+                shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
+                gameObject.GetComponent<Player>().speed = InitSpeed;
+                gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
+                break;
+        }
+        switch ()
+        {
             case Plat1:
                 StartCoroutine(RegenPlat1());
                 break;
@@ -84,7 +92,16 @@ public class PlatsBuffsScripts : MonoBehaviour
             case Plat3:
                 StartCoroutine(RegenPlat3());
                 break;
-
+            default:
+                //reinitialiser
+                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
+                shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
+                gameObject.GetComponent<Player>().speed = InitSpeed;
+                gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
+                break;
+        }
+        switch ()
+        {
             case Dessert1:
                 Currentspeed =  InitSpeed + dessert1speedbonus;
                 gameObject.GetComponent<Player>().speed = Currentspeed;
