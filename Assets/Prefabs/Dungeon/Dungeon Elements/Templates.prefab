@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumDistance: 4
-  ratio1Door: 0.05
-  ratio2Door: 0.75
+  ratio1Door: 0.3
+  ratio2Door: 0.5
   ratio3Door: 0.15
   ratio4Door: 0.05
   spawnpointPrefab: {fileID: 3405203705847998835, guid: 1dbecc10b54ebb243afb3b00df461f7f,
@@ -65,6 +65,7 @@ MonoBehaviour:
   - {fileID: 3259993818924464387, guid: 9000681e0744a4049928e96683fe634c, type: 3}
   - {fileID: 7964330227571814941, guid: dd0db018a7144164995efd7d205afa82, type: 3}
   - {fileID: 350665585694511150, guid: e56547770f60dce438d372e18c9868c8, type: 3}
+  - {fileID: 2913999184267011980, guid: 6fd4c5d8f6440ab4a83dadb163414e8f, type: 3}
   west:
   - {fileID: 3259160190267655929, guid: 2d9d57096fe14c24c84ee3887efcabae, type: 3}
   - {fileID: 7450392639903430377, guid: 87af5f3cdfd6af441afb69283486d43a, type: 3}

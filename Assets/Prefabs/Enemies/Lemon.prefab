@@ -93,21 +93,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8814737615478560464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec5a057e42e5504a86131f14781ed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeController: {fileID: 0}
   maximumHealth: 10
-  health: 0
-  speed: 3
+  isDead: 0
+  baseSpeed: 0
+  realSpeed: 0
   attackDamage: 0
+  attackModifier: 1
+  initialAttackCooldown: 0
   isAttacking: 0
-  lootPercentage: 0.6
-  loot: {fileID: 5035239278725360892, guid: 22f5e95b242d66946ac50225c0082d11, type: 3}
-  target: {fileID: 0}
-  rb: {fileID: 0}
-  knockbackPower: 0
+  lootPrefab: {fileID: 0}
+  lootChance: 0
   fuiteDist: 3
   speedFuite: 1
   offsetDetectionRange: 0.1
@@ -188,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8814737615838232178
 Transform:
   m_ObjectHideFlags: 0
