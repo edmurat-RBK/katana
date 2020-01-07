@@ -158,8 +158,10 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name.Equals("StartRun"))
         {
-            if(Input.GetButtonDown("Dash"))
+            Debug.Log("Can start");
+            if(Input.GetButton("Dash"))
             {
+                Debug.Log("Want to start");
                 manager.GetComponent<GameManager>().ConsumeOnRun();
                 rb.velocity = Vector3.zero;
                 isInTheChatiere = true;
@@ -170,18 +172,18 @@ public class Player : MonoBehaviour
 
         if(other.gameObject.name.Equals("StartTuto"))
         {
-            if(Input.GetButtonDown("Dash"))
+            if(Input.GetButton("Dash"))
             {
                 //SceneManager.LoadScene("TutorialScene");
             }
         }
 
         if (other.gameObject.name.Equals("OpenMenu"))
-        { 
-
+        {
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowMenu").gameObject);
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButton("Dash"))
             {
+                Debug.Log("Want to menu");
                 GameObject.FindGameObjectWithTag("UI").GetComponent<MenuUI>().Pause();
             }
         }
@@ -190,7 +192,7 @@ public class Player : MonoBehaviour
         {
             GameObject.Find("Frigo").GetComponent<Animator>().SetBool("openFridge", true);
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().IncreaseOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
-            if (Input.GetButtonDown("MeleeAttack"))
+            if (Input.GetButton("Dash"))
             {
 
                 GameObject.FindGameObjectWithTag("UI").GetComponent<FridgeUI>().Pause();
@@ -199,7 +201,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.name.Equals("ReturnToHub"))
         {
-            if(Input.GetButtonDown("Dash"))
+            if(Input.GetButton("Dash"))
             {
                 SceneManager.LoadScene("HubScene");
             }  
