@@ -45,37 +45,37 @@ public class ShurikenBarUI : MonoBehaviour
          *  Merci pour votre compassion. Et encore désolé pour la suite.
          */
 
-        if(0 <= player.heldTimer && player.heldTimer < 0.6)
+        if(0 == player.heldTimer)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (0.6 <= player.heldTimer && player.heldTimer < 0.6+0.032)
+        else if (0 <= player.heldTimer && player.heldTimer < 0.032)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[1];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (0.6+0.032 <= player.heldTimer && player.heldTimer < 0.6 + 0.032*2)
+        else if (0.032 <= player.heldTimer && player.heldTimer < 0.032*2)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[2];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (0.6 + 0.032*2 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 3)
+        else if (0.032*2 <= player.heldTimer && player.heldTimer < 0.032 * 3)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[3];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (0.6 + 0.032*3 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 4)
+        else if (0.032*3 <= player.heldTimer && player.heldTimer < 0.032 * 4)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[4];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (0.6 + 0.032 *4 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 *5 )
+        else if (0.032 *4 <= player.heldTimer && player.heldTimer < 0.032 *5 )
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
@@ -84,37 +84,37 @@ public class ShurikenBarUI : MonoBehaviour
 
 
 
-        else if (0.6 + 0.032*5 <= player.heldTimer && player.heldTimer < 1.2)
+        else if (0.032*5 <= player.heldTimer && player.heldTimer < 0.6)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.2 <= player.heldTimer && player.heldTimer < 1.2 + 0.032)
+        else if (0.6 <= player.heldTimer && player.heldTimer < 0.6 + 0.032)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[1];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.2 + 0.032 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 2)
+        else if (0.6 + 0.032 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 2)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[2];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.2 + 0.032 * 2 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 3)
+        else if (0.6 + 0.032 * 2 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 3)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[3];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.2 + 0.032 * 3 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 4)
+        else if (0.6 + 0.032 * 3 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 4)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[4];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.2 + 0.032 * 4 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 5)
+        else if (0.6 + 0.032 * 4 <= player.heldTimer && player.heldTimer < 0.6 + 0.032 * 5)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
@@ -123,37 +123,37 @@ public class ShurikenBarUI : MonoBehaviour
 
 
 
-        else if (1.2 + 0.032 * 5 <= player.heldTimer && player.heldTimer < 1.8)
+        else if (0.6 + 0.032 * 5 <= player.heldTimer && player.heldTimer < 1.2)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[0];
         }
-        else if (1.8 <= player.heldTimer && player.heldTimer < 1.8 + 0.032)
+        else if (1.2 <= player.heldTimer && player.heldTimer < 1.2 + 0.032)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[1];
         }
-        else if (1.8 + 0.032 <= player.heldTimer && player.heldTimer < 1.8 + 0.032 * 2)
+        else if (1.2 + 0.032 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 2)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[2];
         }
-        else if (1.8 + 0.032 * 2 <= player.heldTimer && player.heldTimer < 1.8 + 0.032 * 3)
+        else if (1.2 + 0.032 * 2 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 3)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[3];
         }
-        else if (1.8 + 0.032 * 3 <= player.heldTimer && player.heldTimer < 1.8 + 0.032 * 4)
+        else if (1.2 + 0.032 * 3 <= player.heldTimer && player.heldTimer < 1.2 + 0.032 * 4)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             thirdShuriken.GetComponent<Image>().sprite = shurikenSprite[4];
         }
-        else if (1.8 + 0.032 * 4 <= player.heldTimer)
+        else if (1.2 + 0.032 * 4 <= player.heldTimer)
         {
             firstShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
             secondShuriken.GetComponent<Image>().sprite = shurikenSprite[5];
