@@ -380,11 +380,11 @@ public class Player : MonoBehaviour
 
     private void RangeAttack()
     {
-        bool inputRange = Input.GetButton("RangeAttack");
+        float inputRange = Input.GetAxis("RangeAttack");
 
         if (attackRangeCooldown <= 0)
         {
-            if(inputRange)
+            if(inputRange == 1)
             {
                 heldTimer += Time.deltaTime;
 
@@ -403,7 +403,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if(Input.GetButtonUp("RangeAttack"))
+            if(heldTimer > 0.05 && Input.GetAxis("RangeAttack") == 0)
             {
                 Vector3 direction = transform.position + new Vector3(0f, 0.5f, 0f);
 
