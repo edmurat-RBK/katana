@@ -26,6 +26,7 @@ public class MenuUI : MonoBehaviour
     public GameObject lemonNumber;
     public GameObject watermelonNumber;
     public GameObject tofuNumber;
+
     private GameManager gameManager;
     private int onionCount = 0;
     private int watermelonCount = 0;
@@ -53,13 +54,12 @@ public class MenuUI : MonoBehaviour
 
     public void Pause()
     {
-        UpdateCount();
         menuUI.SetActive(true);
         eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstSelectedObject;
         eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstSelectedObject);
         Time.timeScale = 0f;
         gameIsPaused = true;
-        SetTogglesDisabled();
+        StartCoroutine(UpdateMenu());
     }
 
     public void Resume()
@@ -77,6 +77,8 @@ public class MenuUI : MonoBehaviour
             menuToggles[i].isOn = false;
         }
     }
+
+ 
 
     private void ResetCount()
     {
@@ -125,7 +127,7 @@ public class MenuUI : MonoBehaviour
         tofuNumber.GetComponent<Text>().text = tofuCount.ToString();
     }
 
-    private void SetTogglesDisabled()
+    private void SetTogglesDisabled() // Disable toggle if not enough ingredients
     {
         for (int i = 0; i < menuToggles.Count; i++)
         {
@@ -141,6 +143,17 @@ public class MenuUI : MonoBehaviour
          }
     }
 
+    private IEnumerator UpdateMenu()
+    {
+        while(gameIsPaused)
+        {
+            UpdateCount();
+            SetTogglesDisabled();
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        yield return null;
+    }
     public void CourseDescription()
     {
         if(eventSystem.currentSelectedGameObject == menuToggles[0].gameObject)
@@ -196,6 +209,7 @@ public class MenuUI : MonoBehaviour
         }
     }
 
+    #region ResetDescription
     public void ResetDescriptionEntry()
     {
         EntryDescription.transform.position -= offset;
@@ -210,5 +224,6 @@ public class MenuUI : MonoBehaviour
     {
         DesertDescription.transform.position -= offset;
     }
+    #endregion
 
 }

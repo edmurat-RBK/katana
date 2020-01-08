@@ -14,10 +14,15 @@ public class RoomChecker : MonoBehaviour
     private BoxCollider2D[] checkerResults;
     private BoxCollider2D[] spawnerResults;
     bool checking = true;
+    private GameObject gameManager;
+    private GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        manager = gameManager.GetComponent<GameManager>();
+
         roomCheckerCollider = GetComponent<BoxCollider2D>();
         enemySpawnerFilter.SetLayerMask(enemySpawnerLayer);
         enemyFilter.SetLayerMask(enemyLayer);
@@ -41,8 +46,19 @@ public class RoomChecker : MonoBehaviour
             if (roomCheckerCollider.OverlapCollider(enemySpawnerFilter, spawnerResults) == 0 && roomCheckerCollider.OverlapCollider(enemyFilter, checkerResults) == 0)
             {
                 Debug.Log("Il y a plus de mobs");
+                if (manager.restartCounter < 3)
+                {
+                    manager.restartCounter++;
+                    SceneManager.LoadScene("SandboxScene");
+                }
+                else
+                {
+                    SceneManager.LoadScene("HubScene");
+                    manager.restartCounter = 0;
+                }
+                
                 yield return new WaitForSeconds(5f);
-                SceneManager.LoadScene("HubScene");
+                
             }
             else 
             {

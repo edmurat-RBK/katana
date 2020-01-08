@@ -9209,6 +9209,11 @@ MonoBehaviour:
   lemonNumber: {fileID: 1658221715}
   watermelonNumber: {fileID: 168149791}
   tofuNumber: {fileID: 86503134}
+  eggplantCost: {fileID: 0}
+  onionCost: {fileID: 0}
+  lemonCost: {fileID: 0}
+  watermelonCost: {fileID: 0}
+  tofuCost: {fileID: 0}
 --- !u!1 &1139135033
 GameObject:
   m_ObjectHideFlags: 0
@@ -22072,7 +22077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1762707701
 RectTransform:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private int lemonCount = 0;
     private int eggplantCount = 0;
     private int tofuCount = 0;
+    [HideInInspector] public int restartCounter = 0;
 
     private void Awake()
     {
