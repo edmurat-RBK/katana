@@ -33,6 +33,10 @@ public class MenuUI : MonoBehaviour
     private int lemonCount = 0;
     private int eggplantCount = 0;
     private int tofuCount = 0;
+    private int CurrentOnionCount = 0;
+    private int CurrentWatermelonCount = 0;
+    private int CurrentEggplantCount = 0;
+    private int CurrentTofuCount = 0;
 
 
     // Start is called before the first frame update
@@ -64,10 +68,10 @@ public class MenuUI : MonoBehaviour
 
     public void Resume()
     {
-        gameIsPaused = false;
         ResetCount(); 
         menuUI.SetActive(false);
         Time.timeScale = 1f;
+        gameIsPaused = false;
     }
 
     public void ResetMenu()
@@ -147,7 +151,6 @@ public class MenuUI : MonoBehaviour
     {
         while(gameIsPaused)
         {
-            ResetCount();
             UpdateCount();
             SetTogglesDisabled();
             yield return new WaitForSeconds(0.3f);
@@ -160,7 +163,8 @@ public class MenuUI : MonoBehaviour
         if(eventSystem.currentSelectedGameObject == menuToggles[0].gameObject)
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[0];
-            EntryDescription.transform.position += offset; 
+            EntryDescription.transform.position += offset;
+            //gameManager.StartersSelect = GameManager.Starters.Starter1;
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[1].gameObject)
@@ -173,6 +177,7 @@ public class MenuUI : MonoBehaviour
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[2];
             EntryDescription.transform.position += offset;
+            gameManager.StartersSelect = GameManager.Starters.Starter3;
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[3].gameObject)
@@ -227,4 +232,49 @@ public class MenuUI : MonoBehaviour
     }
     #endregion
 
+    public void CheckingOkButton()
+    {
+        for(int i = 0; i < menuToggles.Count; i++)
+        {
+            if (menuToggles[i].IsActive())
+            {
+                if (menuToggles[i].name =="Entry_1")
+                {
+                    gameManager.StartersSelect = GameManager.Starters.Starter1;
+                }
+                if (menuToggles[i].name == "Entry_2")
+                {
+                    gameManager.StartersSelect = GameManager.Starters.Starter2;
+                }
+                if (menuToggles[i].name == "Entry_3")
+                {
+                    gameManager.StartersSelect = GameManager.Starters.Starter3;
+                }
+                if (menuToggles[i].name == "Main_1")
+                {
+                    gameManager.PlatSelect = GameManager.Plat.Plat1;
+                }
+                if (menuToggles[i].name == "Main_2")
+                {
+                    gameManager.PlatSelect = GameManager.Plat.Plat2;
+                }
+                if (menuToggles[i].name == "Main_3")
+                {
+                    gameManager.PlatSelect = GameManager.Plat.Plat3;
+                }
+                if (menuToggles[i].name == "Desert_1")
+                {
+                    gameManager.DessertSelect = GameManager.Dessert.Dessert1;
+                }
+                if (menuToggles[i].name == "Desert_2")
+                {
+                    gameManager.DessertSelect = GameManager.Dessert.Dessert2;
+                }
+                if (menuToggles[i].name == "Desert_3")
+                {
+                    gameManager.DessertSelect = GameManager.Dessert.Dessert3;
+                }
+            }
+        }
+    }
 }

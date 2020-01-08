@@ -6916,7 +6916,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -6931,7 +6931,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionDesert
           m_Mode: 1
           m_Arguments:
@@ -7061,7 +7061,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121467651}
+      - m_Target: {fileID: 0}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -8059,7 +8059,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -8074,7 +8074,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionEntry
           m_Mode: 1
           m_Arguments:
@@ -8205,7 +8205,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -8220,7 +8220,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionEntry
           m_Mode: 1
           m_Arguments:
@@ -8386,7 +8386,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -8401,7 +8401,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionEntry
           m_Mode: 1
           m_Arguments:
@@ -9206,9 +9206,9 @@ GameObject:
   - component: {fileID: 1121467647}
   - component: {fileID: 1121467646}
   - component: {fileID: 1121467645}
-  - component: {fileID: 1121467651}
   - component: {fileID: 1121467649}
   - component: {fileID: 1121467650}
+  - component: {fileID: 1121467652}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -9316,6 +9316,7 @@ MonoBehaviour:
   selectedClip: {fileID: 8300000, guid: 6c322eb450db17c40a85b9002ac40b20, type: 3}
   pressedClip: {fileID: 0}
   eventSystem: {fileID: 1492684622}
+  controlPanel: {fileID: 254301369}
 --- !u!114 &1121467650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9339,7 +9340,7 @@ MonoBehaviour:
   lemonNumber: {fileID: 1044797482}
   watermelonNumber: {fileID: 156805193}
   tofuNumber: {fileID: 1036742647}
---- !u!114 &1121467651
+--- !u!114 &1121467652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9348,7 +9349,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121467644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ccaf60c5f28184c87f607d6e2c58bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 76e4de478d53cac49a5f8baffcbd1582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1762707700}
@@ -9579,7 +9580,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -9594,7 +9595,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionDesert
           m_Mode: 1
           m_Arguments:
@@ -20378,7 +20379,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -20393,7 +20394,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionMain
           m_Mode: 1
           m_Arguments:
@@ -21901,7 +21902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121467651}
+      - m_Target: {fileID: 0}
         m_MethodName: ResetMenu
         m_Mode: 1
         m_Arguments:
@@ -22782,7 +22783,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -22797,7 +22798,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionDesert
           m_Mode: 1
           m_Arguments:
@@ -22928,7 +22929,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -22943,7 +22944,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionMain
           m_Mode: 1
           m_Arguments:
@@ -23439,7 +23440,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: CourseDescription
           m_Mode: 1
           m_Arguments:
@@ -23454,7 +23455,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1121467651}
+        - m_Target: {fileID: 1121467652}
           m_MethodName: ResetDescriptionMain
           m_Mode: 1
           m_Arguments:
