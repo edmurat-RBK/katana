@@ -20,6 +20,22 @@ public class GameManager : MonoBehaviour
     private int lemonCount = 0;
     private int eggplantCount = 0;
     private int tofuCount = 0;
+    public Starters StartersSelect;
+    public Plat PlatSelect;
+    public Dessert DessertSelect;
+    public enum Starters
+    {
+        Starter1 , Starter2 , Starter3
+    }
+    public enum Plat
+    {
+        Plat1, Plat2, Plat3
+    }
+    public enum Dessert
+    {
+        Dessert1, Dessert2, Dessert3
+    }
+
     [HideInInspector] public int restartCounter = 0;
 
     private void Awake()
@@ -52,7 +68,13 @@ public class GameManager : MonoBehaviour
         hubUI = GameObject.FindGameObjectWithTag("UI");
         toggles = hubUI.GetComponent<MenuUI>().menuToggles;
     }
+    public void DishEffects()
+    {
+        if (toggles[1].isOn)
+        {
 
+        }
+    }
     public void ConsumeOnRun()
     {
         for (int i = 0; i < toggles.Count ; i++)

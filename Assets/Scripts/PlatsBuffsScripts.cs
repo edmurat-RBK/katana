@@ -6,7 +6,7 @@ public class PlatsBuffsScripts : MonoBehaviour
 {
 
     public GameObject shuriken = GameObject.Find("Shuriken");
-
+    private GameManager gameManager;
     private float initMeleeDmg;
     private float CurrentMeleeDmg;
     private float initRangeDmg;
@@ -16,6 +16,7 @@ public class PlatsBuffsScripts : MonoBehaviour
     private float OriginalDashCD;
     private float CurrentDashCD;
     private float CurrentHealth;
+
     // effets des entrées
     public float Starter1MeleeAttackbonus;
     public float Starter2RangeAttackbonus;
@@ -39,6 +40,7 @@ public class PlatsBuffsScripts : MonoBehaviour
         initRangeDmg = shuriken.GetComponent<Shuriken>().attackDamage;
         InitSpeed = gameObject.GetComponent<Player>().speed;
         OriginalDashCD = gameObject.GetComponent<Player>().initialDashCooldown;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame
     void Update()
@@ -48,23 +50,23 @@ public class PlatsBuffsScripts : MonoBehaviour
     }
     private void EatEffects()
     {
-        /*
-        switch ()
+
+        switch (gameManager.StartersSelect)
         {
 
-            case starter1:
+            case GameManager.Starters.Starter1:
                 CurrentMeleeDmg = initMeleeDmg + Starter1MeleeAttackbonus;
                 gameObject.GetComponent<Player>().attackMeleeDamage = CurrentMeleeDmg;
                 break;
 
 
-            case starter2:
+            case GameManager.Starters.Starter2:
                 CurrentMeleeDmg = initRangeDmg + Starter2RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
 
 
-            case starter3:
+            case GameManager.Starters.Starter3:
                 CurrentMeleeDmg = initMeleeDmg + Starter3MeleeAttackbonus;
                 gameObject.GetComponent<Player>().attackMeleeDamage = CurrentMeleeDmg;
                 CurrentMeleeDmg = initRangeDmg + Starter3RangeAttackbonus;
@@ -78,19 +80,19 @@ public class PlatsBuffsScripts : MonoBehaviour
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
-        switch ()
+        switch (gameManager.PlatSelect)
         {
-            case Plat1:
+            case GameManager.Plat.Plat1:
                 StartCoroutine(RegenPlat1());
                 break;
 
 
-            case Plat2:
+            case GameManager.Plat.Plat2:
                 StartCoroutine(RegenPlat2());
                 break;
 
 
-            case Plat3:
+            case GameManager.Plat.Plat3:
                 StartCoroutine(RegenPlat3());
                 break;
             default:
@@ -101,15 +103,15 @@ public class PlatsBuffsScripts : MonoBehaviour
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
-        switch ()
+        switch (gameManager.DessertSelect)
         {
-            case Dessert1:
-                Currentspeed =  InitSpeed + dessert1speedbonus;
+            case GameManager.Dessert.Dessert1:
+                Currentspeed = InitSpeed + dessert1speedbonus;
                 gameObject.GetComponent<Player>().speed = Currentspeed;
                 break;
 
 
-            case Dessert2:
+            case GameManager.Dessert.Dessert2:
                 Currentspeed = InitSpeed + dessert2speedbonus;
                 gameObject.GetComponent<Player>().speed = Currentspeed;
                 CurrentDashCD = OriginalDashCD - dessert2dashbonus;
@@ -117,7 +119,7 @@ public class PlatsBuffsScripts : MonoBehaviour
                 break;
 
 
-            case Dessert3:
+            case GameManager.Dessert.Dessert3:
                 Currentspeed = InitSpeed + dessert3speedbonus;
                 gameObject.GetComponent<Player>().speed = Currentspeed;
                 CurrentDashCD = OriginalDashCD - dessert3dashbonus;
@@ -133,7 +135,7 @@ public class PlatsBuffsScripts : MonoBehaviour
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
-        */
+
     }
 
     IEnumerator RegenPlat1()

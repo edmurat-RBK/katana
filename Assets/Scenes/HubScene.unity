@@ -9316,7 +9316,6 @@ MonoBehaviour:
   selectedClip: {fileID: 8300000, guid: 6c322eb450db17c40a85b9002ac40b20, type: 3}
   pressedClip: {fileID: 0}
   eventSystem: {fileID: 1492684622}
-  controlPanel: {fileID: 254301369}
 --- !u!114 &1121467650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19913,7 +19912,8 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5490287178699011562, guid: 6fec2f8a4045b55478a7392351b79010, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6fec2f8a4045b55478a7392351b79010, type: 3}
 --- !u!1 &1339562115
 GameObject:

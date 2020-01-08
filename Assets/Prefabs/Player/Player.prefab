@@ -19613,6 +19613,7 @@ GameObject:
   - component: {fileID: 8108098142860748108}
   - component: {fileID: 8108098142860748110}
   - component: {fileID: -3914454739603916709}
+  - component: {fileID: -5490287178699011562}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -19825,6 +19826,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d7360f32836964e888c134a2c68caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5490287178699011562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108098142860748115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550f7f5eb086637449888c3468525076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shuriken: {fileID: 0}
+  Starter1MeleeAttackbonus: 0
+  Starter2RangeAttackbonus: 0
+  Starter3RangeAttackbonus: 0
+  Starter3MeleeAttackbonus: 0
+  Plat1HealthCd: 0
+  Plat2HealthCd: 0
+  Plat3HealthCd: 0
+  dessert1speedbonus: 0
+  dessert2speedbonus: 0
+  dessert2dashbonus: 0
+  dessert3speedbonus: 0
+  dessert3dashbonus: 0
 --- !u!1001 &8766521597343807909
 PrefabInstance:
   m_ObjectHideFlags: 0
