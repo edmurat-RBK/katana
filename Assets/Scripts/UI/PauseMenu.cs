@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PauseMenu : MonoBehaviour
     public AudioClip selectedClip;
     public AudioClip pressedClip;
     public EventSystem eventSystem;
+    public GameObject controlPanel;
+    private bool isInOptions = false;
 
 
     void Start()
@@ -35,10 +38,18 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
        }
+
+       if(isInOptions && Input.GetButtonDown("MeleeAttack"))
+       {
+            controlPanel.SetActive(false);
+            isInOptions = false;
+       }
     }
 
     public void Resume()
     {
+        controlPanel.SetActive(false);
+        isInOptions = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -58,12 +69,15 @@ public class PauseMenu : MonoBehaviour
 
     public void onQuit()
     {
-        Debug.Log("QUIT WIP");
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        SceneManager.LoadScene("TitleScreen");
     }
 
     public void onOptions()
     {
-        Debug.Log("OPTIONS WIP");
+        controlPanel.SetActive(true);
+        isInOptions = true;
     }
 
     public void SelectedSound()

@@ -64,10 +64,10 @@ public class MenuUI : MonoBehaviour
 
     public void Resume()
     {
+        gameIsPaused = false;
         ResetCount(); 
         menuUI.SetActive(false);
         Time.timeScale = 1f;
-        gameIsPaused = false;
     }
 
     public void ResetMenu()
@@ -147,6 +147,7 @@ public class MenuUI : MonoBehaviour
     {
         while(gameIsPaused)
         {
+            ResetCount();
             UpdateCount();
             SetTogglesDisabled();
             yield return new WaitForSeconds(0.3f);

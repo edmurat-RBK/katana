@@ -19770,11 +19770,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f687ea656cf624192f64cebf50e96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ppProfileInit: {fileID: 11400000, guid: 5d64bd116fc09344992abcc2e9ca09e4, type: 2}
+  ppProfileBlur: {fileID: 11400000, guid: da56356ed233ca2488ebf5cd5cfe91a4, type: 2}
   maximumHealth: 10
   health: 0
   speed: 5
   speedModifier: 1
   isInTheChatiere: 0
+  collideChatiere: 0
   dashSpeed: 45
   initialDashTime: 0.08
   initialDashCooldown: 0.7

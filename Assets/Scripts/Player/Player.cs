@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private GameObject manager;
+
+    //Camera
+    private GameObject mainCamera;
+    private PostProcessVolume ppVolume;
+    public PostProcessProfile ppProfileInit;
+    public PostProcessProfile ppProfileBlur;
 
     // Health
     public float maximumHealth = 10f;
@@ -22,6 +29,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float speedModifier = 1f;
     public bool isInTheChatiere = false;
+    public bool collideChatiere = false;
     // Dash
     public float dashSpeed = 1.5f;
     private float dashTime;
@@ -83,11 +91,10 @@ public class Player : MonoBehaviour
     public GameObject soundSource;
     public AudioSource source;
 
-
-
-
     void Start()
     {
+        mainCamera = GameObject.Find("Main Camera");
+        ppVolume = mainCamera.GetComponent<PostProcessVolume>();
         manager = GameObject.FindGameObjectWithTag("GameManager");
         source = soundSource.GetComponent<AudioSource>();
         tofuEffectCooldown = initTofuEffectCooldown;
@@ -115,7 +122,7 @@ public class Player : MonoBehaviour
                 Move();
             }            
 
-            if (!isMeleeAttacking)
+            if (!isMeleeAttacking && !collideChatiere)
             {
                 Dash();
             }
@@ -159,12 +166,15 @@ public class Player : MonoBehaviour
         if (other.gameObject.name.Equals("StartRun"))
         {
             Debug.Log("Can start");
-            if(Input.GetButton("Dash"))
+            collideChatiere = true;
+            dashTime = 0;
+
+            if (Input.GetButton("Dash"))
             {
                 Debug.Log("Want to start");
                 manager.GetComponent<GameManager>().ConsumeOnRun();
-                rb.velocity = Vector3.zero;
                 isInTheChatiere = true;
+                rb.velocity = Vector3.zero;
                 transform.position = new Vector3(1.667f, 1.416f, 0);
                 anim.SetBool("isInTheChatiere", true);
             }
@@ -221,9 +231,11 @@ public class Player : MonoBehaviour
             other.gameObject.transform.parent.gameObject.GetComponent<SpriteOpacityManager>().ResetOpacity(other.gameObject.transform.Find("GlowFridge").gameObject);
         }
 
-
+        if (other.gameObject.name.Equals("StartRun"))
+        {
+            collideChatiere = false;
+        }
     }
-
     private void Move()
     {
         float inputHorizontal = Input.GetAxis("Horizontal");
@@ -524,6 +536,7 @@ public class Player : MonoBehaviour
                     {
                         health++;
                     }
+                    StartCoroutine(Blur());
                     underOnionEffect = true;
                     break;
                 case Item.WATERMELON:
@@ -692,5 +705,13 @@ public class Player : MonoBehaviour
         return (int)Mathf.Ceil(health);
     }
 
-    
+    private IEnumerator Blur()
+    {
+        ppVolume.profile = ppProfileBlur;
+        
+        yield return new WaitForSeconds(1f);
+        ppVolume.profile = ppProfileInit;
+
+        yield return null;
+    }
 }
