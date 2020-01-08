@@ -10,6 +10,7 @@ public class MenuUI : MonoBehaviour
     public GameObject firstSelectedObject;
     private bool gameIsPaused = false;
     public EventSystem eventSystem;
+    private bool pressedOk = false;
 
     //Courses and Description
     public List<Toggle> menuToggles = new List<Toggle>();
@@ -54,6 +55,13 @@ public class MenuUI : MonoBehaviour
         {
             Resume();
         }
+
+        if (pressedOk && Input.GetButtonUp("Dash"))
+        {
+            Resume();
+            CheckingOkButton();
+            pressedOk = false;
+        }
     }
 
     public void Pause()
@@ -69,9 +77,14 @@ public class MenuUI : MonoBehaviour
     public void Resume()
     {
         ResetCount(); 
-        menuUI.SetActive(false);
         Time.timeScale = 1f;
+        menuUI.SetActive(false);
         gameIsPaused = false;
+    }
+
+    public void PressedOk()
+    {
+        pressedOk = true;
     }
 
     public void ResetMenu()
@@ -81,8 +94,6 @@ public class MenuUI : MonoBehaviour
             menuToggles[i].isOn = false;
         }
     }
-
- 
 
     private void ResetCount()
     {
@@ -164,7 +175,7 @@ public class MenuUI : MonoBehaviour
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[0];
             EntryDescription.transform.position += offset;
-            //gameManager.StartersSelect = GameManager.Starters.Starter1;
+            
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[1].gameObject)
@@ -177,7 +188,7 @@ public class MenuUI : MonoBehaviour
         {
             EntryDescription.GetComponent<Image>().sprite = courseDescription[2];
             EntryDescription.transform.position += offset;
-            gameManager.StartersSelect = GameManager.Starters.Starter3;
+            
         }
 
         else if (eventSystem.currentSelectedGameObject == menuToggles[3].gameObject)
@@ -236,9 +247,9 @@ public class MenuUI : MonoBehaviour
     {
         for(int i = 0; i < menuToggles.Count; i++)
         {
-            if (menuToggles[i].IsActive())
+            if (menuToggles[i].isOn)
             {
-                if (menuToggles[i].name =="Entry_1")
+                if (menuToggles[i].name == "Entry_1")
                 {
                     gameManager.StartersSelect = GameManager.Starters.Starter1;
                 }

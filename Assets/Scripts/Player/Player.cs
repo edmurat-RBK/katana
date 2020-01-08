@@ -666,6 +666,7 @@ public class Player : MonoBehaviour
         if (eventMessage.Equals("ChatiereEnded"))
         {
             anim.SetBool("isInTheChatiere", false);
+            
             SceneManager.LoadScene("SandboxScene");
         }
     }

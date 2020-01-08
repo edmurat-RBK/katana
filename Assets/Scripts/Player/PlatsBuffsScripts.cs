@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatsBuffsScripts : MonoBehaviour
 {
 
-    public GameObject shuriken = GameObject.Find("Shuriken");
+    public GameObject shuriken;
     private GameManager gameManager;
     private float initMeleeDmg;
     private float CurrentMeleeDmg;
@@ -32,23 +33,34 @@ public class PlatsBuffsScripts : MonoBehaviour
     public float dessert2dashbonus;
     public float dessert3speedbonus;
     public float dessert3dashbonus;
-
+    //Scene
+    public Scene HubScene;
+    private bool isInHub;
 
     void Start()
     {
+
         initMeleeDmg = gameObject.GetComponent<Player>().attackMeleeDamage;
         initRangeDmg = shuriken.GetComponent<Shuriken>().attackDamage;
         InitSpeed = gameObject.GetComponent<Player>().speed;
         OriginalDashCD = gameObject.GetComponent<Player>().initialDashCooldown;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        CurrentHealth = gameObject.GetComponent<Player>().health;
     }
     // Update is called once per frame
     void Update()
-    {
-        CurrentHealth = gameObject.GetComponent<Player>().health;
-        //EatEffects();
+    {   
+        if (SceneManager.GetActiveScene() == HubScene)
+        {
+            isInHub = true;
+        }
+        else
+        {
+            isInHub = false;
+        }
+        ApplicateEffects();
     }
-    private void EatEffects()
+    public void ApplicateEffects()
     {
 
         switch (gameManager.StartersSelect)
@@ -59,12 +71,10 @@ public class PlatsBuffsScripts : MonoBehaviour
                 gameObject.GetComponent<Player>().attackMeleeDamage = CurrentMeleeDmg;
                 break;
 
-
             case GameManager.Starters.Starter2:
                 CurrentMeleeDmg = initRangeDmg + Starter2RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
-
 
             case GameManager.Starters.Starter3:
                 CurrentMeleeDmg = initMeleeDmg + Starter3MeleeAttackbonus;
@@ -72,25 +82,25 @@ public class PlatsBuffsScripts : MonoBehaviour
                 CurrentMeleeDmg = initRangeDmg + Starter3RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
+
             default:
                 //reinitialiser
-                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
+                //gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
                 shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
                 gameObject.GetComponent<Player>().speed = InitSpeed;
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
+
         switch (gameManager.PlatSelect)
         {
             case GameManager.Plat.Plat1:
                 StartCoroutine(RegenPlat1());
                 break;
 
-
             case GameManager.Plat.Plat2:
                 StartCoroutine(RegenPlat2());
                 break;
-
 
             case GameManager.Plat.Plat3:
                 StartCoroutine(RegenPlat3());
@@ -140,32 +150,35 @@ public class PlatsBuffsScripts : MonoBehaviour
 
     IEnumerator RegenPlat1()
     {
-
-        yield return new WaitForSeconds(Plat1HealthCd);
-        if (CurrentHealth <= 9)
+        while(!isInHub)
         {
-            gameObject.GetComponent<Player>().health = CurrentHealth+1;
+            yield return new WaitForSeconds(Plat1HealthCd);
+            if (CurrentHealth <= 9)
+            {
+                gameObject.GetComponent<Player>().health = CurrentHealth + 1;
+            }
         }
-        StartCoroutine(RegenPlat1());
     }
     IEnumerator RegenPlat2()
     {
-
-        yield return new WaitForSeconds(Plat2HealthCd);
-        if (CurrentHealth <= 9)
+        while (!isInHub)
         {
-            gameObject.GetComponent<Player>().health = CurrentHealth + 1;
+            yield return new WaitForSeconds(Plat2HealthCd);
+            if (CurrentHealth <= 9)
+            {
+                gameObject.GetComponent<Player>().health = CurrentHealth + 1;
+            }
         }
-        StartCoroutine(RegenPlat2());
     }
     IEnumerator RegenPlat3()
     {
-
-        yield return new WaitForSeconds(Plat3HealthCd);
-        if (CurrentHealth <= 9)
+        while (!isInHub)
         {
-            gameObject.GetComponent<Player>().health = CurrentHealth + 1;
+            yield return new WaitForSeconds(Plat3HealthCd);
+            if (CurrentHealth <= 9)
+            {
+                gameObject.GetComponent<Player>().health = CurrentHealth + 1;
+            }
         }
-        StartCoroutine(RegenPlat3());
     }
 }

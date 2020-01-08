@@ -19612,8 +19612,8 @@ GameObject:
   - component: {fileID: 8108098142860748109}
   - component: {fileID: 8108098142860748108}
   - component: {fileID: 8108098142860748110}
+  - component: {fileID: 9056139309114730177}
   - component: {fileID: -3914454739603916709}
-  - component: {fileID: -5490287178699011562}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -19814,6 +19814,34 @@ MonoBehaviour:
   attackParticule: {fileID: 1405131456683062177}
   soundSource: {fileID: 7114158649320730082}
   source: {fileID: 0}
+--- !u!114 &9056139309114730177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108098142860748115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2428455e82f70b244b62163672576829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shuriken: {fileID: 3782794491880227671, guid: 64fc6f1e9c9133e4c9a0c8749de23002,
+    type: 3}
+  Starter1MeleeAttackbonus: 1
+  Starter2RangeAttackbonus: 0.5
+  Starter3RangeAttackbonus: 0.5
+  Starter3MeleeAttackbonus: 2
+  Plat1HealthCd: 30
+  Plat2HealthCd: 20
+  Plat3HealthCd: 10
+  dessert1speedbonus: 0.1
+  dessert2speedbonus: 0.2
+  dessert2dashbonus: 0.2
+  dessert3speedbonus: 0.5
+  dessert3dashbonus: 0.5
+  HubScene:
+    m_Handle: 0
 --- !u!114 &-3914454739603916709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19826,31 +19854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d7360f32836964e888c134a2c68caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5490287178699011562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108098142860748115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550f7f5eb086637449888c3468525076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shuriken: {fileID: 0}
-  Starter1MeleeAttackbonus: 0
-  Starter2RangeAttackbonus: 0
-  Starter3RangeAttackbonus: 0
-  Starter3MeleeAttackbonus: 0
-  Plat1HealthCd: 0
-  Plat2HealthCd: 0
-  Plat3HealthCd: 0
-  dessert1speedbonus: 0
-  dessert2speedbonus: 0
-  dessert2dashbonus: 0
-  dessert3speedbonus: 0
-  dessert3dashbonus: 0
 --- !u!1001 &8766521597343807909
 PrefabInstance:
   m_ObjectHideFlags: 0

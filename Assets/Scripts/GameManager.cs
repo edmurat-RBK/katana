@@ -25,15 +25,15 @@ public class GameManager : MonoBehaviour
     public Dessert DessertSelect;
     public enum Starters
     {
-        Starter1 , Starter2 , Starter3
+        None , Starter1 , Starter2 , Starter3
     }
     public enum Plat
     {
-        Plat1, Plat2, Plat3
+        None , Plat1, Plat2, Plat3
     }
     public enum Dessert
     {
-        Dessert1, Dessert2, Dessert3
+        None , Dessert1, Dessert2, Dessert3
     }
 
     [HideInInspector] public int restartCounter = 0;
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
                 
                 break;
         }
+        Debug.Log(StartersSelect);
     }
 
     public void GetUIAndToggles()
