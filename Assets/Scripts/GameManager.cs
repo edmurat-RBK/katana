@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
         fridgeInventory = new List<Item>();
     }
 

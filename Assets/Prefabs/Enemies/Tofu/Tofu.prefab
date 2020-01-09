@@ -180,7 +180,7 @@ MonoBehaviour:
   iSpawnCooldown: 100
   tofuClone: {fileID: 2702780795305700636, guid: d891f90a7f18f1245b75689eb05fda08,
     type: 3}
-  stoppingDistance: 5
+  stoppingDistance: 8
   deathParticle: {fileID: 2995226003516106350}
   hitParticle: {fileID: 4393164798207854522}
 --- !u!1001 &1722871319204144635
