@@ -93,7 +93,7 @@ public class PlatsBuffsScripts : MonoBehaviour
                 break;
         }
 
-        switch (gameManager.PlatSelect)
+        /*switch (gameManager.PlatSelect)
         {
             case GameManager.Plat.Plat1:
                 StartCoroutine(RegenPlat1());
@@ -111,7 +111,7 @@ public class PlatsBuffsScripts : MonoBehaviour
                 Debug.Log("Je passe dans default2");
 
                 break;
-        }
+        }*/
         switch (gameManager.DessertSelect)
         {
             case GameManager.Dessert.Dessert1:
@@ -150,6 +150,7 @@ public class PlatsBuffsScripts : MonoBehaviour
     {
         while(!isInHub)
         {
+            Debug.Log("sumossaka activee");
             yield return new WaitForSeconds(Plat1HealthCd);
             if (CurrentHealth <= 9)
             {
