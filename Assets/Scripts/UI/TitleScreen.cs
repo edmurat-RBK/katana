@@ -9,21 +9,28 @@ public class TitleScreen : MonoBehaviour
     public AudioSource source;
     public AudioClip selectedClip;
     public AudioClip pressedClip;
+    public GameObject controlPanel;
+    private bool isInOptions = false;
 
     public void OnNewGame()
     {
         SceneManager.LoadScene("HubScene");
     }
 
+    void Update()
+    {
+        if (isInOptions && Input.GetButtonDown("MeleeAttack") )
+        {
+            controlPanel.SetActive(false);
+            isInOptions = false;
+        }
+    }
     public void OnOptions()
     {
-        Debug.Log("Option LV3");
+        controlPanel.SetActive(true);
+        isInOptions = true;
     }
 
-    public void OnCredits()
-    {
-        Debug.Log("Crédits : La meilleure team");
-    }
 
     public void OnQuit()
     {

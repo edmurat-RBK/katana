@@ -18,7 +18,7 @@ public class MenuUI : MonoBehaviour
     public GameObject EntryDescription;
     public GameObject MainDescription;
     public GameObject DesertDescription;
-    private Vector3 offset = new Vector3 (120f, 0f, 0f);
+    private Vector3 offset = new Vector3 (210f, 0f, 0f);
 
     //Text 
     [Header("Inventory")]
