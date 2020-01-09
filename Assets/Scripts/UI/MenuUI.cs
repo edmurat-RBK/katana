@@ -287,5 +287,20 @@ public class MenuUI : MonoBehaviour
                 }
             }
         }
+
+        if(!menuToggles[0].isOn && !menuToggles[1].isOn && !menuToggles[2].isOn)
+        {
+            gameManager.StartersSelect = GameManager.Starters.None;
+        }
+
+        if(!menuToggles[3].isOn && !menuToggles[4].isOn && !menuToggles[5].isOn)
+        {
+            gameManager.PlatSelect = GameManager.Plat.None;
+        }
+
+        if(!menuToggles[6].isOn && !menuToggles[7].isOn && !menuToggles[8].isOn)
+        {
+            gameManager.DessertSelect = GameManager.Dessert.None;
+        }
     }
 }

@@ -8,6 +8,7 @@ public class PlatsBuffsScripts : MonoBehaviour
 
     public GameObject shuriken;
     private GameManager gameManager;
+    private Player player;
     private float initMeleeDmg;
     private float CurrentMeleeDmg;
     private float initRangeDmg;
@@ -39,7 +40,7 @@ public class PlatsBuffsScripts : MonoBehaviour
 
     void Start()
     {
-
+        player = gameObject.GetComponent<Player>();
         initMeleeDmg = gameObject.GetComponent<Player>().attackMeleeDamage;
         initRangeDmg = shuriken.GetComponent<Shuriken>().attackDamage;
         InitSpeed = gameObject.GetComponent<Player>().speed;
@@ -68,27 +69,27 @@ public class PlatsBuffsScripts : MonoBehaviour
 
             case GameManager.Starters.Starter1:
                 CurrentMeleeDmg = initMeleeDmg + Starter1MeleeAttackbonus;
-                gameObject.GetComponent<Player>().attackMeleeDamage = CurrentMeleeDmg;
+                player.attackMeleeDamage = CurrentMeleeDmg;
                 break;
 
             case GameManager.Starters.Starter2:
-                CurrentMeleeDmg = initRangeDmg + Starter2RangeAttackbonus;
+                CurrentRangeDmg = initRangeDmg + Starter2RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
 
             case GameManager.Starters.Starter3:
                 CurrentMeleeDmg = initMeleeDmg + Starter3MeleeAttackbonus;
                 gameObject.GetComponent<Player>().attackMeleeDamage = CurrentMeleeDmg;
-                CurrentMeleeDmg = initRangeDmg + Starter3RangeAttackbonus;
+
+                CurrentRangeDmg = initRangeDmg + Starter3RangeAttackbonus;
                 shuriken.GetComponent<Shuriken>().attackDamage = CurrentRangeDmg;
                 break;
 
             default:
                 //reinitialiser
-                //gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
+                Debug.Log("Je passe dans default1");
+                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
                 shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
-                gameObject.GetComponent<Player>().speed = InitSpeed;
-                gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
         }
 
@@ -107,10 +108,8 @@ public class PlatsBuffsScripts : MonoBehaviour
                 break;
             default:
                 //reinitialiser
-                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
-                shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
-                gameObject.GetComponent<Player>().speed = InitSpeed;
-                gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
+                Debug.Log("Je passe dans default2");
+
                 break;
         }
         switch (gameManager.DessertSelect)
@@ -139,8 +138,7 @@ public class PlatsBuffsScripts : MonoBehaviour
 
             default:
                 //reinitialiser
-                gameObject.GetComponent<Player>().attackMeleeDamage = initMeleeDmg;
-                shuriken.GetComponent<Shuriken>().attackDamage = initRangeDmg;
+                Debug.Log("Je passe dans default3");
                 gameObject.GetComponent<Player>().speed = InitSpeed;
                 gameObject.GetComponent<Player>().initialDashCooldown = OriginalDashCD;
                 break;
