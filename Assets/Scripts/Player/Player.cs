@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //TestHealthModifier();
+        TestHealthModifier();
 
         if(isAlive)
         {

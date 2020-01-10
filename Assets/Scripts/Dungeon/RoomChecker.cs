@@ -50,6 +50,10 @@ public class RoomChecker : MonoBehaviour
                 {
                     manager.restartCounter++;
                     SceneManager.LoadScene("SandboxScene");
+                    for(int i = 0; i<3; i++)
+                    {
+                        gameManager.GetComponent<GameManager>().fridgeInventory.Add(Item.LEMON);
+                    }
                 }
                 else
                 {

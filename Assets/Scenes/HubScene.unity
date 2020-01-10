@@ -8185,7 +8185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onionCost: 0
   eggplantCost: 0
-  lemonCost: 0
+  lemonCost: 1
   tofuCost: 2
   watermelonCost: 6
 --- !u!114 &792790376
